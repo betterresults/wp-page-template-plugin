@@ -36,23 +36,6 @@ const TestimonialsSection = () => {
           <div className="fbl_w_dcWK51Qwf6A51i8gEolc"></div>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="bg-white rounded-2xl p-8 shadow-md">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <p className="text-muted-foreground">Properties Cleaned</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
-              <p className="text-muted-foreground">Average Rating</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">100%</div>
-              <p className="text-muted-foreground">Deposit Success Rate</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

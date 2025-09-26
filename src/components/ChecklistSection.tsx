@@ -105,16 +105,6 @@ const ChecklistSection = () => {
             icon={Home}
           />
         </div>
-
-        <div className="text-center">
-          <div className="inline-flex items-center gap-4 bg-card px-8 py-4 rounded-2xl shadow-sm border border-border">
-            <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-            <span className="text-lg font-semibold text-foreground">
-              Over 200+ Individual Tasks Completed
-            </span>
-            <Sparkles className="w-5 h-5 text-primary" />
-          </div>
-        </div>
       </div>
     </section>
   );

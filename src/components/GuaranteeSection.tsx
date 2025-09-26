@@ -23,13 +23,13 @@ const GuaranteeSection = () => {
           <div className="lg:col-span-9 space-y-8">
             <div className="space-y-4">
               <h3 className="text-4xl lg:text-5xl font-bold font-heading">
-                Our Cast-Iron <span className="text-gradient-accent text-accent">Guarantee</span>
+                Our Cast-Iron <span className="text-primary">Guarantee</span>
               </h3>
               <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
                 Your deposit is our priority. We are so confident in our agency-approved standards that we offer a 
                 rock-solid guarantee: in the unlikely event of any issues flagged in your checkout report, we will 
                 return to the property to rectify them{" "}
-                <span className="font-bold text-accent">completely free of charge</span> within 72 hours.
+                <span className="font-bold text-primary">completely free of charge</span> within 72 hours.
               </p>
             </div>
 
@@ -44,7 +44,7 @@ const GuaranteeSection = () => {
               </div>
               
               <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-                <Clock className="w-8 h-8 text-accent flex-shrink-0" />
+                <Clock className="w-8 h-8 text-primary flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-lg">72-Hour Return</h4>
                   <p className="text-white/80 text-sm">Quick response time</p>
@@ -52,7 +52,7 @@ const GuaranteeSection = () => {
               </div>
               
               <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-                <Shield className="w-8 h-8 text-primary-light flex-shrink-0" />
+                <Shield className="w-8 h-8 text-primary flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-lg">100% Free</h4>
                   <p className="text-white/80 text-sm">No additional costs</p>
@@ -62,7 +62,7 @@ const GuaranteeSection = () => {
 
             {/* CTA */}
             <div className="pt-6">
-              <Button className="btn-secondary text-lg px-8 py-4">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-xl px-12 py-6 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 Book Your Guaranteed Clean
               </Button>
             </div>
