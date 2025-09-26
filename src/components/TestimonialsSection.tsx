@@ -1,29 +1,26 @@
-import { Star, Quote } from "lucide-react";
+import { useEffect } from "react";
 
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Sarah M.",
-      location: "South Hornchurch",
-      rating: 5,
-      text: "Absolutely fantastic service! Got my full deposit back thanks to their thorough cleaning. The team was professional and efficient.",
-      highlight: "Full deposit returned"
-    },
-    {
-      name: "James L.", 
-      location: "Upminster",
-      rating: 5,
-      text: "Best cleaning service in Havering! They went above and beyond expectations. My letting agent was impressed with the standard.",
-      highlight: "Above expectations"
-    },
-    {
-      name: "Maria K.",
-      location: "Hornchurch", 
-      rating: 5,
-      text: "Same-day service when I needed it most. Professional team, fair pricing, and excellent results. Highly recommended!",
-      highlight: "Same-day availability"
-    }
-  ];
+  useEffect(() => {
+    // Load the testimonials widget script
+    const script = document.createElement('script');
+    script.innerHTML = `
+      ! function(w, d){
+        if (!w || !d) return false;    
+        d.addEventListener("DOMContentLoaded", function(event) {
+            var s = d.createElement('script');
+            s.setAttribute('src','https://fbl.embedwidgets.com/dcWK51Qwf6A51i8gEolc.js');
+            d.body.appendChild(s);
+          });
+        }(window, document)
+    `;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <section className="section-padding bg-gradient-to-br from-muted/20 to-background">
@@ -37,44 +34,9 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="card-glass p-8 relative">
-              {/* Quote Icon */}
-              <div className="absolute -top-4 left-8">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <Quote className="w-4 h-4 text-white" />
-                </div>
-              </div>
-
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-4 mt-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-
-              {/* Testimonial Text */}
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                "{testimonial.text}"
-              </p>
-
-              {/* Customer Info */}
-              <div className="border-t border-border pt-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                  </div>
-                  <div className="bg-primary/10 px-3 py-1 rounded-full">
-                    <span className="text-xs font-semibold text-primary">
-                      {testimonial.highlight}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Real Review Widget */}
+        <div className="card-glass p-8 mb-12">
+          <div className="fbl_w_dcWK51Qwf6A51i8gEolc"></div>
         </div>
 
         {/* Trust Indicators */}
