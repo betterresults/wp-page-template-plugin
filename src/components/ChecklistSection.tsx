@@ -36,7 +36,7 @@ const ChecklistSection = () => {
   }) => (
     <div className="card-feature">
       <div className="mb-6">
-        <h4 className={`text-2xl font-bold font-heading bg-gradient-to-r ${gradientFrom} ${gradientTo} bg-clip-text text-transparent pb-3 border-b-2 border-primary/20`}>
+        <h4 className="text-2xl font-bold font-heading text-primary pb-3 border-b-2 border-primary/20">
           {title}
         </h4>
       </div>
@@ -59,7 +59,7 @@ const ChecklistSection = () => {
         <div className="text-center mb-16 space-y-6">
           <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground">
             A Checklist That Leaves{" "}
-            <span className="text-gradient-primary">Nothing to Chance</span>
+            <span className="text-primary">Nothing to Chance</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We clean everything. Our comprehensive service ensures every corner of your property meets 
@@ -71,20 +71,20 @@ const ChecklistSection = () => {
           <TaskList
             title="Kitchen Deep Clean"
             tasks={kitchenTasks}
-            gradientFrom="from-primary"
-            gradientTo="to-primary-light"
+            gradientFrom=""
+            gradientTo=""
           />
           <TaskList
             title="Bathroom Sanitisation"
             tasks={bathroomTasks}
-            gradientFrom="from-accent"
-            gradientTo="to-orange-400"
+            gradientFrom=""
+            gradientTo=""
           />
           <TaskList
             title="General Areas"
             tasks={generalTasks}
-            gradientFrom="from-primary-dark"
-            gradientTo="to-primary"
+            gradientFrom=""
+            gradientTo=""
           />
         </div>
 

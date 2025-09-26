@@ -44,7 +44,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight">
                 <span className="block">End of Tenancy</span>
-                <span className="block text-gradient-accent bg-gradient-to-r from-accent to-yellow-300 bg-clip-text text-transparent">
+                <span className="block text-primary">
                   Cleaning
                 </span>
                 <span className="block text-4xl lg:text-5xl">in South Hornchurch</span>

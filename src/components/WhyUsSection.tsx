@@ -29,7 +29,7 @@ const WhyUsSection = () => {
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight">
                 Why Trust Us For Your Clean in{" "}
-                <span className="text-gradient-primary">South Hornchurch</span>?
+                <span className="text-primary">South Hornchurch</span>?
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">

@@ -39,7 +39,7 @@
     /* Functional Colors */
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
-    --success: 142 76% 36%;
+    --success: 180 63% 36%; /* Use primary color instead of green */
     --success-foreground: 0 0% 100%;
 
     /* Gradients */
