@@ -7,34 +7,34 @@
 /* Modern Cleaning Service Design System */
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --primary: 180 100% 35%; /* Modern teal #00B3B3 */
-    --primary-light: 180 100% 45%; /* Bright teal #00CCCC */
-    --primary-dark: 180 100% 25%; /* Deep teal #008080 */
+    /* Core Brand Colors - Your Specified Palette */
+    --primary: 180 63% 36%; /* #18A5A5 */
+    --primary-light: 180 45% 40%; /* Lighter variant */
+    --primary-dark: 203 55% 25%; /* #185166 */
     --primary-foreground: 0 0% 100%;
 
     /* Supporting Colors */
-    --secondary: 200 15% 96%; /* Cool light gray */
-    --secondary-foreground: 200 20% 20%;
-    --accent: 45 100% 60%; /* Golden yellow accent */
+    --secondary: 210 40% 96%; /* Light gray */
+    --secondary-foreground: 210 11% 15%; /* #2C3338 */
+    --accent: 180 63% 36%; /* #18A5A5 - matching primary */
     --accent-foreground: 0 0% 100%;
 
     /* Neutrals */
     --background: 0 0% 100%;
-    --foreground: 200 20% 15%; /* Deep charcoal */
-    --muted: 200 15% 96%;
-    --muted-foreground: 200 10% 45%;
+    --foreground: 210 11% 15%; /* #2C3338 */
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 11% 22%; /* #3C434A */
 
     /* Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 200 20% 15%;
+    --card-foreground: 210 11% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 200 20% 15%;
+    --popover-foreground: 210 11% 15%;
 
     /* Interactive Elements */
-    --border: 200 15% 90%;
-    --input: 200 15% 95%;
-    --ring: 180 100% 35%;
+    --border: 210 40% 90%;
+    --input: 210 40% 95%;
+    --ring: 180 63% 36%;
 
     /* Functional Colors */
     --destructive: 0 85% 60%;
@@ -62,25 +62,25 @@
   }
 
   .dark {
-    --background: 200 20% 8%;
+    --background: 0 0% 0%; /* #000000 */
     --foreground: 0 0% 95%;
-    --card: 200 20% 10%;
+    --card: 210 11% 15%; /* #2C3338 */
     --card-foreground: 0 0% 95%;
-    --popover: 200 20% 10%;
+    --popover: 210 11% 15%;
     --popover-foreground: 0 0% 95%;
-    --primary: 180 100% 45%;
-    --primary-foreground: 200 20% 8%;
-    --secondary: 200 20% 15%;
+    --primary: 180 63% 36%; /* #18A5A5 */
+    --primary-foreground: 0 0% 95%;
+    --secondary: 203 55% 25%; /* #185166 */
     --secondary-foreground: 0 0% 95%;
-    --muted: 200 20% 15%;
+    --muted: 210 11% 15%;
     --muted-foreground: 200 10% 65%;
-    --accent: 45 100% 65%;
-    --accent-foreground: 200 20% 8%;
+    --accent: 180 63% 36%; /* #18A5A5 */
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 85% 65%;
     --destructive-foreground: 0 0% 95%;
-    --border: 200 20% 20%;
-    --input: 200 20% 15%;
-    --ring: 180 100% 45%;
+    --border: 203 55% 25%;
+    --input: 210 11% 15%;
+    --ring: 180 63% 36%;
   }
 }
 

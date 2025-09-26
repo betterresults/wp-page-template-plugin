@@ -71,14 +71,11 @@ const HeroSection = () => {
 
           {/* Quote Form */}
           <div className="animate-fade-in-delayed">
-            <div className="card-glass p-8 lg:p-10 max-w-md mx-auto lg:mx-0">
+            <div className="card-glass p-6 lg:p-8 max-w-sm mx-auto lg:mx-0">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold font-heading text-foreground mb-3">
                   Get Your Instant Quote
                 </h3>
-                <p className="text-lg text-muted-foreground">
-                  Enter your postcode to get started:
-                </p>
               </div>
 
               <div className="space-y-6">
@@ -89,7 +86,7 @@ const HeroSection = () => {
                   <Input
                     id="postcode"
                     type="text"
-                    placeholder="e.g. RM12"
+                    placeholder="Add your postcode"
                     value={postcode}
                     onChange={(e) => setPostcode(e.target.value)}
                     className="h-14 text-lg px-4 rounded-xl border-2 focus:border-primary transition-colors"
@@ -103,10 +100,6 @@ const HeroSection = () => {
                   Check Prices & Availability
                   <ArrowRight className="w-5 h-5" />
                 </Button>
-
-                <p className="text-sm text-center text-muted-foreground">
-                  You will be taken to our secure booking page.
-                </p>
               </div>
             </div>
           </div>
