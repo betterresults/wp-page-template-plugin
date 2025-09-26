@@ -79,9 +79,9 @@ const HeroSection = () => {
                 </h3>
               </div>
 
-              {/* Desktop input with icon + button on the right */}
-              <div className="flex items-center gap-2 bg-background rounded-xl border-2 border-input shadow-sm">
-                <div className="flex items-center flex-1 px-4 py-3">
+              <div className="space-y-4">
+                {/* Desktop input with icon */}
+                <div className="flex items-center bg-background rounded-xl border-2 border-input shadow-sm px-4 py-3">
                   <MapPin className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
                   <Input
                     id="postcode-desktop"
@@ -92,9 +92,11 @@ const HeroSection = () => {
                     className="border-0 bg-transparent text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
                   />
                 </div>
+                
+                {/* Button underneath */}
                 <Button
                   onClick={handleGetQuote}
-                  className="btn-hero h-14 px-6 text-base whitespace-nowrap"
+                  className="btn-hero w-full h-14 text-lg"
                 >
                   Check Prices & Availability
                 </Button>
