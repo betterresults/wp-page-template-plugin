@@ -86,10 +86,10 @@ const HeroSection = () => {
                   <Input
                     id="postcode-desktop"
                     type="text"
-                    placeholder="Enter your postcode here"
+                    placeholder="Enter a postcode here"
                     value={postcode}
                     onChange={(e) => setPostcode(e.target.value)}
-                    className="border-0 bg-transparent text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
+                    className="border-0 bg-transparent text-lg placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 p-0 font-medium"
                   />
                 </div>
                 
@@ -111,10 +111,10 @@ const HeroSection = () => {
                   <Input
                     id="postcode-mobile"
                     type="text"
-                    placeholder="Enter your postcode here"
+                    placeholder="Enter a postcode here"
                     value={postcode}
                     onChange={(e) => setPostcode(e.target.value)}
-                    className="border-0 bg-transparent text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
+                    className="border-0 bg-transparent text-lg placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 p-0 font-medium"
                   />
                 </div>
                 <Button

@@ -21,16 +21,16 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-surface">
+    <section className="section-padding bg-slate-900">
       <div className="section-container">
         <div className="space-y-16">
           {/* Title and Description */}
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight mb-6">
-              Your trusted local cleaning experts
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-white leading-tight mb-6">
+              Your trusted <span className="text-primary">local cleaning experts</span>
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto">
               Photo Warehouse licensed and insured cleaning professionals in South Hornchurch. 
               We guarantee your deposit return with our meticulous end of tenancy cleaning service.
             </p>
@@ -54,30 +54,30 @@ const WhyUsSection = () => {
                 </div>
                 
                 {/* Floating badges */}
-                <div className="absolute bottom-4 right-4 bg-card rounded-2xl p-4 shadow-lg z-20">
+                <div className="absolute bottom-4 right-4 bg-white rounded-2xl p-4 shadow-lg z-20">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-success rounded-full animate-pulse" />
-                    <span className="text-sm font-semibold text-foreground">Licensed & Insured</span>
+                    <span className="text-sm font-semibold text-slate-800">Licensed & Insured</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Features */}
-            <div className="p-6 bg-card rounded-2xl shadow-sm border">
+            <div className="p-6 bg-slate-800 rounded-2xl shadow-xl border border-slate-700">
               <ul className="space-y-6">
                 {features.map((feature, index) => (
                   <li key={index} className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                         <feature.icon className="w-6 h-6 text-primary" />
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-xl font-semibold font-heading text-foreground">
+                      <h4 className="text-xl font-semibold font-heading text-white">
                         {feature.title}
                       </h4>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-slate-300 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
