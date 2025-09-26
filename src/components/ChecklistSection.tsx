@@ -2,138 +2,117 @@ import { Check, Sparkles, Home, Bath, ChefHat } from "lucide-react";
 
 const ChecklistSection = () => {
   const kitchenTasks = [
-    "Worktops cleaned & degreased",
-    "Cupboards inside/outside/on top",
-    "Sink & taps cleaned & descaled",
-    "Oven in/out, trays, racks, hob",
-    "Fridge/freezer in/out, seals & drawers",
-    "Dishwasher inside/outside",
-    "Washing machine drawer, seals, drum",
-    "Microwave & small appliances in/out",
-    "Windows & sills, doors & handles",
-    "Skirting boards, cobwebs removed",
-    "Floor vacuumed & mopped"
+    "All worktops thoroughly cleaned and degreased",
+    "Kitchen cupboards cleaned inside, outside and on top",
+    "Sink and taps cleaned and descaled to shine",
+    "Oven deep cleaned inside and out, including trays and hob",
+    "Fridge and freezer cleaned inside and out, including seals",
+    "Dishwasher cleaned thoroughly inside and outside",
+    "Washing machine drawer, seals and drum cleaned",
+    "Microwave and small appliances cleaned inside and out",
+    "Windows, window sills, doors and handles cleaned",
+    "All skirting boards wiped down, cobwebs removed",
+    "Floors vacuumed and mopped to perfection"
   ];
 
   const bathroomTasks = [
-    "Bath/shower/screen cleaned & descaled",
-    "Toilet disinfected (in/out)",
-    "Sink & taps cleaned & descaled", 
-    "Tiles & grout cleaned",
-    "Mirrors polished",
-    "Extractor fan wiped",
-    "Skirting boards cleaned",
-    "Radiators & light fittings",
-    "Floor vacuumed & mopped"
+    "Bath, shower and screen cleaned and descaled",
+    "Toilet thoroughly disinfected inside and out",
+    "Sink and taps cleaned and descaled until sparkling", 
+    "All tiles and grout deep cleaned",
+    "Mirrors and glass surfaces polished",
+    "Extractor fan and vents cleaned",
+    "Skirting boards and baseboards wiped clean",
+    "Radiators and light fittings dusted",
+    "Floors vacuumed and mopped thoroughly"
   ];
 
-  const bedroomTasks = [
-    "Skirting boards cleaned",
-    "Switches & sockets wiped",
-    "Windows & sills cleaned",
-    "Wardrobes & drawers inside/outside",
-    "Mirrors & glass polished",
-    "Carpets steam cleaned",
-    "Floor vacuumed & mopped",
-    "Mattress cleaning available"
+  const generalTasks = [
+    "All skirting boards and baseboards cleaned",
+    "Light switches and electrical sockets wiped",
+    "Windows and window sills cleaned inside",
+    "Wardrobes and drawers cleaned inside and outside",
+    "Mirrors and glass surfaces polished to shine",
+    "Carpets professionally steam cleaned",
+    "All floors vacuumed and mopped",
+    "Mattress cleaning service available upon request"
   ];
 
-  const TaskList = ({ title, tasks, icon: Icon, gradient }: { 
+  const TaskList = ({ title, tasks, icon: Icon }: { 
     title: string; 
     tasks: string[];
     icon: any;
-    gradient: string;
   }) => (
-    <div className={`relative overflow-hidden rounded-3xl ${gradient} p-8 shadow-lg hover:shadow-xl transition-all duration-300 group`}>
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12" />
-      
-      <div className="relative z-10">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-            <Icon className="w-7 h-7 text-white" />
-          </div>
-          <h4 className="text-2xl font-bold font-heading text-white">
-            {title}
-          </h4>
+    <div className="bg-white rounded-2xl p-8 shadow-sm border border-border hover:shadow-md transition-all duration-300 group">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+          <Icon className="w-6 h-6 text-primary" />
         </div>
-        
-        <ul className="space-y-4">
-          {tasks.map((task, index) => (
-            <li key={index} className="flex items-start gap-4 group/item">
-              <div className="flex-shrink-0 w-6 h-6 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center mt-0.5 group-hover/item:scale-125 transition-transform">
-                <Check className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white/90 font-medium leading-relaxed">{task}</span>
-            </li>
-          ))}
-        </ul>
+        <h4 className="text-xl font-bold font-heading text-foreground">
+          {title}
+        </h4>
       </div>
+      
+      <ul className="space-y-3">
+        {tasks.map((task, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+              <Check className="w-3 h-3 text-primary" />
+            </div>
+            <span className="text-muted-foreground leading-relaxed">{task}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 
   return (
-    <section className="section-padding bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-200/40 rounded-full blur-3xl" />
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-cyan-200/20 rounded-full blur-3xl" />
-      </div>
-      
-      <div className="section-container relative">
-        <div className="text-center mb-20 space-y-8">
-          <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-emerald-200/50">
-            <Sparkles className="w-5 h-5 text-emerald-600" />
-            <span className="text-emerald-700 font-semibold">Professional Deep Clean</span>
+    <section className="section-padding bg-background">
+      <div className="section-container">
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-full">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="text-primary font-semibold">Professional Deep Clean</span>
           </div>
           
-          <h2 className="text-4xl lg:text-6xl font-bold font-heading text-slate-800 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight">
             A Checklist That Leaves{" "}
-            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="text-primary">
               Nothing to Chance
             </span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We clean everything. Our comprehensive service ensures every corner of your property meets 
             the highest standards for final inspection.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           <TaskList
             title="Kitchen Deep Clean"
             tasks={kitchenTasks}
             icon={ChefHat}
-            gradient="bg-gradient-to-br from-emerald-500 to-emerald-600"
           />
           <TaskList
             title="Bathroom Sanitisation"
             tasks={bathroomTasks}
             icon={Bath}
-            gradient="bg-gradient-to-br from-teal-500 to-cyan-500"
           />
           <TaskList
-            title="Living & Bedrooms"
-            tasks={bedroomTasks}
+            title="General Areas"
+            tasks={generalTasks}
             icon={Home}
-            gradient="bg-gradient-to-br from-cyan-500 to-blue-500"
           />
         </div>
 
-        {/* Enhanced call-to-action */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-4 bg-white/90 backdrop-blur-sm px-10 py-6 rounded-3xl shadow-lg border border-emerald-200/50 hover:shadow-xl transition-all duration-300">
-            <div className="relative">
-              <div className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-pulse" />
-              <div className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full animate-ping opacity-75" />
-            </div>
-            <span className="text-xl font-bold text-slate-800">
+          <div className="inline-flex items-center gap-4 bg-card px-8 py-4 rounded-2xl shadow-sm border border-border">
+            <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+            <span className="text-lg font-semibold text-foreground">
               Over 200+ Individual Tasks Completed
             </span>
-            <Sparkles className="w-6 h-6 text-emerald-600" />
+            <Sparkles className="w-5 h-5 text-primary" />
           </div>
         </div>
       </div>
