@@ -72,57 +72,55 @@ const HeroSection = () => {
           {/* Quote Form */}
           <div className="lg:col-span-2 animate-fade-in-delayed">
             {/* Desktop Form */}
-            <div className="hidden lg:block card-glass p-6 lg:p-8 max-w-sm mx-auto lg:ml-auto lg:mr-0">
-              <div className="text-center mb-8">
+            <div className="hidden lg:block card-glass p-6 lg:p-8 max-w-md mx-auto lg:ml-auto lg:mr-0">
+              <div className="text-center mb-6">
                 <h3 className="text-3xl font-bold font-heading text-foreground mb-3">
                   Get Your Instant Quote
                 </h3>
               </div>
 
-              <div className="space-y-6">
-                <div className="space-y-3">
+              {/* Desktop input with icon + button on the right */}
+              <div className="flex items-center gap-2 bg-background rounded-xl border-2 border-input shadow-sm">
+                <div className="flex items-center flex-1 px-4 py-3">
+                  <MapPin className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
                   <Input
-                    id="postcode"
+                    id="postcode-desktop"
                     type="text"
-                    placeholder="Add your postcode"
+                    placeholder="Enter your postcode here"
                     value={postcode}
                     onChange={(e) => setPostcode(e.target.value)}
-                    className="h-14 text-lg px-4 rounded-xl border-2 focus:border-primary transition-colors"
+                    className="border-0 bg-transparent text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
                   />
                 </div>
-
                 <Button
                   onClick={handleGetQuote}
-                  className="btn-hero w-full h-14 text-lg"
+                  className="btn-hero h-14 px-6 text-base whitespace-nowrap"
                 >
                   Check Prices & Availability
-                  <ArrowRight className="w-5 h-5" />
                 </Button>
               </div>
             </div>
 
             {/* Mobile Form */}
             <div className="lg:hidden w-full max-w-2xl mx-auto">
-              <div className="bg-white rounded-2xl p-2 shadow-xl border border-gray-200">
-                <div className="flex items-center">
-                  <div className="flex items-center flex-1 px-4 py-3">
-                    <MapPin className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
-                    <Input
-                      id="postcode-mobile"
-                      type="text"
-                      placeholder="Enter your postcode here"
-                      value={postcode}
-                      onChange={(e) => setPostcode(e.target.value)}
-                      className="border-0 bg-transparent text-lg placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
-                    />
-                  </div>
-                  <Button
-                    onClick={handleGetQuote}
-                    className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-xl text-lg whitespace-nowrap"
-                  >
-                    QUOTE ME
-                  </Button>
+              <div className="bg-background rounded-2xl p-3 shadow-xl border border-input">
+                <div className="flex items-center px-4 py-3">
+                  <MapPin className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
+                  <Input
+                    id="postcode-mobile"
+                    type="text"
+                    placeholder="Enter your postcode here"
+                    value={postcode}
+                    onChange={(e) => setPostcode(e.target.value)}
+                    className="border-0 bg-transparent text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
+                  />
                 </div>
+                <Button
+                  onClick={handleGetQuote}
+                  className="btn-hero w-full h-12 text-base mt-2"
+                >
+                  Check Prices & Availability
+                </Button>
               </div>
             </div>
           </div>

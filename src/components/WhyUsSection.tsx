@@ -21,16 +21,16 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gray-100">
+    <section className="section-padding bg-gradient-surface">
       <div className="section-container">
         <div className="space-y-16">
           {/* Title and Description */}
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-gray-800 leading-tight mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight mb-6">
               Your trusted local cleaning experts
             </h2>
             
-            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Photo Warehouse licensed and insured cleaning professionals in South Hornchurch. 
               We guarantee your deposit return with our meticulous end of tenancy cleaning service.
             </p>
@@ -54,7 +54,7 @@ const WhyUsSection = () => {
                 </div>
                 
                 {/* Floating badges */}
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-lg z-20">
+                <div className="absolute bottom-4 right-4 bg-card rounded-2xl p-4 shadow-lg z-20">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-success rounded-full animate-pulse" />
                     <span className="text-sm font-semibold text-foreground">Licensed & Insured</span>
@@ -64,27 +64,26 @@ const WhyUsSection = () => {
             </div>
 
             {/* Features */}
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-white" />
+            <div className="p-6 bg-card rounded-2xl shadow-sm border">
+              <ul className="space-y-6">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <feature.icon className="w-6 h-6 text-primary" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="text-xl font-semibold font-heading text-foreground">
-                      {feature.title}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                    <div className="space-y-1">
+                      <h4 className="text-xl font-semibold font-heading text-foreground">
+                        {feature.title}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
