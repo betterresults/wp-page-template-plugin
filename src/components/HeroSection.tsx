@@ -38,9 +38,9 @@ const HeroSection = () => {
       </div>
 
       <div className="section-container relative z-20 section-padding">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           {/* Hero Content */}
-          <div className="text-white space-y-8 animate-slide-up">
+          <div className="lg:col-span-3 text-white space-y-8 animate-slide-up">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight">
                 <span className="block">End of Tenancy</span>
@@ -70,8 +70,8 @@ const HeroSection = () => {
           </div>
 
           {/* Quote Form */}
-          <div className="animate-fade-in-delayed">
-            <div className="card-glass p-6 lg:p-8 max-w-sm mx-auto lg:mx-0">
+          <div className="lg:col-span-2 animate-fade-in-delayed">
+            <div className="card-glass p-6 lg:p-8 max-w-sm mx-auto lg:ml-auto lg:mr-0">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold font-heading text-foreground mb-3">
                   Get Your Instant Quote
@@ -80,9 +80,6 @@ const HeroSection = () => {
 
               <div className="space-y-6">
                 <div className="space-y-3">
-                  <Label htmlFor="postcode" className="text-sm font-semibold text-foreground">
-                    Your Postcode
-                  </Label>
                   <Input
                     id="postcode"
                     type="text"

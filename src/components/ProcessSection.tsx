@@ -9,22 +9,16 @@ const ProcessSection = () => {
       description: "Choose your preferred date and time. We offer flexible scheduling including weekends and same-day service."
     },
     {
-      icon: ClipboardCheck,
-      number: "02", 
-      title: "Pre-Clean Assessment",
-      description: "Our team conducts a thorough property assessment to create a customized cleaning plan for your specific needs."
-    },
-    {
       icon: Sparkles,
-      number: "03",
-      title: "Deep Clean Execution",
-      description: "Professional cleaning using agency-approved methods and commercial-grade equipment for exceptional results."
+      number: "02",
+      title: "Meet Our Cleaner",
+      description: "Our professional team arrives on time with all equipment and conducts a thorough assessment of your property."
     },
     {
       icon: ThumbsUp,
-      number: "04",
-      title: "Final Quality Check",
-      description: "Complete inspection ensures every detail meets our high standards and your letting agent's requirements."
+      number: "03",
+      title: "Enjoy Your Deposit Back",
+      description: "Relax knowing your property meets agency standards and your deposit is secure with our guarantee."
     }
   ];
 
@@ -33,14 +27,14 @@ const ProcessSection = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-            Our <span className="text-primary">4-Step Process</span>
+            Our <span className="text-primary">3-Step Process</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From booking to completion, we make the entire process simple and stress-free
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {/* Connector Line */}
