@@ -21,21 +21,18 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-surface">
+    <section className="section-padding bg-gray-100">
       <div className="section-container">
         <div className="space-y-16">
           {/* Title and Description */}
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight mb-6">
-              Why Trust Us For Your Clean in{" "}
-              <span className="text-primary">South Hornchurch</span>?
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-gray-800 leading-tight mb-6">
+              Your trusted local cleaning experts
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              When it comes to securing your deposit, you can't afford to take risks. We're not just another cleaning company; 
-              we're your local partners in making your move as smooth and successful as possible. Our meticulous attention to 
-              detail and unwavering commitment to quality set us apart from the competition in the{" "}
-              <span className="font-semibold text-primary">Havering</span> borough.
+            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+              Photo Warehouse licensed and insured cleaning professionals in South Hornchurch. 
+              We guarantee your deposit return with our meticulous end of tenancy cleaning service.
             </p>
           </div>
 

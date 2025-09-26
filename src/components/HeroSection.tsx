@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowRight, Shield, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Star, CheckCircle, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-kitchen.jpg";
 
 const HeroSection = () => {
@@ -42,7 +42,7 @@ const HeroSection = () => {
           {/* Hero Content */}
           <div className="lg:col-span-3 text-white space-y-8 animate-slide-up">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight text-center lg:text-left">
                 <span className="block">End of Tenancy</span>
                 <span className="block text-primary">
                   Cleaning
@@ -71,7 +71,8 @@ const HeroSection = () => {
 
           {/* Quote Form */}
           <div className="lg:col-span-2 animate-fade-in-delayed">
-            <div className="card-glass p-6 lg:p-8 max-w-sm mx-auto lg:ml-auto lg:mr-0">
+            {/* Desktop Form */}
+            <div className="hidden lg:block card-glass p-6 lg:p-8 max-w-sm mx-auto lg:ml-auto lg:mr-0">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold font-heading text-foreground mb-3">
                   Get Your Instant Quote
@@ -97,6 +98,31 @@ const HeroSection = () => {
                   Check Prices & Availability
                   <ArrowRight className="w-5 h-5" />
                 </Button>
+              </div>
+            </div>
+
+            {/* Mobile Form */}
+            <div className="lg:hidden w-full max-w-2xl mx-auto">
+              <div className="bg-white rounded-2xl p-2 shadow-xl border border-gray-200">
+                <div className="flex items-center">
+                  <div className="flex items-center flex-1 px-4 py-3">
+                    <MapPin className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
+                    <Input
+                      id="postcode-mobile"
+                      type="text"
+                      placeholder="Enter your postcode here"
+                      value={postcode}
+                      onChange={(e) => setPostcode(e.target.value)}
+                      className="border-0 bg-transparent text-lg placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
+                    />
+                  </div>
+                  <Button
+                    onClick={handleGetQuote}
+                    className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-xl text-lg whitespace-nowrap"
+                  >
+                    QUOTE ME
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
