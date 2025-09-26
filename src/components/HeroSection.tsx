@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(0, 128, 128, 0.85), rgba(0, 179, 179, 0.75)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(135deg, rgba(28, 60, 80, 0.9), rgba(24, 81, 102, 0.85)), url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundAttachment: 'fixed'
@@ -58,12 +58,12 @@ const HeroSection = () => {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Shield className="w-6 h-6 text-success" />
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                <Shield className="w-6 h-6 text-yellow-400" />
                 <span className="font-semibold">100% Deposit Guarantee</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Star className="w-6 h-6 text-accent" />
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                <Star className="w-6 h-6 text-yellow-400" />
                 <span className="font-semibold">5-Star Local Rating</span>
               </div>
             </div>

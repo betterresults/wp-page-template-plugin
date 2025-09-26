@@ -39,9 +39,10 @@ const WhyUsSection = () => {
             </p>
           </div>
 
-          {/* Image */}
-          <div className="flex justify-center">
-            <div className="relative max-w-2xl">
+          {/* Image and Features Grid */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Image */}
+            <div className="relative">
               <div className="relative overflow-hidden rounded-3xl">
                 {/* Background decoration */}
                 <div className="absolute -top-8 -left-8 w-full h-full bg-gradient-primary rounded-3xl opacity-20 z-0" />
@@ -64,26 +65,30 @@ const WhyUsSection = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-8 h-8 text-white" />
+            {/* Features */}
+            <div className="space-y-6">
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-semibold font-heading text-foreground">
+                      {feature.title}
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold font-heading text-foreground mb-4">
-                  {feature.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
