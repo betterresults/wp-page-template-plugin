@@ -29,9 +29,6 @@ const TestimonialsSection = () => {
           <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
             What Our <span className="text-primary">Customers Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real reviews from satisfied customers across Havering
-          </p>
         </div>
 
         {/* Real Review Widget */}
