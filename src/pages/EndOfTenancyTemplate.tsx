@@ -1,6 +1,7 @@
 import TemplateHeroSection from "@/components/TemplateHeroSection";
-import WhyUsSection from "@/components/WhyUsSection";
+import TemplateH2Section from "@/components/TemplateH2Section";
 import ProcessSection from "@/components/ProcessSection";
+import TemplateWhyUsSection from "@/components/TemplateWhyUsSection";
 import TemplateAboutSection from "@/components/TemplateAboutSection";
 import TemplateServiceAreasSection from "@/components/TemplateServiceAreasSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -15,14 +16,17 @@ const EndOfTenancyTemplate = () => {
       {/* Hero Section - Dynamic */}
       <TemplateHeroSection />
       
-      {/* About Section - Dynamic */}
-      <TemplateAboutSection />
+      {/* H2 Section - Dynamic */}
+      <TemplateH2Section />
       
       {/* Process Section - Static */}
       <ProcessSection />
       
-      {/* Why Us Section - Static */}
-      <WhyUsSection />
+      {/* Why Us Section - Dynamic H3 */}
+      <TemplateWhyUsSection />
+      
+      {/* About Section - Static Stats */}
+      <TemplateAboutSection />
       
       {/* Testimonials Section - Static */}
       <TestimonialsSection />
