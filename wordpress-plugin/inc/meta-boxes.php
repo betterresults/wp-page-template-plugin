@@ -33,28 +33,17 @@ class ESN_Meta_Boxes {
     public function template_selector_callback($post) {
         wp_nonce_field('esn_meta_box_nonce', 'esn_meta_box_nonce');
         
-        $selected_template = get_post_meta($post->ID, '_esn_page_template', true);
-        
         $template_display_name = get_post_meta($post->ID, '_esn_template_display_name', true);
         if (empty($template_display_name)) {
             $template_display_name = 'Service Cleaning Template';
         }
         
-        $templates = array(
-            '' => 'Default Template',
-            'service-cleaning-template' => $template_display_name,
-        );
+        echo '<p><strong>Note:</strong> To use this template, select "Service Cleaning Template" from the Page Attributes meta box on the right sidebar, then fill in the content fields below.</p>';
         
-        echo '<label for="esn_page_template">Select Template:</label>';
-        echo '<select name="esn_page_template" id="esn_page_template" class="widefat">';
-        foreach ($templates as $value => $label) {
-            echo '<option value="' . esc_attr($value) . '" ' . selected($selected_template, $value, false) . '>' . esc_html($label) . '</option>';
-        }
-        echo '</select>';
-        
-        echo '<br><br>';
+        echo '<br>';
         echo '<label for="esn_template_display_name">Template Display Name:</label>';
         echo '<input type="text" name="esn_template_display_name" id="esn_template_display_name" value="' . esc_attr($template_display_name) . '" class="widefat" placeholder="e.g., End of Tenancy Cleaning Template" />';
+        echo '<p class="description">This name will appear in your template selector dropdown.</p>';
     }
 
     public function content_fields_callback($post) {
@@ -116,15 +105,16 @@ class ESN_Meta_Boxes {
         echo '<script>
         jQuery(document).ready(function($) {
             function toggleFields() {
-                var selectedTemplate = $("#esn_page_template").val();
-                if (selectedTemplate !== "" && selectedTemplate !== "default") {
+                var selectedTemplate = $("#page_template").val();
+                if (selectedTemplate === "service-cleaning-template") {
                     $("#esn-content-fields").show();
                 } else {
                     $("#esn-content-fields").hide();
                 }
             }
             
-            $("#esn_page_template").change(toggleFields);
+            // Monitor WordPress page template dropdown
+            $(document).on("change", "#page_template", toggleFields);
             toggleFields(); // Run on page load
         });
         </script>';
@@ -146,12 +136,7 @@ class ESN_Meta_Boxes {
             return;
         }
 
-        // Save template selection
-        if (isset($_POST['esn_page_template'])) {
-            update_post_meta($post_id, '_esn_page_template', sanitize_text_field($_POST['esn_page_template']));
-        }
-        
-        // Save template display name
+        // Save template display name only
         if (isset($_POST['esn_template_display_name'])) {
             update_post_meta($post_id, '_esn_template_display_name', sanitize_text_field($_POST['esn_template_display_name']));
         }
