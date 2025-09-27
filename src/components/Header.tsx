@@ -44,14 +44,14 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               <NavigationMenuItem>
                 <Link 
                   to="/" 
-                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base")}
+                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base")}
                 >
                   Home
                 </Link>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base">
+                <NavigationMenuTrigger className="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base">
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base">
+                <NavigationMenuTrigger className="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base">
                   About Us
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -173,7 +173,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               <NavigationMenuItem>
                 <Link 
                   to="/faq" 
-                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base")}
+                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base")}
                 >
                   FAQ
                 </Link>
