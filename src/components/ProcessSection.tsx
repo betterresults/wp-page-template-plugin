@@ -67,6 +67,12 @@ const ProcessSection = () => {
           ))}
         </div>
 
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-xl">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="font-semibold text-primary">Average completion time: 3-5 hours</span>
+          </div>
+        </div>
       </div>
     </section>
   );
