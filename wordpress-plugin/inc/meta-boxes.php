@@ -63,12 +63,18 @@ class ESN_Meta_Boxes {
             'meta_description' => 'Meta Description (SEO)',
             'page_h1' => 'Main Heading (H1)',
             'under_heading' => 'Under Heading Text',
-            'hero_image' => 'Hero Background Image',
+            'hero_image' => 'Hero Background Image URL',
+            'hero_image_name' => 'Hero Image Name (for filename)',
+            'hero_image_alt' => 'Hero Image Alt Text (SEO)',
+            'hero_image_desc' => 'Hero Image Description (SEO)',
             'page_area' => 'Service Area',
             'page_borough' => 'Borough',
             'page_subheading' => 'About Section Heading',
             'page_subheading_description' => 'About Section Description',
-            'page_image' => 'Content Section Image',
+            'page_image' => 'Content Section Image URL',
+            'page_image_name' => 'Content Image Name (for filename)',
+            'page_image_alt' => 'Content Image Alt Text (SEO)',
+            'page_image_desc' => 'Content Image Description (SEO)',
             'page_h2' => 'Content Section H2',
             'page_h2_paragraph' => 'Content Section H2 Paragraph',
             'page_h3' => 'Content Section H3',
@@ -152,22 +158,25 @@ class ESN_Meta_Boxes {
 
         // Save content fields
         $fields = array(
-            'page_title', 'meta_description', 'page_h1', 'under_heading', 'hero_image', 'page_area', 'page_borough',
-            'page_subheading', 'page_subheading_description', 'page_image', 'page_h2', 'page_h2_paragraph',
-            'page_h3', 'page_h3_paragraph', 'page_h4', 'page_h4_paragraph_1', 'page_h4_paragraph_2',
+            'page_title', 'meta_description', 'page_h1', 'under_heading', 
+            'hero_image', 'hero_image_name', 'hero_image_alt', 'hero_image_desc',
+            'page_area', 'page_borough', 'page_subheading', 'page_subheading_description', 
+            'page_image', 'page_image_name', 'page_image_alt', 'page_image_desc',
+            'page_h2', 'page_h2_paragraph', 'page_h3', 'page_h3_paragraph', 
+            'page_h4', 'page_h4_paragraph_1', 'page_h4_paragraph_2',
             'page_question_1', 'page_answer_1', 'page_question_2', 'page_answer_2'
         );
         
         // Process image URLs for SEO optimization
-        $image_fields = array('hero_image', 'page_image');
-        foreach ($image_fields as $image_field) {
+        $image_fields = array('hero_image' => 'hero', 'page_image' => 'page');
+        foreach ($image_fields as $image_field => $image_type) {
             if (isset($_POST[$image_field]) && !empty($_POST[$image_field])) {
                 $image_url = sanitize_url($_POST[$image_field]);
                 
                 // Check if it's a URL (not already a local image)
                 if (filter_var($image_url, FILTER_VALIDATE_URL) && strpos($image_url, site_url()) === false) {
                     // Process the image from URL
-                    $processed_url = esn_process_image_from_url($image_url, $post_id);
+                    $processed_url = esn_process_image_from_url($image_url, $post_id, $image_type);
                     if ($processed_url) {
                         // Update with the new local URL
                         update_post_meta($post_id, '_' . $image_field, $processed_url);

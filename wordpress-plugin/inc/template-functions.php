@@ -109,25 +109,35 @@ function esn_get_static_faqs() {
 /**
  * Download and rename image from URL for SEO
  */
-function esn_process_image_from_url($image_url, $post_id) {
+function esn_process_image_from_url($image_url, $post_id, $image_type = 'hero') {
     if (empty($image_url) || !filter_var($image_url, FILTER_VALIDATE_URL)) {
         return false;
     }
     
-    // Get page data for naming
-    $page_title = get_post_meta($post_id, '_page_title', true) ?: get_the_title($post_id);
-    $page_area = get_post_meta($post_id, '_page_area', true);
-    $page_borough = get_post_meta($post_id, '_page_borough', true);
-    $template_name = get_post_meta($post_id, '_esn_template_display_name', true) ?: 'cleaning-service';
+    // Get custom image naming fields
+    $custom_name = get_post_meta($post_id, '_' . $image_type . '_image_name', true);
+    $custom_alt = get_post_meta($post_id, '_' . $image_type . '_image_alt', true);
+    $custom_desc = get_post_meta($post_id, '_' . $image_type . '_image_desc', true);
     
     // Create SEO-friendly filename
-    $filename_parts = array();
-    if (!empty($page_area)) $filename_parts[] = sanitize_title($page_area);
-    if (!empty($page_borough)) $filename_parts[] = sanitize_title($page_borough);
-    $filename_parts[] = sanitize_title($template_name);
-    $filename_parts[] = sanitize_title($page_title);
+    if (!empty($custom_name)) {
+        $filename = sanitize_title($custom_name);
+    } else {
+        // Auto-generate from page data
+        $page_title = get_post_meta($post_id, '_page_title', true) ?: get_the_title($post_id);
+        $page_area = get_post_meta($post_id, '_page_area', true);
+        $page_borough = get_post_meta($post_id, '_page_borough', true);
+        $template_name = get_post_meta($post_id, '_esn_template_display_name', true) ?: 'cleaning-service';
+        
+        $filename_parts = array();
+        if (!empty($page_area)) $filename_parts[] = sanitize_title($page_area);
+        if (!empty($page_borough)) $filename_parts[] = sanitize_title($page_borough);
+        $filename_parts[] = sanitize_title($template_name);
+        $filename_parts[] = sanitize_title($page_title);
+        
+        $filename = implode('-', array_filter($filename_parts));
+    }
     
-    $filename = implode('-', array_filter($filename_parts));
     $filename = substr($filename, 0, 200); // Limit length
     
     // Get file extension from URL
@@ -147,15 +157,27 @@ function esn_process_image_from_url($image_url, $post_id) {
         'tmp_name' => $temp_file
     );
     
-    // Generate alt text for SEO
-    $alt_text_parts = array();
-    if (!empty($template_name)) $alt_text_parts[] = $template_name;
-    if (!empty($page_area)) $alt_text_parts[] = 'in ' . $page_area;
-    if (!empty($page_borough)) $alt_text_parts[] = $page_borough;
-    $alt_text = implode(' ', $alt_text_parts);
+    // Generate alt text
+    if (!empty($custom_alt)) {
+        $alt_text = $custom_alt;
+    } else {
+        // Auto-generate alt text
+        $template_name = get_post_meta($post_id, '_esn_template_display_name', true) ?: 'cleaning service';
+        $page_area = get_post_meta($post_id, '_page_area', true);
+        $page_borough = get_post_meta($post_id, '_page_borough', true);
+        
+        $alt_text_parts = array();
+        $alt_text_parts[] = $template_name;
+        if (!empty($page_area)) $alt_text_parts[] = 'in ' . $page_area;
+        if (!empty($page_borough)) $alt_text_parts[] = $page_borough;
+        $alt_text = implode(' ', $alt_text_parts);
+    }
+    
+    // Generate description
+    $description = !empty($custom_desc) ? $custom_desc : $alt_text;
     
     // Insert into media library
-    $id = media_handle_sideload($file_array, $post_id, $alt_text);
+    $id = media_handle_sideload($file_array, $post_id, $description);
     
     // Clean up temp file
     unlink($temp_file);
@@ -169,7 +191,7 @@ function esn_process_image_from_url($image_url, $post_id) {
     wp_update_post(array(
         'ID' => $id,
         'post_excerpt' => $alt_text, // Caption
-        'post_content' => $alt_text   // Description
+        'post_content' => $description   // Description
     ));
     
     return wp_get_attachment_url($id);
