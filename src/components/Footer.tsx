@@ -25,11 +25,11 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
               <img 
                 src={snLogo} 
                 alt="SN Cleaning Services" 
-                className="h-16 w-auto"
+                className="h-16 w-auto rounded-lg border-2 border-border p-2"
               />
             </div>
             <p className={`text-sm leading-relaxed ${variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'}`}>
-              Professional cleaning services across London. We guarantee exceptional results with our comprehensive cleaning solutions for residential and commercial properties.
+              Professional cleaning services across London and Essex. We guarantee exceptional results with our comprehensive cleaning solutions for residential and commercial properties.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -83,14 +83,6 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 Home
               </Link>
               <Link 
-                to="/services" 
-                className={`transition-colors duration-200 hover:text-primary ${
-                  variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'
-                }`}
-              >
-                Our Services
-              </Link>
-              <Link 
                 to="/about" 
                 className={`transition-colors duration-200 hover:text-primary ${
                   variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'
@@ -113,6 +105,14 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 }`}
               >
                 Get Quote
+              </Link>
+              <Link 
+                to="/contact" 
+                className={`transition-colors duration-200 hover:text-primary ${
+                  variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'
+                }`}
+              >
+                Contact
               </Link>
             </nav>
           </div>
@@ -223,7 +223,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 <div>
                   <div className="font-medium">Service Area</div>
                   <div className={`${variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'}`}>
-                    London & Surrounding Areas
+                    London & Essex
                   </div>
                 </div>
               </div>
