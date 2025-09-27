@@ -47,10 +47,9 @@ const HomepageHeroSection = () => {
           {/* Hero Content */}
           <div className="lg:col-span-3 text-white space-y-8 animate-slide-up">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-heading leading-tight text-center lg:text-left">
                 <span className="block">Best Cleaners</span>
-                <span className="block">In Your</span>
-                <span className="block text-primary">Area</span>
+                <span className="block">In Your <span className="text-primary">Area</span></span>
               </h1>
               
               <h2 className="text-3xl lg:text-4xl font-semibold text-accent leading-relaxed">
@@ -64,22 +63,22 @@ const HomepageHeroSection = () => {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Shield className="w-5 h-5 text-yellow-400" />
-                <span className="font-semibold text-sm">Fully Insured</span>
+            <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-3 lg:gap-4 pt-4 max-w-md lg:max-w-none">
+              <div className="flex items-center gap-2 lg:gap-3 bg-white/20 backdrop-blur-sm px-3 lg:px-4 py-2 rounded-full">
+                <Shield className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 flex-shrink-0" />
+                <span className="font-semibold text-xs lg:text-sm">Fully Insured</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Star className="w-5 h-5 text-yellow-400" />
-                <span className="font-semibold text-sm">5-Star Rated</span>
+              <div className="flex items-center gap-2 lg:gap-3 bg-white/20 backdrop-blur-sm px-3 lg:px-4 py-2 rounded-full">
+                <Star className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 flex-shrink-0" />
+                <span className="font-semibold text-xs lg:text-sm">5-Star Rated</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span className="font-semibold text-sm">Same-Day Service</span>
+              <div className="flex items-center gap-2 lg:gap-3 bg-white/20 backdrop-blur-sm px-3 lg:px-4 py-2 rounded-full">
+                <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-green-400 flex-shrink-0" />
+                <span className="font-semibold text-xs lg:text-sm">Same-Day Service</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="font-semibold text-sm">Local Experts</span>
+              <div className="flex items-center gap-2 lg:gap-3 bg-white/20 backdrop-blur-sm px-3 lg:px-4 py-2 rounded-full">
+                <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 flex-shrink-0" />
+                <span className="font-semibold text-xs lg:text-sm">Local Experts</span>
               </div>
             </div>
           </div>
