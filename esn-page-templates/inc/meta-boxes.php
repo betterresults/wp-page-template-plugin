@@ -78,7 +78,9 @@ class ESN_Meta_Boxes {
             'page_answer_2' => 'FAQ Answer 2'
         );
 
-        echo '<div id="esn-content-fields" style="display: none;">';
+        // Always show fields for easier editing
+        echo '<div id="esn-content-fields">';
+        echo '<p><strong>Fill in these fields to customize your template content:</strong></p>';
         echo '<table class="form-table">';
         
         foreach ($fields as $field_key => $field_label) {
@@ -88,13 +90,13 @@ class ESN_Meta_Boxes {
                 // Textarea for longer content
                 echo '<tr>';
                 echo '<th scope="row"><label for="' . $field_key . '">' . $field_label . '</label></th>';
-                echo '<td><textarea name="' . $field_key . '" id="' . $field_key . '" class="widefat" rows="4">' . esc_textarea($field_value) . '</textarea></td>';
+                echo '<td><textarea name="' . $field_key . '" id="' . $field_key . '" class="widefat" rows="4" placeholder="Enter ' . strtolower($field_label) . '...">' . esc_textarea($field_value) . '</textarea></td>';
                 echo '</tr>';
             } else {
                 // Input field for shorter content
                 echo '<tr>';
                 echo '<th scope="row"><label for="' . $field_key . '">' . $field_label . '</label></th>';
-                echo '<td><input type="text" name="' . $field_key . '" id="' . $field_key . '" value="' . esc_attr($field_value) . '" class="widefat" /></td>';
+                echo '<td><input type="text" name="' . $field_key . '" id="' . $field_key . '" value="' . esc_attr($field_value) . '" class="widefat" placeholder="Enter ' . strtolower($field_label) . '..." /></td>';
                 echo '</tr>';
             }
         }
@@ -102,21 +104,23 @@ class ESN_Meta_Boxes {
         echo '</table>';
         echo '</div>';
         
-        // JavaScript to show/hide fields based on template selection
+        // JavaScript to highlight template fields when ESN template is selected
         echo '<script>
         jQuery(document).ready(function($) {
-            function toggleFields() {
+            function toggleFieldsHighlight() {
                 var selectedTemplate = $("#page_template").val();
                 if (selectedTemplate === "service-cleaning-template.php") {
-                    $("#esn-content-fields").show();
+                    $("#esn-content-fields").css("background", "#f0f8ff").css("padding", "15px").css("border-radius", "8px").css("border", "2px solid #0073aa");
+                    $("#esn-content-fields p").css("color", "#0073aa").css("font-weight", "bold");
                 } else {
-                    $("#esn-content-fields").hide();
+                    $("#esn-content-fields").css("background", "").css("padding", "").css("border-radius", "").css("border", "");
+                    $("#esn-content-fields p").css("color", "").css("font-weight", "");
                 }
             }
             
             // Monitor WordPress page template dropdown
-            $(document).on("change", "#page_template", toggleFields);
-            toggleFields(); // Run on page load
+            $(document).on("change", "#page_template", toggleFieldsHighlight);
+            toggleFieldsHighlight(); // Run on page load
         });
         </script>';
     }

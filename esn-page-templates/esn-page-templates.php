@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('ESN_TEMPLATES_VERSION', '1.6.0');
+define('ESN_TEMPLATES_VERSION', '1.7.0');
 define('ESN_TEMPLATES_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ESN_TEMPLATES_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
