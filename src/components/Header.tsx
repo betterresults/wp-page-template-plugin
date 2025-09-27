@@ -44,163 +44,128 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               <NavigationMenuItem>
                 <Link 
                   to="/" 
-                  className={cn(navigationMenuTriggerStyle(), "relative text-foreground hover:text-primary font-semibold transition-all duration-300 group bg-transparent")}
+                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base")}
                 >
                   Home
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-light group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="relative text-foreground hover:text-primary font-semibold transition-all duration-300 group bg-transparent">
+                <NavigationMenuTrigger className="text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base">
                   Services
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-light group-hover:w-full transition-all duration-300"></span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-3 p-6 bg-background border border-border rounded-lg shadow-lg">
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/end-of-tenancy"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">End Of Tenancy Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Professional cleaning for rental properties
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/after-builders"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">After Builders Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Post-construction cleanup services
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/domestic"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Domestic Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Regular home cleaning services
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/airbnb"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Airbnb Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Cleaning for short-term rentals
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/deep-house"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Deep House Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Thorough deep cleaning services
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/carpet"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Carpet Cleaning Services</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Professional carpet cleaning
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/office"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Office Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Commercial office cleaning
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/school"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">School Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Educational facility cleaning
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/services/nursery"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Nursery Cleaning</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Child-safe nursery cleaning
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
+                  <div className="w-[280px] p-4 bg-background border border-border rounded-lg shadow-lg">
+                    <div className="grid gap-1">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/end-of-tenancy"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          End Of Tenancy Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/after-builders"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          After Builders Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/domestic"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Domestic Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/airbnb"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Airbnb Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/deep-house"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Deep House Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/carpet"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Carpet Cleaning Services
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/office"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Office Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/school"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          School Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/services/nursery"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Nursery Cleaning
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="relative text-foreground hover:text-primary font-semibold transition-all duration-300 group bg-transparent">
+                <NavigationMenuTrigger className="text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base">
                   About Us
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-light group-hover:w-full transition-all duration-300"></span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[300px] gap-3 p-6 bg-background border border-border rounded-lg shadow-lg">
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/contact"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Contact Us</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Get in touch with our team
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/accreditation"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">Accreditation</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Our certifications and credentials
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/about"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">About Us</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Learn more about our company
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
+                  <div className="w-[200px] p-4 bg-background border border-border rounded-lg shadow-lg">
+                    <div className="grid gap-1">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/contact"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Contact Us
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/accreditation"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          Accreditation
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/about"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                        >
+                          About Us
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -208,10 +173,9 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               <NavigationMenuItem>
                 <Link 
                   to="/faq" 
-                  className={cn(navigationMenuTriggerStyle(), "relative text-foreground hover:text-primary font-semibold transition-all duration-300 group bg-transparent")}
+                  className={cn(navigationMenuTriggerStyle(), "text-foreground hover:text-primary font-semibold transition-all duration-300 bg-transparent text-base")}
                 >
                   FAQ
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-light group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
