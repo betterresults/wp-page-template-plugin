@@ -1,7 +1,8 @@
 <?php
 /**
- * Service Cleaning Template
- * Template for service pages with dynamic content
+ * Template Name: Service Cleaning Template
+ * Template Post Type: page
+ * Description: Template for service pages with dynamic content
  */
 
 get_header(); ?>

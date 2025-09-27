@@ -12,7 +12,7 @@ class ESN_Template_Loader {
     }
 
     public function add_page_templates($templates) {
-        $templates['service-cleaning-template'] = 'Service Cleaning Template';
+        $templates['service-cleaning-template.php'] = 'Service Cleaning Template';
         return $templates;
     }
 
@@ -22,7 +22,7 @@ class ESN_Template_Loader {
         if (is_page()) {
             $page_template = get_page_template_slug($post->ID);
             
-            if ($page_template === 'service-cleaning-template') {
+            if ($page_template === 'service-cleaning-template.php') {
                 $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/service-cleaning-template.php';
                 
                 if (file_exists($template_path)) {
@@ -40,7 +40,7 @@ class ESN_Template_Loader {
         if (is_page()) {
             $page_template = get_page_template_slug($post->ID);
             
-            if ($page_template === 'service-cleaning-template') {
+            if ($page_template === 'service-cleaning-template.php') {
                 $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/service-cleaning-template.php';
                 
                 if (file_exists($template_path)) {

@@ -106,7 +106,7 @@ class ESN_Meta_Boxes {
         jQuery(document).ready(function($) {
             function toggleFields() {
                 var selectedTemplate = $("#page_template").val();
-                if (selectedTemplate === "service-cleaning-template") {
+                if (selectedTemplate === "service-cleaning-template.php") {
                     $("#esn-content-fields").show();
                 } else {
                     $("#esn-content-fields").hide();
