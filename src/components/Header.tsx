@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import snLogo from '@/assets/sn-cleaning-logo.png';
+import { trackClick } from '@/utils/analytics';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -30,7 +31,11 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center hover:opacity-90 transition-all duration-300">
+          <Link 
+            to="/" 
+            className="flex items-center hover:opacity-90 transition-all duration-300"
+            onClick={() => trackClick('logo_click', 'header', 'Logo navigation to home')}
+          >
             <img 
               src={snLogo} 
               alt="SN Cleaning Services" 
@@ -45,13 +50,17 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                 <Link 
                   to="/" 
                   className={cn(navigationMenuTriggerStyle(), "text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base")}
+                  onClick={() => trackClick('nav_home', 'header', 'Home navigation')}
                 >
                   Home
                 </Link>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base">
+                <NavigationMenuTrigger 
+                  className="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base"
+                  onClick={() => trackClick('nav_services_dropdown', 'header', 'Services dropdown opened')}
+                >
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -61,6 +70,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                         <Link
                           to="/services/end-of-tenancy"
                           className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
+                          onClick={() => trackClick('service_click', 'header', 'End Of Tenancy Cleaning', '/services/end-of-tenancy')}
                         >
                           End Of Tenancy Cleaning
                         </Link>
@@ -187,6 +197,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               href="tel:+442038355033" 
               className="flex items-center justify-center w-10 h-10 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md"
               aria-label="Call us"
+              onClick={() => trackClick('phone_click', 'header', 'Phone call button', 'tel:+442038355033')}
             >
               <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
             </a>
@@ -196,12 +207,14 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md"
               aria-label="WhatsApp us"
+              onClick={() => trackClick('whatsapp_click', 'header', 'WhatsApp button', 'https://wa.me/442038355033')}
             >
               <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
             </a>
             <Link 
               to="/quote" 
               className="bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-7 py-3 rounded-xl font-bold hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+              onClick={() => trackClick('get_quote_click', 'header', 'Get Free Quote button', '/quote')}
             >
               Get Free Quote
             </Link>

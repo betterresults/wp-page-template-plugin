@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import snLogo from '@/assets/sn-cleaning-logo.png';
+import { trackClick } from '@/utils/analytics';
 
 interface FooterProps {
   className?: string;
@@ -40,6 +41,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                     : 'bg-white hover:bg-primary/10 text-muted-foreground hover:text-primary shadow-sm'
                 }`}
                 aria-label="Call us"
+                onClick={() => trackClick('phone_icon_click', 'footer', 'Phone icon clicked', 'tel:+442038355033')}
               >
                 <Phone className="w-5 h-5" />
               </a>
@@ -53,6 +55,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                     : 'bg-white hover:bg-primary/10 text-muted-foreground hover:text-primary shadow-sm'
                 }`}
                 aria-label="WhatsApp us"
+                onClick={() => trackClick('whatsapp_icon_click', 'footer', 'WhatsApp icon clicked', 'https://wa.me/442038355033')}
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
@@ -79,6 +82,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 className={`transition-colors duration-200 hover:text-primary ${
                   variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'
                 }`}
+                onClick={() => trackClick('nav_home', 'footer', 'Home link clicked', '/')}
               >
                 Home
               </Link>
@@ -232,6 +236,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 <Link 
                   to="/quote" 
                   className="inline-block w-full text-center bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  onClick={() => trackClick('get_quote_click', 'footer', 'Get Free Quote button clicked', '/quote')}
                 >
                   Get Free Quote
                 </Link>
