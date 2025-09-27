@@ -25,8 +25,6 @@ const EndOfTenancyTemplate = () => {
       {/* Why Us Section - Dynamic H3 */}
       <TemplateWhyUsSection />
       
-      {/* About Section - Static Stats */}
-      <TemplateAboutSection />
       
       {/* Testimonials Section - Static */}
       <TestimonialsSection />
