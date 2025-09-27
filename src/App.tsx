@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EndOfTenancyTemplate from "./pages/EndOfTenancyTemplate";
+import HeaderFooterPreview from "./pages/HeaderFooterPreview";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/template" element={<EndOfTenancyTemplate />} />
+          <Route path="/header-footer-preview" element={<HeaderFooterPreview />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
