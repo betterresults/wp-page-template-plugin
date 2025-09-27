@@ -35,17 +35,14 @@ class ESN_Meta_Boxes {
         
         $selected_template = get_post_meta($post->ID, '_esn_page_template', true);
         
+        $template_display_name = get_post_meta($post->ID, '_esn_template_display_name', true);
+        if (empty($template_display_name)) {
+            $template_display_name = 'Service Cleaning Template';
+        }
+        
         $templates = array(
             '' => 'Default Template',
-            'end-of-tenancy-cleaning-template' => 'End of Tenancy Cleaning Template',
-            'regular-cleaning-template' => 'Regular Cleaning Template',
-            'deep-cleaning-template' => 'Deep Cleaning Template',
-            'office-cleaning-template' => 'Office Cleaning Template',
-            'carpet-cleaning-template' => 'Carpet Cleaning Template',
-            'window-cleaning-template' => 'Window Cleaning Template',
-            'after-builders-cleaning-template' => 'After Builders Cleaning Template',
-            'move-in-cleaning-template' => 'Move In Cleaning Template',
-            // Add more templates here as needed
+            'service-cleaning-template' => $template_display_name,
         );
         
         echo '<label for="esn_page_template">Select Template:</label>';
@@ -54,6 +51,10 @@ class ESN_Meta_Boxes {
             echo '<option value="' . esc_attr($value) . '" ' . selected($selected_template, $value, false) . '>' . esc_html($label) . '</option>';
         }
         echo '</select>';
+        
+        echo '<br><br>';
+        echo '<label for="esn_template_display_name">Template Display Name:</label>';
+        echo '<input type="text" name="esn_template_display_name" id="esn_template_display_name" value="' . esc_attr($template_display_name) . '" class="widefat" placeholder="e.g., End of Tenancy Cleaning Template" />';
     }
 
     public function content_fields_callback($post) {
@@ -142,6 +143,11 @@ class ESN_Meta_Boxes {
         // Save template selection
         if (isset($_POST['esn_page_template'])) {
             update_post_meta($post_id, '_esn_page_template', sanitize_text_field($_POST['esn_page_template']));
+        }
+        
+        // Save template display name
+        if (isset($_POST['esn_template_display_name'])) {
+            update_post_meta($post_id, '_esn_template_display_name', sanitize_text_field($_POST['esn_template_display_name']));
         }
 
         // Save content fields
