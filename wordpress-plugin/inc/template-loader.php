@@ -25,6 +25,11 @@ class ESN_Template_Loader {
             if ($page_template === 'service-cleaning-template.php') {
                 $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/service-cleaning-template.php';
                 
+                // Debug: Log what's happening
+                error_log('ESN Template Debug: Page template = ' . $page_template);
+                error_log('ESN Template Debug: Template path = ' . $template_path);
+                error_log('ESN Template Debug: File exists = ' . (file_exists($template_path) ? 'YES' : 'NO'));
+                
                 if (file_exists($template_path)) {
                     return $template_path;
                 }
