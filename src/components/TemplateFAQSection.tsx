@@ -16,8 +16,8 @@ const TemplateFAQSection = () => {
       answer: "We use professional-grade, eco-friendly cleaning products that are safe for all surfaces. All equipment and supplies are provided by us - you don't need to prepare anything."
     },
     {
-      question: "How much does an end-of-tenancy clean cost?",
-      answer: "Prices vary based on property size and condition. We offer competitive rates with no hidden fees. Contact us for a free, no-obligation quote tailored to your specific needs."
+      question: "How much does an end of tenancy clean cost?",
+      answer: "Prices vary based on property size and condition. We offer competitive rates with no hidden fees. You can book online or get a quote online within two minutes by filling our form. Contact us for a free, no-obligation quote tailored to your specific needs."
     }
   ];
 
