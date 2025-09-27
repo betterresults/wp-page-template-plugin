@@ -157,7 +157,25 @@ class ESN_Meta_Boxes {
             'page_h3', 'page_h3_paragraph', 'page_h4', 'page_h4_paragraph_1', 'page_h4_paragraph_2',
             'page_question_1', 'page_answer_1', 'page_question_2', 'page_answer_2'
         );
-
+        
+        // Process image URLs for SEO optimization
+        $image_fields = array('hero_image', 'page_image');
+        foreach ($image_fields as $image_field) {
+            if (isset($_POST[$image_field]) && !empty($_POST[$image_field])) {
+                $image_url = sanitize_url($_POST[$image_field]);
+                
+                // Check if it's a URL (not already a local image)
+                if (filter_var($image_url, FILTER_VALIDATE_URL) && strpos($image_url, site_url()) === false) {
+                    // Process the image from URL
+                    $processed_url = esn_process_image_from_url($image_url, $post_id);
+                    if ($processed_url) {
+                        // Update with the new local URL
+                        update_post_meta($post_id, '_' . $image_field, $processed_url);
+                        continue; // Skip the normal saving for this field
+                    }
+                }
+            }
+        }
         foreach ($fields as $field) {
             if (isset($_POST[$field])) {
                 if (strpos($field, 'paragraph') !== false || strpos($field, 'description') !== false) {

@@ -105,3 +105,72 @@ function esn_get_static_faqs() {
         )
     );
 }
+
+/**
+ * Download and rename image from URL for SEO
+ */
+function esn_process_image_from_url($image_url, $post_id) {
+    if (empty($image_url) || !filter_var($image_url, FILTER_VALIDATE_URL)) {
+        return false;
+    }
+    
+    // Get page data for naming
+    $page_title = get_post_meta($post_id, '_page_title', true) ?: get_the_title($post_id);
+    $page_area = get_post_meta($post_id, '_page_area', true);
+    $page_borough = get_post_meta($post_id, '_page_borough', true);
+    $template_name = get_post_meta($post_id, '_esn_template_display_name', true) ?: 'cleaning-service';
+    
+    // Create SEO-friendly filename
+    $filename_parts = array();
+    if (!empty($page_area)) $filename_parts[] = sanitize_title($page_area);
+    if (!empty($page_borough)) $filename_parts[] = sanitize_title($page_borough);
+    $filename_parts[] = sanitize_title($template_name);
+    $filename_parts[] = sanitize_title($page_title);
+    
+    $filename = implode('-', array_filter($filename_parts));
+    $filename = substr($filename, 0, 200); // Limit length
+    
+    // Get file extension from URL
+    $path_info = pathinfo(parse_url($image_url, PHP_URL_PATH));
+    $extension = isset($path_info['extension']) ? $path_info['extension'] : 'jpg';
+    $filename .= '.' . $extension;
+    
+    // Download image
+    $temp_file = download_url($image_url);
+    if (is_wp_error($temp_file)) {
+        return false;
+    }
+    
+    // Prepare file array for media library
+    $file_array = array(
+        'name' => $filename,
+        'tmp_name' => $temp_file
+    );
+    
+    // Generate alt text for SEO
+    $alt_text_parts = array();
+    if (!empty($template_name)) $alt_text_parts[] = $template_name;
+    if (!empty($page_area)) $alt_text_parts[] = 'in ' . $page_area;
+    if (!empty($page_borough)) $alt_text_parts[] = $page_borough;
+    $alt_text = implode(' ', $alt_text_parts);
+    
+    // Insert into media library
+    $id = media_handle_sideload($file_array, $post_id, $alt_text);
+    
+    // Clean up temp file
+    unlink($temp_file);
+    
+    if (is_wp_error($id)) {
+        return false;
+    }
+    
+    // Set alt text and description
+    update_post_meta($id, '_wp_attachment_image_alt', $alt_text);
+    wp_update_post(array(
+        'ID' => $id,
+        'post_excerpt' => $alt_text, // Caption
+        'post_content' => $alt_text   // Description
+    ));
+    
+    return wp_get_attachment_url($id);
+}
