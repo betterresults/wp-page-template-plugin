@@ -7,6 +7,11 @@ export interface ClickEvent {
   url?: string;
 }
 
+export interface TrackEvent {
+  event: string;
+  properties: Record<string, any>;
+}
+
 // Store events in localStorage for now (can be integrated with Google Analytics, etc. later)
 const STORAGE_KEY = 'sn_cleaning_analytics';
 
@@ -73,4 +78,38 @@ export const getAnalyticsSummary = () => {
   });
 
   return summary;
+};
+
+// General event tracking function
+export const trackEvent = (event: string, properties: Record<string, any> = {}) => {
+  const eventData = {
+    event,
+    properties: {
+      ...properties,
+      timestamp: Date.now(),
+      url: window.location.href
+    }
+  };
+
+  // Log to console for immediate visibility
+  console.log('📊 Event Tracked:', eventData);
+
+  // Store in localStorage
+  try {
+    const storageKey = 'sn_cleaning_events';
+    const existingEvents = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    existingEvents.push(eventData);
+    
+    // Keep only last 1000 events to prevent storage overflow
+    if (existingEvents.length > 1000) {
+      existingEvents.splice(0, existingEvents.length - 1000);
+    }
+    
+    localStorage.setItem(storageKey, JSON.stringify(existingEvents));
+  } catch (error) {
+    console.error('Failed to store event:', error);
+  }
+
+  // You can add integration with Google Analytics, Facebook Pixel, etc. here
+  // Example: gtag('event', event, properties);
 };
