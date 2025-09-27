@@ -52,12 +52,15 @@ class ESN_Meta_Boxes {
     public function content_fields_callback($post) {
         $fields = array(
             'page_title' => 'Page Title (Browser Tab)',
+            'meta_description' => 'Meta Description (SEO)',
             'page_h1' => 'Main Heading (H1)',
             'under_heading' => 'Under Heading Text',
+            'hero_image' => 'Hero Background Image',
             'page_area' => 'Service Area',
             'page_borough' => 'Borough',
             'page_subheading' => 'About Section Heading',
             'page_subheading_description' => 'About Section Description',
+            'page_image' => 'Content Section Image',
             'page_h2' => 'Content Section H2',
             'page_h2_paragraph' => 'Content Section H2 Paragraph',
             'page_h3' => 'Content Section H3',
@@ -66,7 +69,9 @@ class ESN_Meta_Boxes {
             'page_h4_paragraph_1' => 'Content Section H4 Paragraph 1',
             'page_h4_paragraph_2' => 'Content Section H4 Paragraph 2',
             'page_question_1' => 'FAQ Question 1',
-            'page_question_2' => 'FAQ Question 2'
+            'page_answer_1' => 'FAQ Answer 1',
+            'page_question_2' => 'FAQ Question 2',
+            'page_answer_2' => 'FAQ Answer 2'
         );
 
         echo '<div id="esn-content-fields" style="display: none;">';
@@ -134,10 +139,10 @@ class ESN_Meta_Boxes {
 
         // Save content fields
         $fields = array(
-            'page_title', 'page_h1', 'under_heading', 'page_area', 'page_borough',
-            'page_subheading', 'page_subheading_description', 'page_h2', 'page_h2_paragraph',
+            'page_title', 'meta_description', 'page_h1', 'under_heading', 'hero_image', 'page_area', 'page_borough',
+            'page_subheading', 'page_subheading_description', 'page_image', 'page_h2', 'page_h2_paragraph',
             'page_h3', 'page_h3_paragraph', 'page_h4', 'page_h4_paragraph_1', 'page_h4_paragraph_2',
-            'page_question_1', 'page_question_2'
+            'page_question_1', 'page_answer_1', 'page_question_2', 'page_answer_2'
         );
 
         foreach ($fields as $field) {
