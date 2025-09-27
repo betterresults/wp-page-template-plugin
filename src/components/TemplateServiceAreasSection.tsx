@@ -2,18 +2,18 @@ import { MapPin } from "lucide-react";
 
 const TemplateServiceAreasSection = () => {
   const areas = [
-    "South Hornchurch",
-    "Hornchurch", 
-    "Upminster",
-    "Rainham",
-    "Elm Park",
-    "Romford",
-    "Gidea Park",
-    "Harold Wood",
-    "Harold Hill",
-    "Emerson Park",
-    "Cranham",
-    "North Ockendon"
+    { name: "South Hornchurch", highlighted: true },
+    { name: "Hornchurch", highlighted: true },
+    { name: "Upminster", highlighted: false },
+    { name: "Rainham", highlighted: false },
+    { name: "Elm Park", highlighted: false },
+    { name: "Romford", highlighted: false },
+    { name: "Gidea Park", highlighted: false },
+    { name: "Harold Wood", highlighted: false },
+    { name: "Harold Hill", highlighted: false },
+    { name: "Emerson Park", highlighted: false },
+    { name: "Cranham", highlighted: false },
+    { name: "North Ockendon", highlighted: false }
   ];
 
   return (
@@ -29,19 +29,25 @@ const TemplateServiceAreasSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="card-glass p-8">
-            <div className="mb-6">
-              <MapPin className="w-6 h-6 text-primary mx-auto" />
-            </div>
+          <div className="bg-white rounded-2xl p-8 shadow-lg border">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-orange-300/30 px-4 py-2 rounded-lg border border-orange-400 text-center">
-                <span className="font-medium text-foreground">
-                  [dynamic_areas_from_same_borough]
-                </span>
-                <p className="text-sm text-muted-foreground mt-1">
-                  PHP: Extract all areas where borough = [page_borough]
-                </p>
-              </div>
+              {areas.map((area, index) => (
+                <div 
+                  key={index}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-200 hover:shadow-md ${
+                    area.highlighted 
+                      ? 'bg-cyan-50 border-cyan-200 hover:bg-cyan-100' 
+                      : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                  }`}
+                >
+                  <div className={`w-2 h-2 rounded-full ${
+                    area.highlighted ? 'bg-cyan-500' : 'bg-gray-400'
+                  }`} />
+                  <span className="font-medium text-foreground text-sm">
+                    {area.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
