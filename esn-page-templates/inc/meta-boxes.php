@@ -36,14 +36,14 @@ class ESN_Meta_Boxes {
         
         $template_display_name = get_post_meta($post->ID, '_esn_template_display_name', true);
         if (empty($template_display_name)) {
-            $template_display_name = 'Service Cleaning Template';
+            $template_display_name = 'End of Tenancy Cleaning Borough Templates';
         }
         
-        echo '<p><strong>Note:</strong> To use this template, select "Service Cleaning Template" from the Page Attributes meta box on the right sidebar, then fill in the content fields below.</p>';
+        echo '<p><strong>Note:</strong> To use this template, select "End of Tenancy Cleaning Borough Templates" from the Page Attributes meta box on the right sidebar, then fill in the content fields below.</p>';
         
         echo '<br>';
         echo '<label for="esn_template_display_name">Template Display Name:</label>';
-        echo '<input type="text" name="esn_template_display_name" id="esn_template_display_name" value="' . esc_attr($template_display_name) . '" class="widefat" placeholder="e.g., End of Tenancy Cleaning Template" />';
+        echo '<input type="text" name="esn_template_display_name" id="esn_template_display_name" value="' . esc_attr($template_display_name) . '" class="widefat" placeholder="e.g., End of Tenancy Cleaning Borough Templates" />';
         echo '<p class="description">This name will appear in your template selector dropdown.</p>';
     }
 
@@ -202,7 +202,7 @@ class ESN_Meta_Boxes {
         if ($page_template === 'service-cleaning-template.php') {
             // Mark this page as using our template
             update_post_meta($post_id, '_esn_page_template', 'service-cleaning-template.php');
-            update_post_meta($post_id, '_esn_template_display_name', 'Service Cleaning Template');
+            update_post_meta($post_id, '_esn_template_display_name', 'End of Tenancy Cleaning Borough Templates');
         } else {
             // Remove our template markers if template was changed
             delete_post_meta($post_id, '_esn_page_template');

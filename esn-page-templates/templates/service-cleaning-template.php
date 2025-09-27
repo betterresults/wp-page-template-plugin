@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: End of Tenancy Cleaning Template
+ * Template Name: End of Tenancy Cleaning Borough Templates
  * Template Post Type: page
- * Description: Complete template matching the React EndOfTenancyTemplate
+ * Description: Complete template for end of tenancy cleaning service pages
  */
 
 get_header(); ?>

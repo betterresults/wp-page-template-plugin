@@ -12,7 +12,7 @@ class ESN_Template_Loader {
     }
 
     public function add_page_templates($templates) {
-        $templates['service-cleaning-template.php'] = 'Service Cleaning Template';
+        $templates['service-cleaning-template.php'] = 'End of Tenancy Cleaning Borough Templates';
         return $templates;
     }
 

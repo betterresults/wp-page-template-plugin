@@ -54,7 +54,7 @@ class ESN_Admin_Dashboard {
                             </select>
                             <select id="esn-template-filter">
                                 <option value="">All Templates</option>
-            <option value="service-cleaning-template.php">End of Tenancy Cleaning Templates</option>
+                            <option value="service-cleaning-template.php">End of Tenancy Cleaning Borough Templates</option>
                                 <option value="no-template">No Template</option>
                             </select>
                             <button id="esn-filter-btn" class="button">Filter</button>
@@ -64,7 +64,7 @@ class ESN_Admin_Dashboard {
                     <div class="esn-bulk-actions">
                         <select id="esn-bulk-template">
                             <option value="">Select Template to Assign</option>
-                            <option value="service-cleaning-template.php">End of Tenancy Cleaning Templates</option>
+                            <option value="service-cleaning-template.php">End of Tenancy Cleaning Borough Templates</option>
                             <option value="remove-template">Remove Template</option>
                         </select>
                         <button id="esn-bulk-assign" class="button button-primary" disabled>Apply to Selected</button>
@@ -521,8 +521,8 @@ class ESN_Admin_Dashboard {
             // Template data for modal
             const templates = {
                 'service-cleaning-template.php': {
-                    name: 'End of Tenancy Cleaning Borrowed Templates',
-                    description: 'Complete template for cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
+                    name: 'End of Tenancy Cleaning Borough Templates',
+                    description: 'Complete template for end of tenancy cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
                     sections: {
                         'Hero Section': 'Dynamic H1, area, borough, hero image',
                         'About Section': 'Company information and stats',
@@ -706,8 +706,8 @@ class ESN_Admin_Dashboard {
     private function render_templates() {
         $templates = array(
             'service-cleaning-template.php' => array(
-                'name' => 'End of Tenancy Cleaning Borrowed Templates',
-                'description' => 'Complete template for cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
+                'name' => 'End of Tenancy Cleaning Borough Templates',
+                'description' => 'Complete template for end of tenancy cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
                 'pages_count' => $this->count_pages_using_template('service-cleaning-template.php'),
                 'sections' => array(
                     'Hero Section' => 'Dynamic H1, area, borough, hero image',
