@@ -1,4 +1,4 @@
-import { Check, Sparkles, Home, Bath, ChefHat } from "lucide-react";
+import { Check, Sparkles, Home, Bath, ChefHat, Bed } from "lucide-react";
 
 const ChecklistSection = () => {
   const kitchenTasks = [
@@ -27,15 +27,28 @@ const ChecklistSection = () => {
     "Floors vacuumed and mopped thoroughly"
   ];
 
-  const generalTasks = [
-    "All skirting boards and baseboards cleaned",
-    "Light switches and electrical sockets wiped",
-    "Windows and window sills cleaned inside",
-    "Wardrobes and drawers cleaned inside and outside",
-    "Mirrors and glass surfaces polished to shine",
-    "Carpets professionally steam cleaned",
-    "All floors vacuumed and mopped",
-    "Mattress cleaning service available upon request"
+  const bedroomTasks = [
+    "Wardrobes cleaned inside, outside, and on top",
+    "Furniture moved and cleaned behind and underneath",
+    "Drawers and bedside tables cleaned inside and out",
+    "Window sills, frames and glass cleaned thoroughly",
+    "Light fittings, switches and sockets wiped clean",
+    "Skirting boards and door frames detailed clean",
+    "Radiators dusted and cleaned behind",
+    "Carpets deep cleaned or hard floors mopped",
+    "Cobwebs removed from corners and ceilings"
+  ];
+
+  const livingRoomTasks = [
+    "All furniture moved and cleaned behind",
+    "TV units and entertainment centres cleaned inside and out",
+    "Sofas vacuumed underneath and cushions cleaned",
+    "Coffee tables and side tables detailed clean",
+    "Bookshelves and display units dusted inside and out",
+    "Windows, sills and frames cleaned inside",
+    "Light switches, sockets and door handles wiped",
+    "Skirting boards and architraves cleaned",
+    "Carpets deep cleaned or floors mopped to shine"
   ];
 
   const TaskList = ({ title, tasks, icon: Icon }: { 
@@ -88,7 +101,7 @@ const ChecklistSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <TaskList
             title="Kitchen Deep Clean"
             tasks={kitchenTasks}
@@ -100,8 +113,13 @@ const ChecklistSection = () => {
             icon={Bath}
           />
           <TaskList
-            title="General Areas"
-            tasks={generalTasks}
+            title="Bedrooms"
+            tasks={bedroomTasks}
+            icon={Bed}
+          />
+          <TaskList
+            title="Living Areas"
+            tasks={livingRoomTasks}
             icon={Home}
           />
         </div>
