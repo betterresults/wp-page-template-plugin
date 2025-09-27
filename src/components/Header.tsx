@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/end-of-tenancy"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           End Of Tenancy Cleaning
                         </Link>
@@ -68,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/after-builders"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           After Builders Cleaning
                         </Link>
@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/domestic"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Domestic Cleaning
                         </Link>
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/airbnb"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Airbnb Cleaning
                         </Link>
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/deep-house"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Deep House Cleaning
                         </Link>
@@ -100,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/carpet"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Carpet Cleaning Services
                         </Link>
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/office"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Office Cleaning
                         </Link>
@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/school"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           School Cleaning
                         </Link>
@@ -124,7 +124,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/services/nursery"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Nursery Cleaning
                         </Link>
@@ -144,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/contact"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Contact Us
                         </Link>
@@ -152,7 +152,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/accreditation"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           Accreditation
                         </Link>
@@ -160,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                       <NavigationMenuLink asChild>
                         <Link
                           to="/about"
-                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-foreground rounded-md transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
                         >
                           About Us
                         </Link>
