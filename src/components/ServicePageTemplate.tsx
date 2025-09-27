@@ -18,16 +18,16 @@ interface ServicePageTemplateProps {
 const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Dynamic Hero Section */}
+      {/* Dynamic Hero Section - Same as main page but with placeholders */}
       <section className="section-padding bg-gradient-to-br from-primary/10 via-background to-primary/5 relative overflow-hidden">
         <div className="section-container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                {data.page_h1}
+              <h1 className="text-4xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
+                <span className="bg-yellow-200 px-2 py-1 rounded text-black">[page_h1]</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                {data.under_heading}
+                <span className="bg-yellow-200 px-2 py-1 rounded text-black">[under_heading]</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -57,7 +57,7 @@ const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => 
             
             <div className="relative">
               <img 
-                src="/src/assets/professional-cleaner.jpg" 
+                src="/src/assets/hero-kitchen.jpg" 
                 alt="Professional cleaning service" 
                 className="rounded-2xl shadow-2xl w-full"
               />
@@ -71,25 +71,25 @@ const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => 
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              {data.page_subheading}
+              <span className="bg-blue-200 px-2 py-1 rounded text-black">[page_subheading]</span>
             </h2>
             <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-              <p>{data.page_subheading_description}</p>
+              <p className="bg-blue-200 px-2 py-1 rounded text-black">[page_subheading_description]</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Static Process Section */}
+      {/* Static Process Section - Same as main page */}
       <ProcessSection />
 
-      {/* Static Why Us Section */}
+      {/* Static Why Us Section - Same as main page */}
       <WhyUsSection />
 
-      {/* Static Testimonials Section */}
+      {/* Static Testimonials Section - Same as main page */}
       <TestimonialsSection />
 
-      {/* Static Checklist Section */}
+      {/* Static Checklist Section - Same as main page */}
       <ChecklistSection />
 
       {/* Dynamic Content Section */}
@@ -97,17 +97,17 @@ const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => 
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              {data.page_h2}
+              <span className="bg-green-200 px-2 py-1 rounded text-black">[page_h2]</span>
             </h2>
             <div className="text-lg text-muted-foreground leading-relaxed mb-8">
-              <p>{data.page_h2_paragraph}</p>
+              <p className="bg-green-200 px-2 py-1 rounded text-black">[page_h2_paragraph]</p>
             </div>
             
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              {data.page_h3}
+              <span className="bg-green-200 px-2 py-1 rounded text-black">[page_h3]</span>
             </h3>
             <div className="text-lg text-muted-foreground leading-relaxed">
-              <p>{data.page_h3_paragraph}</p>
+              <p className="bg-green-200 px-2 py-1 rounded text-black">[page_h3_paragraph]</p>
             </div>
           </div>
         </div>
@@ -121,36 +121,56 @@ const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => 
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Got questions? We've got answers about our {data.page_area} cleaning service.
+              Got questions? We've got answers about our <span className="bg-purple-200 px-1 rounded text-black">[page_area]</span> cleaning service.
             </p>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
             {/* Dynamic FAQs */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-foreground mb-3">{data.page_question_1}</h3>
-              <p className="text-muted-foreground">Our professional answer for this specific question about {data.page_area} cleaning services.</p>
+            <div className="bg-card border border-border rounded-lg px-6">
+              <div className="text-left hover:no-underline py-6">
+                <span className="font-semibold text-foreground bg-purple-200 px-2 py-1 rounded text-black">[page_question_1]</span>
+              </div>
+              <div className="pb-6 text-muted-foreground leading-relaxed">
+                <span className="bg-purple-200 px-2 py-1 rounded text-black">[Answer for page_question_1]</span>
+              </div>
             </div>
             
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-foreground mb-3">{data.page_question_2}</h3>
-              <p className="text-muted-foreground">Detailed answer explaining our {data.page_area} cleaning process and guarantees.</p>
+            <div className="bg-card border border-border rounded-lg px-6">
+              <div className="text-left hover:no-underline py-6">
+                <span className="font-semibold text-foreground bg-purple-200 px-2 py-1 rounded text-black">[page_question_2]</span>
+              </div>
+              <div className="pb-6 text-muted-foreground leading-relaxed">
+                <span className="bg-purple-200 px-2 py-1 rounded text-black">[Answer for page_question_2]</span>
+              </div>
             </div>
 
-            {/* Static FAQs */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-foreground mb-3">Do I need to be present during the cleaning?</h3>
-              <p className="text-muted-foreground">No, you don't need to be present. Many of our clients prefer to hand over the keys and let us work undisturbed. We're fully insured and bonded for your peace of mind.</p>
+            {/* Static FAQs - Same questions on every page */}
+            <div className="bg-card border border-border rounded-lg px-6">
+              <div className="text-left hover:no-underline py-6">
+                <span className="font-semibold text-foreground">Do I need to be present during the cleaning?</span>
+              </div>
+              <div className="pb-6 text-muted-foreground leading-relaxed">
+                No, you don't need to be present. Many of our clients prefer to hand over the keys and let us work undisturbed. We're fully insured and bonded for your peace of mind.
+              </div>
             </div>
             
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-foreground mb-3">What cleaning products do you use?</h3>
-              <p className="text-muted-foreground">We use professional-grade, eco-friendly cleaning products that are safe for all surfaces. All equipment and supplies are provided by us.</p>
+            <div className="bg-card border border-border rounded-lg px-6">
+              <div className="text-left hover:no-underline py-6">
+                <span className="font-semibold text-foreground">What cleaning products do you use?</span>
+              </div>
+              <div className="pb-6 text-muted-foreground leading-relaxed">
+                We use professional-grade, eco-friendly cleaning products that are safe for all surfaces. All equipment and supplies are provided by us - you don't need to prepare anything.
+              </div>
             </div>
             
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-foreground mb-3">How much does a cleaning service cost?</h3>
-              <p className="text-muted-foreground">Prices vary based on property size and condition. Contact us for a free, no-obligation quote tailored to your specific needs.</p>
+            <div className="bg-card border border-border rounded-lg px-6">
+              <div className="text-left hover:no-underline py-6">
+                <span className="font-semibold text-foreground">How much does a cleaning service cost?</span>
+              </div>
+              <div className="pb-6 text-muted-foreground leading-relaxed">
+                Prices vary based on property size and condition. We offer competitive rates with no hidden fees. Contact us for a free, no-obligation quote tailored to your specific needs.
+              </div>
             </div>
           </div>
         </div>
@@ -161,43 +181,41 @@ const ServicePageTemplate = ({ data, staticData }: ServicePageTemplateProps) => 
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-              Areas We <span className="text-primary">Cover</span>
+              London <span className="text-primary">Boroughs</span> We Cover
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional cleaning services across {data.page_area}, {data.page_borough}
+              Professional end of tenancy cleaning across <span className="bg-orange-200 px-1 rounded text-black">[page_area]</span>, <span className="bg-orange-200 px-1 rounded text-black">[page_borough]</span>
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-card border border-border rounded-lg p-8">
+            <div className="card-glass p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
+                <div className="w-6 h-6 text-primary" />
+                Boroughs We Cover
+              </h3>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {[
                   "South Hornchurch", "Hornchurch", "Upminster", "Rainham",
                   "Elm Park", "Romford", "Gidea Park", "Harold Wood",
                   "Harold Hill", "Emerson Park", "Cranham", "North Ockendon"
-                ].map((area) => {
-                  const isCurrentArea = area.toLowerCase().includes(data.page_area.toLowerCase());
-                  return (
-                    <div 
-                      key={area}
-                      className={`flex items-center gap-3 p-3 rounded-lg border transition-colors ${
-                        isCurrentArea 
-                          ? 'bg-primary/10 border-primary/20' 
-                          : 'bg-background hover:bg-primary/5'
-                      }`}
-                    >
-                      <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="font-medium text-foreground">{area}</span>
-                    </div>
-                  );
-                })}
+                ].map((area, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center gap-3 p-3 bg-background rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    <div className="w-2 h-2 bg-primary rounded-full" />
+                    <span className="font-medium text-foreground">{area}</span>
+                    {area === "Hornchurch" && <span className="text-xs bg-orange-200 px-1 rounded text-black">(highlighted if matches [page_area])</span>}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Static Guarantee Section */}
+      {/* Static Guarantee Section - Same as main page */}
       <GuaranteeSection />
     </div>
   );
