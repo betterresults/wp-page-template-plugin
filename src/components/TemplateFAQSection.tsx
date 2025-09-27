@@ -29,7 +29,7 @@ const TemplateFAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers about our <span className="bg-purple-300/30 px-1 rounded">[page_poro_cleaning_service]</span> cleaning service.
+            Got questions? We've got answers about our <span className="bg-purple-300/30 px-1 rounded">[page_borough]</span> cleaning service.
           </p>
         </div>
         
