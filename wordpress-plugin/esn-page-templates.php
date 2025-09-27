@@ -22,6 +22,7 @@ define('ESN_TEMPLATES_PLUGIN_PATH', plugin_dir_path(__FILE__));
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/meta-boxes.php';
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/template-functions.php';
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/template-loader.php';
+require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/admin-dashboard.php';
 
 class ESN_Page_Templates {
 
@@ -36,6 +37,7 @@ class ESN_Page_Templates {
         // Initialize plugin components
         new ESN_Meta_Boxes();
         new ESN_Template_Loader();
+        new ESN_Admin_Dashboard();
     }
 
     public function enqueue_scripts() {
