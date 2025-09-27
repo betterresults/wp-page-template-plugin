@@ -54,7 +54,7 @@ class ESN_Admin_Dashboard {
                             </select>
                             <select id="esn-template-filter">
                                 <option value="">All Templates</option>
-                                <option value="service-cleaning-template.php">Service Cleaning Template</option>
+            <option value="service-cleaning-template.php">End of Tenancy Cleaning Templates</option>
                                 <option value="no-template">No Template</option>
                             </select>
                             <button id="esn-filter-btn" class="button">Filter</button>
@@ -64,7 +64,7 @@ class ESN_Admin_Dashboard {
                     <div class="esn-bulk-actions">
                         <select id="esn-bulk-template">
                             <option value="">Select Template to Assign</option>
-                            <option value="service-cleaning-template.php">Service Cleaning Template</option>
+                            <option value="service-cleaning-template.php">End of Tenancy Cleaning Templates</option>
                             <option value="remove-template">Remove Template</option>
                         </select>
                         <button id="esn-bulk-assign" class="button button-primary" disabled>Apply to Selected</button>
@@ -74,6 +74,19 @@ class ESN_Admin_Dashboard {
                     <div id="esn-pages-list">
                         <?php $this->render_pages_list(); ?>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Details Modal -->
+        <div id="esn-template-modal" class="esn-modal" style="display: none;">
+            <div class="esn-modal-content">
+                <div class="esn-modal-header">
+                    <h2 id="esn-modal-title">Template Details</h2>
+                    <span class="esn-modal-close">&times;</span>
+                </div>
+                <div id="esn-modal-body" class="esn-modal-body">
+                    <!-- Content will be loaded here -->
                 </div>
             </div>
         </div>
@@ -106,7 +119,7 @@ class ESN_Admin_Dashboard {
         /* Templates Grid */
         .esn-templates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -117,22 +130,100 @@ class ESN_Admin_Dashboard {
             overflow: hidden;
             background: #f9f9f9;
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
         
         .esn-template-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .esn-template-preview {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 250px;
+            background: #f8f9fa;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 16px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .esn-template-layout {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .esn-preview-section {
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 2px;
+            font-size: 10px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .esn-preview-section.esn-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            flex: 2;
+            font-weight: bold;
+        }
+        
+        .esn-preview-section.esn-about {
+            background: #4CAF50;
+        }
+        
+        .esn-preview-section.esn-process {
+            background: #2196F3;
+        }
+        
+        .esn-preview-section.esn-testimonials {
+            background: #FF9800;
+        }
+        
+        .esn-preview-section.esn-checklist {
+            background: #9C27B0;
+        }
+        
+        .esn-preview-section.esn-content {
+            background: #607D8B;
+        }
+        
+        .esn-preview-section.esn-areas {
+            background: #795548;
+        }
+        
+        .esn-preview-section.esn-guarantee {
+            background: #F44336;
+        }
+        
+        .esn-preview-section.esn-faq {
+            background: #009688;
+        }
+        
+        .esn-template-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .esn-template-card:hover .esn-template-overlay {
+            opacity: 1;
         }
         
         .esn-template-info {
@@ -148,6 +239,7 @@ class ESN_Admin_Dashboard {
             margin: 0;
             color: #666;
             font-size: 14px;
+            line-height: 1.4;
         }
         
         .esn-template-stats {
@@ -156,6 +248,11 @@ class ESN_Admin_Dashboard {
             margin-top: 10px;
             font-size: 12px;
             color: #999;
+        }
+        
+        .esn-template-status {
+            color: #4CAF50 !important;
+            font-weight: 600;
         }
         
         /* Pages Section */
@@ -271,6 +368,126 @@ class ESN_Admin_Dashboard {
             color: #999;
         }
         
+        /* Modal Styles */
+        .esn-modal {
+            position: fixed;
+            z-index: 100000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .esn-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .esn-modal-header {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .esn-modal-header h2 {
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+        
+        .esn-modal-close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .esn-modal-close:hover {
+            color: #000;
+        }
+        
+        .esn-modal-body {
+            padding: 20px;
+        }
+        
+        .esn-template-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .esn-template-meta {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        
+        .esn-template-meta h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .esn-template-sections {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        
+        .esn-section-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .esn-section-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .esn-section-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .esn-section-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .esn-section-desc {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .esn-fields-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        
+        .esn-fields-list li {
+            padding: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .esn-fields-list li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
         @media (max-width: 768px) {
             .esn-pages-header {
                 flex-direction: column;
@@ -290,12 +507,102 @@ class ESN_Admin_Dashboard {
                 flex-direction: column;
                 align-items: stretch;
             }
+            
+            .esn-template-details {
+                grid-template-columns: 1fr;
+            }
         }
         </style>
 
         <script>
         jQuery(document).ready(function($) {
             let selectedPages = new Set();
+            
+            // Template data for modal
+            const templates = {
+                'service-cleaning-template.php': {
+                    name: 'End of Tenancy Cleaning Borrowed Templates',
+                    description: 'Complete template for cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
+                    sections: {
+                        'Hero Section': 'Dynamic H1, area, borough, hero image',
+                        'About Section': 'Company information and stats',
+                        '3-Step Process': 'Booking process explanation', 
+                        'Why Choose Us': 'Service highlights and benefits',
+                        'Testimonials': 'Customer reviews and ratings',
+                        'Checklist': 'Detailed service checklist',
+                        'Content Sections': 'Dynamic H2, H3, H4 with content',
+                        'Service Areas': 'Coverage area listing',
+                        'FAQ Section': 'Frequently asked questions',
+                        'Guarantee': 'Cast iron guarantee section'
+                    },
+                    fields: [
+                        'Page Title & Meta Description',
+                        'Hero H1, Image, Area, Borough',
+                        'About Section Heading & Description', 
+                        'Content H2, H3, H4 with Paragraphs',
+                        'Content Image with SEO optimization',
+                        'FAQ Questions & Answers',
+                        'Service area customization'
+                    ]
+                }
+            };
+            
+            // Handle template card clicks
+            $('.esn-template-card').click(function() {
+                const templateKey = $(this).data('template');
+                const template = templates[templateKey];
+                
+                if (template) {
+                    showTemplateModal(template);
+                }
+            });
+            
+            // Show template modal
+            function showTemplateModal(template) {
+                $('#esn-modal-title').text(template.name);
+                
+                let modalContent = '<div class="esn-template-details">';
+                
+                // Template metadata
+                modalContent += '<div class="esn-template-meta">';
+                modalContent += '<h3>Template Information</h3>';
+                modalContent += '<p><strong>Name:</strong> ' + template.name + '</p>';
+                modalContent += '<p><strong>Description:</strong> ' + template.description + '</p>';
+                modalContent += '<p><strong>Status:</strong> <span style="color: #4CAF50;">Active</span></p>';
+                
+                modalContent += '<h3>Available Fields</h3>';
+                modalContent += '<ul class="esn-fields-list">';
+                template.fields.forEach(function(field) {
+                    modalContent += '<li>' + field + '</li>';
+                });
+                modalContent += '</ul>';
+                modalContent += '</div>';
+                
+                // Template sections
+                modalContent += '<div class="esn-template-sections">';
+                modalContent += '<h3>Template Sections</h3>';
+                modalContent += '<ul class="esn-section-list">';
+                Object.keys(template.sections).forEach(function(section) {
+                    modalContent += '<li>';
+                    modalContent += '<div class="esn-section-name">' + section + '</div>';
+                    modalContent += '<div class="esn-section-desc">' + template.sections[section] + '</div>';
+                    modalContent += '</li>';
+                });
+                modalContent += '</ul>';
+                modalContent += '</div>';
+                
+                modalContent += '</div>';
+                
+                $('#esn-modal-body').html(modalContent);
+                $('#esn-template-modal').show();
+            }
+            
+            // Close modal
+            $('.esn-modal-close, .esn-modal').click(function(e) {
+                if (e.target === this) {
+                    $('#esn-template-modal').hide();
+                }
+            });
             
             // Handle page selection
             $(document).on('change', '.esn-page-checkbox', function() {
@@ -399,19 +706,50 @@ class ESN_Admin_Dashboard {
     private function render_templates() {
         $templates = array(
             'service-cleaning-template.php' => array(
-                'name' => 'Service Cleaning Template',
-                'description' => 'Perfect for cleaning service pages with hero section, about, content, FAQs, and service areas.',
-                'pages_count' => $this->count_pages_using_template('service-cleaning-template.php')
+                'name' => 'End of Tenancy Cleaning Borrowed Templates',
+                'description' => 'Complete template for cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
+                'pages_count' => $this->count_pages_using_template('service-cleaning-template.php'),
+                'sections' => array(
+                    'Hero Section' => 'Dynamic H1, area, borough, hero image',
+                    'About Section' => 'Company information and stats',
+                    '3-Step Process' => 'Booking process explanation', 
+                    'Why Choose Us' => 'Service highlights and benefits',
+                    'Testimonials' => 'Customer reviews and ratings',
+                    'Checklist' => 'Detailed service checklist',
+                    'Content Sections' => 'Dynamic H2, H3, H4 with content',
+                    'Service Areas' => 'Coverage area listing',
+                    'FAQ Section' => 'Frequently asked questions',
+                    'Guarantee' => 'Cast iron guarantee section'
+                ),
+                'fields' => array(
+                    'Page Title & Meta Description',
+                    'Hero H1, Image, Area, Borough',
+                    'About Section Heading & Description', 
+                    'Content H2, H3, H4 with Paragraphs',
+                    'Content Image with SEO optimization',
+                    'FAQ Questions & Answers',
+                    'Service area customization'
+                )
             )
         );
         
         foreach ($templates as $template_key => $template_data) {
             ?>
-            <div class="esn-template-card">
+            <div class="esn-template-card" data-template="<?php echo esc_attr($template_key); ?>">
                 <div class="esn-template-preview">
-                    <div>
-                        <strong><?php echo esc_html($template_data['name']); ?></strong><br>
-                        <small>Template Preview</small>
+                    <div class="esn-template-layout">
+                        <div class="esn-preview-section esn-hero">[page_h1]</div>
+                        <div class="esn-preview-section esn-about">[page_h2]</div>
+                        <div class="esn-preview-section esn-process">Our 3-Step Process</div>
+                        <div class="esn-preview-section esn-testimonials">What Our Customers Say</div>
+                        <div class="esn-preview-section esn-checklist">Service Checklist</div>
+                        <div class="esn-preview-section esn-content">[page_h3] & [page_h4]</div>
+                        <div class="esn-preview-section esn-areas">Areas We Cover</div>
+                        <div class="esn-preview-section esn-guarantee">Our Guarantee</div>
+                        <div class="esn-preview-section esn-faq">FAQ</div>
+                    </div>
+                    <div class="esn-template-overlay">
+                        <span>Click to view details</span>
                     </div>
                 </div>
                 <div class="esn-template-info">
@@ -419,7 +757,7 @@ class ESN_Admin_Dashboard {
                     <p><?php echo esc_html($template_data['description']); ?></p>
                     <div class="esn-template-stats">
                         <span><?php echo $template_data['pages_count']; ?> pages using this template</span>
-                        <span>Active</span>
+                        <span class="esn-template-status">Active</span>
                     </div>
                 </div>
             </div>
