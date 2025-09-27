@@ -29,13 +29,13 @@ const TemplateAboutSection = () => {
       <div className="section-container">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className="space-y-6">
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight">
-              <span className="bg-blue-300/30 px-2 py-1 rounded">[page_h2]</span>
-            </h2>
+            <h3 className="text-4xl lg:text-5xl font-bold font-heading text-foreground leading-tight">
+              <span className="bg-blue-300/30 px-2 py-1 rounded">[page_h3]</span>
+            </h3>
             
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p className="bg-blue-300/30 px-2 py-1 rounded">
-                [page_h2_paragraph]
+                [page_h3_paragraph]
               </p>
             </div>
           </div>

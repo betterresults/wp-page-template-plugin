@@ -10,9 +10,9 @@ const TemplateContentSection = () => {
             <Sparkles className="w-5 h-5 text-primary" />
             <span className="text-primary font-semibold">Why Choose Us</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
+          <h4 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
             Why Choose <span className="text-primary">Us</span>
-          </h2>
+          </h4>
         </div>
 
         {/* Content Grid */}
@@ -29,7 +29,7 @@ const TemplateContentSection = () => {
                 </div>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed bg-green-300/30 px-2 py-1 rounded">
-                  [page_h3_paragraph_1]
+                  [page_h4_paragraph_1]
                 </p>
               </div>
             </div>
@@ -41,11 +41,11 @@ const TemplateContentSection = () => {
                   <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
                     <Sparkles className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground bg-green-300/30 px-2 py-1 rounded">[page_h3]</h3>
+                  <h3 className="text-2xl font-bold text-foreground bg-green-300/30 px-2 py-1 rounded">[page_h4]</h3>
                 </div>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed bg-green-300/30 px-2 py-1 rounded">
-                  [page_h3_paragraph_2]
+                  [page_h4_paragraph_2]
                 </p>
               </div>
             </div>

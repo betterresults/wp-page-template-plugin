@@ -33,14 +33,14 @@ const EndOfTenancyTemplate = () => {
       {/* Content Section - Dynamic */}
       <TemplateContentSection />
       
-      {/* FAQ Section - Dynamic + Static */}
-      <TemplateFAQSection />
-      
       {/* Service Areas Section - Dynamic */}
       <TemplateServiceAreasSection />
       
       {/* Guarantee Section - Static */}
       <GuaranteeSection />
+      
+      {/* FAQ Section - Dynamic + Static */}
+      <TemplateFAQSection />
     </div>
   );
 };
