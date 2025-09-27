@@ -1,27 +1,10 @@
-import { Star, Award, Clock, Users } from "lucide-react";
+import { Star, Award, Users } from "lucide-react";
 
 const TemplateAboutSection = () => {
   const stats = [
-    {
-      icon: Star,
-      number: "5,000+",
-      label: "Happy Customers"
-    },
-    {
-      icon: Award,
-      number: "99.8%",
-      label: "Success Rate"
-    },
-    {
-      icon: Clock,
-      number: "3-5",
-      label: "Hours Average"
-    },
-    {
-      icon: Users,
-      number: "50+",
-      label: "Expert Cleaners"
-    }
+    { icon: Star, number: "8,000+", label: "Happy Customers" },
+    { icon: Award, number: "99.8%", label: "Success Rate" },
+    { icon: Users, number: "49", label: "Expert Cleaners" }
   ];
 
   return (
@@ -41,7 +24,7 @@ const TemplateAboutSection = () => {
           </div>
 
           {/* Dynamic Stats Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {stats.map(({ icon: Icon, number, label }, idx) => (
               <div key={idx} className="text-center p-6 bg-gradient-surface rounded-2xl">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">

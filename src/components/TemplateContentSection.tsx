@@ -11,7 +11,7 @@ const TemplateContentSection = () => {
             <span className="text-primary font-semibold">Why Choose Us</span>
           </div>
           <h4 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-            Why Choose <span className="text-primary">Us</span>
+            <span className="bg-green-300/30 px-2 py-1 rounded">[page_h4]</span>
           </h4>
         </div>
 
@@ -51,16 +51,6 @@ const TemplateContentSection = () => {
             </div>
           </div>
 
-          {/* Bottom Feature */}
-          <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-4 bg-primary/5 border border-primary/20 px-8 py-4 rounded-2xl">
-              <div className="w-4 h-4 bg-primary rounded-full animate-pulse" />
-              <span className="text-xl font-semibold text-foreground">
-                Your deposit protection is our guarantee
-              </span>
-              <div className="w-4 h-4 bg-primary rounded-full animate-pulse" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
