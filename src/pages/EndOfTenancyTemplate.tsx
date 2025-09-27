@@ -8,16 +8,12 @@ import ChecklistSection from "@/components/ChecklistSection";
 import TemplateContentSection from "@/components/TemplateContentSection";
 import TemplateFAQSection from "@/components/TemplateFAQSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
-import TemplateH2Section from "@/components/TemplateH2Section";
 
 const EndOfTenancyTemplate = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Dynamic */}
       <TemplateHeroSection />
-
-      {/* H2 Section - Dynamic */}
-      <TemplateH2Section />
       
       {/* About Section - Dynamic */}
       <TemplateAboutSection />
