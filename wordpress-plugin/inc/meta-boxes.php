@@ -37,7 +37,14 @@ class ESN_Meta_Boxes {
         
         $templates = array(
             '' => 'Default Template',
-            'service-cleaning-template' => 'Service Cleaning Template',
+            'end-of-tenancy-cleaning-template' => 'End of Tenancy Cleaning Template',
+            'regular-cleaning-template' => 'Regular Cleaning Template',
+            'deep-cleaning-template' => 'Deep Cleaning Template',
+            'office-cleaning-template' => 'Office Cleaning Template',
+            'carpet-cleaning-template' => 'Carpet Cleaning Template',
+            'window-cleaning-template' => 'Window Cleaning Template',
+            'after-builders-cleaning-template' => 'After Builders Cleaning Template',
+            'move-in-cleaning-template' => 'Move In Cleaning Template',
             // Add more templates here as needed
         );
         
@@ -103,7 +110,7 @@ class ESN_Meta_Boxes {
         jQuery(document).ready(function($) {
             function toggleFields() {
                 var selectedTemplate = $("#esn_page_template").val();
-                if (selectedTemplate === "service-cleaning-template") {
+                if (selectedTemplate !== "" && selectedTemplate !== "default") {
                     $("#esn-content-fields").show();
                 } else {
                     $("#esn-content-fields").hide();
