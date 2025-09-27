@@ -8,6 +8,7 @@ import ChecklistSection from "@/components/ChecklistSection";
 import TemplateContentSection from "@/components/TemplateContentSection";
 import TemplateFAQSection from "@/components/TemplateFAQSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
+import TemplateH2Section from "@/components/TemplateH2Section";
 
 const EndOfTenancyTemplate = () => {
   return (
@@ -15,11 +16,14 @@ const EndOfTenancyTemplate = () => {
       {/* Hero Section - Dynamic */}
       <TemplateHeroSection />
       
-      {/* About Section - Dynamic */}
-      <TemplateAboutSection />
+      {/* H2 Section - Dynamic */}
+      <TemplateH2Section />
       
       {/* Process Section - Static */}
       <ProcessSection />
+      
+      {/* About Section - Dynamic */}
+      <TemplateAboutSection />
       
       {/* Why Us Section - Static */}
       <WhyUsSection />
