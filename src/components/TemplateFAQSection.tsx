@@ -29,7 +29,7 @@ const TemplateFAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers about our <span className="bg-purple-300/30 px-1 rounded">[page_area]</span> cleaning service.
+            Got questions? We've got answers about our <span className="bg-purple-300/30 px-1 rounded">[page_poro_cleaning_service]</span> cleaning service.
           </p>
         </div>
         
@@ -44,7 +44,7 @@ const TemplateFAQSection = () => {
                 <span className="font-semibold text-foreground bg-purple-300/30 px-2 py-1 rounded">[page_question_1]</span>
               </AccordionTrigger>
               <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                Professional answer for this specific question about <span className="bg-purple-300/30 px-1 rounded">[page_area]</span> cleaning services.
+                <span className="bg-purple-300/30 px-2 py-1 rounded">[page_answer_1]</span>
               </AccordionContent>
             </AccordionItem>
 
@@ -57,7 +57,7 @@ const TemplateFAQSection = () => {
                 <span className="font-semibold text-foreground bg-purple-300/30 px-2 py-1 rounded">[page_question_2]</span>
               </AccordionTrigger>
               <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                Detailed answer explaining our <span className="bg-purple-300/30 px-1 rounded">[page_area]</span> cleaning process and guarantees.
+                <span className="bg-purple-300/30 px-2 py-1 rounded">[page_answer_2]</span>
               </AccordionContent>
             </AccordionItem>
 
