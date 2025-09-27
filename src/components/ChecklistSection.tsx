@@ -1,54 +1,76 @@
-import { Check, Sparkles, Home, Bath, ChefHat, Bed } from "lucide-react";
+import { Check, Sparkles, Home, Bath, ChefHat, Bed, Building } from "lucide-react";
 
 const ChecklistSection = () => {
   const kitchenTasks = [
-    "All worktops thoroughly cleaned and degreased",
-    "Kitchen cupboards cleaned inside, outside and on top",
-    "Sink and taps cleaned and descaled to shine",
-    "Oven deep cleaned inside and out, including trays and hob",
-    "Fridge and freezer cleaned inside and out, including seals",
-    "Dishwasher cleaned thoroughly inside and outside",
-    "Washing machine drawer, seals and drum cleaned",
-    "Microwave and small appliances cleaned inside and out",
-    "Windows, window sills, doors and handles cleaned",
-    "All skirting boards wiped down, cobwebs removed",
-    "Floors vacuumed and mopped to perfection"
+    "All worktops cleaned and degreased",
+    "Cupboards cleaned inside, outside and on top",
+    "Sink and taps descaled to shine",
+    "Oven deep cleaned including trays and hob",
+    "Fridge/freezer cleaned inside and out",
+    "Dishwasher cleaned inside and outside",
+    "Washing machine drawer and seals cleaned",
+    "Microwave and appliances cleaned",
+    "Windows, sills and handles cleaned"
   ];
 
   const bathroomTasks = [
-    "Bath, shower and screen cleaned and descaled",
-    "Toilet thoroughly disinfected inside and out",
-    "Sink and taps cleaned and descaled until sparkling", 
+    "Bath, shower and screen descaled",
+    "Toilet disinfected inside and out",
+    "Sink and taps cleaned and descaled", 
     "All tiles and grout deep cleaned",
     "Mirrors and glass surfaces polished",
     "Extractor fan and vents cleaned",
-    "Skirting boards and baseboards wiped clean",
+    "Skirting boards wiped clean",
     "Radiators and light fittings dusted",
-    "Floors vacuumed and mopped thoroughly"
+    "Floors vacuumed and mopped"
   ];
 
   const bedroomTasks = [
     "Wardrobes cleaned inside, outside, and on top",
-    "Furniture moved and cleaned behind and underneath",
-    "Drawers and bedside tables cleaned inside and out",
-    "Window sills, frames and glass cleaned thoroughly",
-    "Light fittings, switches and sockets wiped clean",
-    "Skirting boards and door frames detailed clean",
-    "Radiators dusted and cleaned behind",
-    "Carpets deep cleaned or hard floors mopped",
-    "Cobwebs removed from corners and ceilings"
+    "Furniture moved and cleaned behind",
+    "Drawers and bedside tables detailed clean",
+    "Windows and sills cleaned thoroughly",
+    "Light switches and sockets wiped",
+    "Skirting boards detailed clean",
+    "Radiators cleaned behind and around",
+    "Carpets deep cleaned or floors mopped",
+    "Cobwebs removed from all corners"
   ];
 
   const livingRoomTasks = [
     "All furniture moved and cleaned behind",
-    "TV units and entertainment centres cleaned inside and out",
-    "Sofas vacuumed underneath and cushions cleaned",
-    "Coffee tables and side tables detailed clean",
-    "Bookshelves and display units dusted inside and out",
-    "Windows, sills and frames cleaned inside",
-    "Light switches, sockets and door handles wiped",
-    "Skirting boards and architraves cleaned",
-    "Carpets deep cleaned or floors mopped to shine"
+    "TV units cleaned inside and out",
+    "Sofas vacuumed underneath",
+    "Coffee tables detailed clean",
+    "Bookshelves dusted inside and out",
+    "Windows and frames cleaned",
+    "Light switches and sockets wiped",
+    "Skirting boards cleaned",
+    "Carpets deep cleaned or floors mopped"
+  ];
+
+  const hallwayTasks = [
+    "All skirting boards and door frames cleaned",
+    "Light switches and sockets wiped",
+    "Stairs and banisters thoroughly cleaned",
+    "Storage cupboards cleaned inside and out",
+    "Mirrors and glass surfaces polished",
+    "Radiators dusted and cleaned behind",
+    "Hard floors mopped or carpets cleaned",
+    "Cobwebs removed from corners",
+    "Entry doors and handles cleaned"
+  ];
+
+  const generalTasks = [
+    "All windows cleaned inside",
+    "Window sills and frames detailed",
+    "Internal doors and handles wiped",
+    "Light fittings and ceiling fans dusted",
+    "Picture rails and architraves cleaned",
+    "Electrical sockets and switches wiped",
+    "Carpets professionally cleaned",
+    "Hard floors vacuumed and mopped",
+    "Final inspection and touch-ups"
   ];
 
   const TaskList = ({ title, tasks, icon: Icon }: { 
@@ -101,27 +123,44 @@ const ChecklistSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <TaskList
-            title="Kitchen Deep Clean"
-            tasks={kitchenTasks}
-            icon={ChefHat}
-          />
-          <TaskList
-            title="Bathroom Sanitisation"
-            tasks={bathroomTasks}
-            icon={Bath}
-          />
-          <TaskList
-            title="Bedrooms"
-            tasks={bedroomTasks}
-            icon={Bed}
-          />
-          <TaskList
-            title="Living Areas"
-            tasks={livingRoomTasks}
-            icon={Home}
-          />
+        <div className="space-y-8">
+          {/* First Row - 3 sections */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            <TaskList
+              title="Kitchen Deep Clean"
+              tasks={kitchenTasks}
+              icon={ChefHat}
+            />
+            <TaskList
+              title="Bathroom Sanitisation"
+              tasks={bathroomTasks}
+              icon={Bath}
+            />
+            <TaskList
+              title="Bedrooms"
+              tasks={bedroomTasks}
+              icon={Bed}
+            />
+          </div>
+
+          {/* Second Row - 3 sections */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            <TaskList
+              title="Living Areas"
+              tasks={livingRoomTasks}
+              icon={Home}
+            />
+            <TaskList
+              title="Hallways & Stairs"
+              tasks={hallwayTasks}
+              icon={Building}
+            />
+            <TaskList
+              title="General Areas"
+              tasks={generalTasks}
+              icon={Sparkles}
+            />
+          </div>
         </div>
       </div>
     </section>
