@@ -3,7 +3,7 @@
  * Plugin Name: ESN Page Templates
  * Plugin URI: https://example.com
  * Description: Custom page templates with dynamic content fields for service pages
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: ESN Templates
  * License: GPL v2 or later
  */
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('ESN_TEMPLATES_VERSION', '1.2.0');
+define('ESN_TEMPLATES_VERSION', '1.3.0');
 define('ESN_TEMPLATES_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ESN_TEMPLATES_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
