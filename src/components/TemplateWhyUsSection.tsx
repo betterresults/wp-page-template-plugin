@@ -42,7 +42,7 @@ const TemplateWhyUsSection = () => {
                 {/* Main image */}
                 <div className="relative z-10 bg-white p-4 rounded-3xl shadow-primary">
                   <img
-                    src={professionalImage}
+                    src="[page_image]"
                     alt="Professional cleaner meticulously cleaning a modern space"
                     className="w-full h-96 object-cover rounded-2xl"
                   />
