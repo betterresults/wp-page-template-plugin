@@ -62,6 +62,9 @@ class ESN_Meta_Boxes {
             'page_h2_paragraph' => 'Content Section H2 Paragraph',
             'page_h3' => 'Content Section H3',
             'page_h3_paragraph' => 'Content Section H3 Paragraph',
+            'page_h4' => 'Content Section H4',
+            'page_h4_paragraph_1' => 'Content Section H4 Paragraph 1',
+            'page_h4_paragraph_2' => 'Content Section H4 Paragraph 2',
             'page_question_1' => 'FAQ Question 1',
             'page_question_2' => 'FAQ Question 2'
         );
@@ -133,7 +136,8 @@ class ESN_Meta_Boxes {
         $fields = array(
             'page_title', 'page_h1', 'under_heading', 'page_area', 'page_borough',
             'page_subheading', 'page_subheading_description', 'page_h2', 'page_h2_paragraph',
-            'page_h3', 'page_h3_paragraph', 'page_question_1', 'page_question_2'
+            'page_h3', 'page_h3_paragraph', 'page_h4', 'page_h4_paragraph_1', 'page_h4_paragraph_2',
+            'page_question_1', 'page_question_2'
         );
 
         foreach ($fields as $field) {
