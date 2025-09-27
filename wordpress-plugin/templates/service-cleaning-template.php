@@ -11,7 +11,8 @@ get_header(); ?>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo esc_html(esn_get_page_title()); ?></title>
+    <title><?php echo esc_html(esn_get_field('page_title', get_the_title())); ?></title>
+    <meta name="description" content="<?php echo esc_attr(esn_get_field('meta_description')); ?>">
     <?php wp_head(); ?>
 </head>
 
@@ -55,11 +56,22 @@ get_header(); ?>
             </div>
             
             <div class="relative">
+                <?php 
+                $hero_image = esn_get_field('hero_image');
+                $hero_alt = esn_get_field('hero_image_alt', 'Professional cleaning service');
+                if ($hero_image): ?>
+                <img 
+                    src="<?php echo esc_url($hero_image); ?>" 
+                    alt="<?php echo esc_attr($hero_alt); ?>" 
+                    class="rounded-2xl shadow-2xl w-full"
+                />
+                <?php else: ?>
                 <img 
                     src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>assets/images/hero-cleaning.jpg" 
                     alt="Professional cleaning service" 
                     class="rounded-2xl shadow-2xl w-full"
                 />
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -127,12 +139,43 @@ get_header(); ?>
                 <?php esn_the_field_html('page_h2_paragraph', 'Our comprehensive cleaning services ensure your property meets the highest standards.'); ?>
             </div>
             
+            <?php if (esn_get_field('page_h3')): ?>
             <h3 class="text-2xl font-bold text-foreground mb-4">
                 <?php esn_the_field('page_h3', 'Why Choose Our Service'); ?>
             </h3>
-            <div class="text-lg text-muted-foreground leading-relaxed">
+            <div class="text-lg text-muted-foreground leading-relaxed mb-8">
                 <?php esn_the_field_html('page_h3_paragraph', 'We are committed to delivering exceptional results with our professional team and quality guarantee.'); ?>
             </div>
+            <?php endif; ?>
+            
+            <?php if (esn_get_field('page_h4')): ?>
+            <h4 class="text-xl font-bold text-foreground mb-4">
+                <?php esn_the_field('page_h4'); ?>
+            </h4>
+            <?php if (esn_get_field('page_h4_paragraph_1')): ?>
+            <div class="text-lg text-muted-foreground leading-relaxed mb-4">
+                <?php esn_the_field_html('page_h4_paragraph_1'); ?>
+            </div>
+            <?php endif; ?>
+            <?php if (esn_get_field('page_h4_paragraph_2')): ?>
+            <div class="text-lg text-muted-foreground leading-relaxed">
+                <?php esn_the_field_html('page_h4_paragraph_2'); ?>
+            </div>
+            <?php endif; ?>
+            <?php endif; ?>
+            
+            <?php 
+            $page_image = esn_get_field('page_image');
+            $page_image_alt = esn_get_field('page_image_alt', 'Professional cleaning service');
+            if ($page_image): ?>
+            <div class="mt-8">
+                <img 
+                    src="<?php echo esc_url($page_image); ?>" 
+                    alt="<?php echo esc_attr($page_image_alt); ?>" 
+                    class="rounded-lg shadow-lg w-full max-w-2xl mx-auto"
+                />
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -155,18 +198,20 @@ get_header(); ?>
             $dynamic_faqs = array();
             
             $q1 = esn_get_field('page_question_1');
+            $a1 = esn_get_field('page_answer_1');
             if (!empty($q1)) {
                 $dynamic_faqs[] = array(
                     'question' => $q1,
-                    'answer' => 'Answer for: ' . $q1
+                    'answer' => !empty($a1) ? $a1 : 'Contact us for more information about this service.'
                 );
             }
             
             $q2 = esn_get_field('page_question_2');
+            $a2 = esn_get_field('page_answer_2');
             if (!empty($q2)) {
                 $dynamic_faqs[] = array(
                     'question' => $q2,
-                    'answer' => 'Answer for: ' . $q2
+                    'answer' => !empty($a2) ? $a2 : 'Contact us for more information about this service.'
                 );
             }
             
