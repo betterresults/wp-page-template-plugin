@@ -21,7 +21,7 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-gradient-to-br from-foreground via-primary-dark to-foreground">
       <div className="section-container">
         <div className="space-y-16">
           {/* Title and Description */}
@@ -64,7 +64,7 @@ const WhyUsSection = () => {
             </div>
 
             {/* Features */}
-            <div className="p-6 bg-slate-800 rounded-2xl shadow-xl border border-slate-700">
+            <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20">
               <ul className="space-y-6">
                 {features.map((feature, index) => (
                   <li key={index} className="flex gap-4">
