@@ -8,6 +8,7 @@ class ESN_Meta_Boxes {
     public function __construct() {
         add_action('add_meta_boxes', array($this, 'add_meta_boxes'));
         add_action('save_post', array($this, 'save_meta_boxes'));
+        add_action('save_post', array($this, 'check_template_assignment'), 20);
     }
 
     public function add_meta_boxes() {
@@ -178,6 +179,34 @@ class ESN_Meta_Boxes {
                     update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
                 }
             }
+        }
+    }
+
+    /**
+     * Check and save template assignment after post save
+     */
+    public function check_template_assignment($post_id) {
+        // Don't run on autosave
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // Only for pages
+        if (get_post_type($post_id) !== 'page') {
+            return;
+        }
+
+        // Get the current template
+        $page_template = get_page_template_slug($post_id);
+        
+        if ($page_template === 'service-cleaning-template.php') {
+            // Mark this page as using our template
+            update_post_meta($post_id, '_esn_page_template', 'service-cleaning-template.php');
+            update_post_meta($post_id, '_esn_template_display_name', 'Service Cleaning Template');
+        } else {
+            // Remove our template markers if template was changed
+            delete_post_meta($post_id, '_esn_page_template');
+            delete_post_meta($post_id, '_esn_template_display_name');
         }
     }
 }
