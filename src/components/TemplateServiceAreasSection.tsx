@@ -24,7 +24,7 @@ const TemplateServiceAreasSection = () => {
             Areas We <span className="text-primary">Cover</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional cleaning services across <span className="bg-orange-300/30 px-1 rounded">[page_area]</span>, <span className="bg-orange-300/30 px-1 rounded">[page_borough]</span>
+            Professional cleaning services across <span className="bg-orange-300/30 px-1 rounded">[page_borough]</span>
           </p>
         </div>
 
@@ -35,25 +35,14 @@ const TemplateServiceAreasSection = () => {
               Areas We Cover
             </h3>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {areas.map((area, index) => {
-                // Highlight current area placeholder
-                const isCurrentAreaPlaceholder = area === "South Hornchurch"; // This would be dynamic in PHP
-                return (
-                  <div 
-                    key={index}
-                    className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
-                      isCurrentAreaPlaceholder 
-                        ? 'bg-orange-300/30 border border-orange-400' 
-                        : 'bg-background hover:bg-primary/5'
-                    }`}
-                  >
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span className="font-medium text-foreground">
-                      {isCurrentAreaPlaceholder ? '[page_area] (highlighted)' : area}
-                    </span>
-                  </div>
-                );
-              })}
+              <div className="bg-orange-300/30 px-4 py-2 rounded-lg border border-orange-400 text-center">
+                <span className="font-medium text-foreground">
+                  [dynamic_areas_from_same_borough]
+                </span>
+                <p className="text-sm text-muted-foreground mt-1">
+                  PHP: Extract all areas where borough = [page_borough]
+                </p>
+              </div>
             </div>
           </div>
         </div>

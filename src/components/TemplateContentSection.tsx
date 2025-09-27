@@ -11,7 +11,7 @@ const TemplateContentSection = () => {
             <span className="text-primary font-semibold">Why Choose Us</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-            <span className="bg-green-300/30 px-2 py-1 rounded">[page_h2]</span>
+            Why Choose <span className="text-primary">Us</span>
           </h2>
         </div>
 
@@ -29,7 +29,7 @@ const TemplateContentSection = () => {
                 </div>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed bg-green-300/30 px-2 py-1 rounded">
-                  [page_h2_paragraph]
+                  [page_h3_paragraph_1]
                 </p>
               </div>
             </div>
@@ -45,7 +45,7 @@ const TemplateContentSection = () => {
                 </div>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed bg-green-300/30 px-2 py-1 rounded">
-                  [page_h3_paragraph]
+                  [page_h3_paragraph_2]
                 </p>
               </div>
             </div>
