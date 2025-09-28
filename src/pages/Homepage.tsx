@@ -32,11 +32,11 @@ const Homepage = () => {
       {/* Recent Blog Posts Section */}
       <RecentBlogPostsSection />
       
-      {/* FAQ Section */}
-      <FAQSection />
-      
       {/* Call to Action Get Quote Section */}
       <CallToActionSection />
+      
+      {/* FAQ Section */}
+      <FAQSection />
     </div>
   );
 };
