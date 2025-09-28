@@ -12,8 +12,7 @@ if (!defined('ABSPATH')) {
 // Get page meta values
 $page_id = get_the_ID();
 
-
-
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

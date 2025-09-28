@@ -49,37 +49,17 @@ class ESN_Theme_Functions {
     public function load_custom_header($name) {
         global $post;
         
-        // Check if we're on a page using ESN templates or if name is 'esn'
-        if ($name === 'esn' || (is_page() && $post)) {
-            $page_template = '';
-            if ($post) {
-                $page_template = get_page_template_slug($post->ID);
-            }
+        // Check if we're on a page using ESN templates
+        if (is_page() && $post) {
+            $page_template = get_page_template_slug($post->ID);
             
-            if ($name === 'esn' || $page_template === 'homepage-template.php' || $page_template === 'service-cleaning-template.php') {
-                ?>
-                <!DOCTYPE html>
-                <html <?php language_attributes(); ?>>
-                <head>
-                    <meta charset="<?php bloginfo('charset'); ?>">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    
-                    <!-- SEO -->
-                    <title><?php bloginfo('name'); ?> — Best Cleaners in Your Area</title>
-                    <meta name="description" content="Professional cleaning services in London & Essex. Get instant quotes, book online, and enjoy guaranteed, 5-star rated cleaning." />
-                    <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" />
-                    <?php wp_head(); ?>
-                </head>
-
-                <body <?php body_class(); ?>>
-                <?php wp_body_open(); ?>
-                
-                <?php
+            if ($page_template === 'homepage-template.php' || $page_template === 'service-cleaning-template.php') {
                 $header_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/header-esn.php';
+                
                 if (file_exists($header_path)) {
                     include $header_path;
+                    return;
                 }
-                return;
             }
         }
         
@@ -101,25 +81,17 @@ class ESN_Theme_Functions {
     public function load_custom_footer($name) {
         global $post;
         
-        // Check if we're on a page using ESN templates or if name is 'esn'
-        if ($name === 'esn' || (is_page() && $post)) {
-            $page_template = '';
-            if ($post) {
-                $page_template = get_page_template_slug($post->ID);
-            }
+        // Check if we're on a page using ESN templates
+        if (is_page() && $post) {
+            $page_template = get_page_template_slug($post->ID);
             
-            if ($name === 'esn' || $page_template === 'homepage-template.php' || $page_template === 'service-cleaning-template.php') {
+            if ($page_template === 'homepage-template.php' || $page_template === 'service-cleaning-template.php') {
                 $footer_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/footer-esn.php';
                 
                 if (file_exists($footer_path)) {
                     include $footer_path;
+                    return;
                 }
-                ?>
-                <?php wp_footer(); ?>
-                </body>
-                </html>
-                <?php
-                return;
             }
         }
         
