@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
-import snLogo from '@/assets/sn-cleaning-logo.png';
+import snLogo from '@/assets/sn-cleaning-logo-new.png';
 import { trackClick } from '@/utils/analytics';
 import {
   NavigationMenu,
