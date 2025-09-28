@@ -39,40 +39,42 @@ const HomepageBookingSection = () => {
           </p>
         </div>
 
-        {/* Process Flow */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-16">
-          {steps.map(({ icon: Icon, title, description }, idx) => (
-            <div key={idx} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              {/* Step */}
-              <div className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-10 h-10 text-white" />
+        {/* Process Flow Container */}
+        <div className="bg-background rounded-3xl border border-border/50 shadow-xl p-8 lg:p-12 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            {steps.map(({ icon: Icon, title, description }, idx) => (
+              <div key={idx} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                {/* Step */}
+                <div className="text-center group">
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-10 h-10 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">
+                      {idx + 1}
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">
-                    {idx + 1}
-                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{title}</h3>
+                  <p className="text-muted-foreground max-w-xs">{description}</p>
                 </div>
-                
-                <h3 className="text-2xl font-bold text-foreground mb-3">{title}</h3>
-                <p className="text-muted-foreground max-w-xs">{description}</p>
-              </div>
 
-              {/* Arrow - only show between steps, not after the last one */}
-              {idx < steps.length - 1 && (
-                <div className="hidden md:block">
-                  <ArrowRight className="w-8 h-8 text-primary/60" />
-                </div>
-              )}
-              
-              {/* Mobile arrow - vertical */}
-              {idx < steps.length - 1 && (
-                <div className="md:hidden rotate-90">
-                  <ArrowRight className="w-6 h-6 text-primary/60" />
-                </div>
-              )}
-            </div>
-          ))}
+                {/* Arrow - only show between steps, not after the last one */}
+                {idx < steps.length - 1 && (
+                  <div className="hidden md:block">
+                    <ArrowRight className="w-8 h-8 text-primary/60" />
+                  </div>
+                )}
+                
+                {/* Mobile arrow - vertical */}
+                {idx < steps.length - 1 && (
+                  <div className="md:hidden rotate-90">
+                    <ArrowRight className="w-6 h-6 text-primary/60" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Large CTA Button */}
