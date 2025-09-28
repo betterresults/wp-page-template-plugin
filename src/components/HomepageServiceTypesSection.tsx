@@ -15,38 +15,32 @@ const HomepageServiceTypesSection = () => {
     {
       image: endOfTenancyImage,
       title: "End of Tenancy",
-      description: "Complete move-out cleaning to get your deposit back",
-      features: ["Deep kitchen & bathroom clean", "All rooms thoroughly cleaned", "Professional grade equipment"]
+      description: "Complete move-out cleaning to get your deposit back with professional standards and equipment."
     },
     {
       image: afterBuildersImage,
       title: "After Builders",
-      description: "Post-construction cleanup and dust removal",
-      features: ["Dust & debris removal", "Paint splatter cleaning", "Window & surface restoration"]
+      description: "Post-construction cleanup and dust removal including paint splatter cleaning and surface restoration."
     },
     {
       image: domesticCleaningImage,
       title: "Domestic Cleaning",
-      description: "Regular weekly, fortnightly or monthly home cleaning",
-      features: ["Flexible scheduling", "Consistent quality", "Trusted cleaning professionals"]
+      description: "Regular weekly, fortnightly or monthly home cleaning with flexible scheduling and consistent quality."
     },
     {
       image: airbnbCleaningImage,
       title: "Airbnb Cleaning",
-      description: "Turnaround cleaning for short-term rentals",
-      features: ["Quick turnaround times", "Guest-ready standards", "Inventory management"]
+      description: "Turnaround cleaning for short-term rentals with quick service and guest-ready standards."
     },
     {
       image: domesticCleaningImage,
       title: "Deep House Cleaning",
-      description: "Comprehensive one-time deep cleaning service",
-      features: ["Inside appliances", "Detailed cleaning", "Every corner covered"]
+      description: "Comprehensive one-time deep cleaning service covering every corner and inside appliances."
     },
     {
       image: carpetCleaningImage,
       title: "Carpet Cleaning",
-      description: "Professional carpet and upholstery cleaning",
-      features: ["Steam cleaning", "Stain removal", "Fast drying technology"]
+      description: "Professional carpet and upholstery cleaning with steam cleaning and fast drying technology."
     }
   ];
 
@@ -54,26 +48,22 @@ const HomepageServiceTypesSection = () => {
     {
       image: officeCleaningImage,
       title: "Office Cleaning",
-      description: "Professional office maintenance and sanitization",
-      features: ["Daily or weekly service", "After-hours cleaning", "Sanitization protocols"]
+      description: "Professional office maintenance and sanitization with daily or weekly service options."
     },
     {
       image: officeCleaningImage,
       title: "School Cleaning",
-      description: "Educational facility cleaning with child-safe products",
-      features: ["Child-safe cleaning products", "Classroom sanitization", "High-touch surface focus"]
+      description: "Educational facility cleaning with child-safe products and classroom sanitization."
     },
     {
       image: officeCleaningImage,
       title: "Nursery Cleaning",
-      description: "Specialized cleaning for childcare facilities",
-      features: ["Non-toxic products only", "Toy sanitization", "Extra hygiene standards"]
+      description: "Specialized cleaning for childcare facilities using only non-toxic products."
     },
     {
       image: officeCleaningImage,
       title: "Retail Cleaning",
-      description: "Specialized cleaning for retail environments",
-      features: ["Customer-friendly hours", "High-traffic area focus", "Display area cleaning"]
+      description: "Specialized cleaning for retail environments with customer-friendly hours."
     }
   ];
 
@@ -99,7 +89,7 @@ const HomepageServiceTypesSection = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {residentialServices.map(({ image, title, description, features }, idx) => (
+            {residentialServices.map(({ image, title, description }, idx) => (
               <div key={idx} className="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -115,15 +105,6 @@ const HomepageServiceTypesSection = () => {
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{description}</p>
-                  
-                  <ul className="space-y-2">
-                    {features.map((feature, featureIdx) => (
-                      <li key={featureIdx} className="text-sm text-muted-foreground flex items-center gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                   
                   <Button 
                     variant="outline" 
@@ -151,7 +132,7 @@ const HomepageServiceTypesSection = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {commercialServices.map(({ image, title, description, features }, idx) => (
+            {commercialServices.map(({ image, title, description }, idx) => (
               <div key={idx} className="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -167,15 +148,6 @@ const HomepageServiceTypesSection = () => {
                 <div className="p-6 space-y-4">
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-                  
-                  <ul className="space-y-1">
-                    {features.map((feature, featureIdx) => (
-                      <li key={featureIdx} className="text-xs text-muted-foreground flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                   
                   <Button 
                     className="btn-primary w-full mt-4 group/btn"
