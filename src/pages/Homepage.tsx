@@ -1,11 +1,7 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
-import HomepageServicesSection from "@/components/HomepageServicesSection";
 import HomepageServiceTypesSection from "@/components/HomepageServiceTypesSection";
 import HomepageBookingSection from "@/components/HomepageBookingSection";
 import HomepageFeaturesSection from "@/components/HomepageFeaturesSection";
-
-import HomepageConscienceSection from "@/components/HomepageConscienceSection";
-import HomepageAboutSection from "@/components/HomepageAboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Homepage = () => {
@@ -14,23 +10,14 @@ const Homepage = () => {
       {/* Hero Section */}
       <HomepageHeroSection />
       
-      {/* Services Overview Section */}
-      <HomepageServicesSection />
-      
       {/* Detailed Service Types Section */}
       <HomepageServiceTypesSection />
       
-      {/* How Easy to Book Section */}
+      {/* Simple Booking Process Section */}
       <HomepageBookingSection />
       
       {/* Features Section */}
       <HomepageFeaturesSection />
-      
-      {/* Cleaning With A Conscience Section */}
-      <HomepageConscienceSection />
-      
-      {/* About Our Services Section */}
-      <HomepageAboutSection />
       
       {/* Testimonials Section */}
       <TestimonialsSection />
