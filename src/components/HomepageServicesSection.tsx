@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Home, Building2, ArrowRight, Sparkles, Hammer, Users, Baby, ShoppingBag, Car } from "lucide-react";
+import { Home, Building2, ArrowRight, Sparkles, Hammer, Users, Baby, ShoppingBag, Car, Scissors } from "lucide-react";
 import { trackEvent } from "@/utils/analytics";
 
 const HomepageServicesSection = () => {
@@ -11,59 +11,123 @@ const HomepageServicesSection = () => {
   };
 
   const residentialServices = [
-    { name: "End of Tenancy", icon: Home },
-    { name: "After Builders", icon: Hammer },
-    { name: "Domestic", icon: Sparkles },
-    { name: "Airbnb", icon: Users },
-    { name: "Deep House Cleaning", icon: Home },
-    { name: "Carpet Cleaning", icon: Car },
+    { 
+      name: "End of Tenancy", 
+      icon: Home,
+      gradient: "from-blue-500 to-purple-600",
+      description: "Complete move-out cleaning"
+    },
+    { 
+      name: "After Builders", 
+      icon: Hammer,
+      gradient: "from-orange-500 to-red-600",
+      description: "Post-construction cleanup"
+    },
+    { 
+      name: "Domestic", 
+      icon: Sparkles,
+      gradient: "from-green-500 to-teal-600",
+      description: "Regular home cleaning"
+    },
+    { 
+      name: "Airbnb", 
+      icon: Users,
+      gradient: "from-pink-500 to-rose-600",
+      description: "Short-term rental cleaning"
+    },
+    { 
+      name: "Deep House Cleaning", 
+      icon: Home,
+      gradient: "from-indigo-500 to-blue-600",
+      description: "Thorough deep clean"
+    },
+    { 
+      name: "Carpet Cleaning", 
+      icon: Scissors,
+      gradient: "from-purple-500 to-pink-600",
+      description: "Professional carpet care"
+    },
   ];
 
   const commercialServices = [
-    { name: "Office Cleaning", icon: Building2 },
-    { name: "School Cleaning", icon: Users },
-    { name: "Nursery Cleaning", icon: Baby },
-    { name: "Retail Cleaning", icon: ShoppingBag },
+    { 
+      name: "Office Cleaning", 
+      icon: Building2,
+      gradient: "from-slate-500 to-gray-600",
+      description: "Professional workspace cleaning"
+    },
+    { 
+      name: "School Cleaning", 
+      icon: Users,
+      gradient: "from-yellow-500 to-orange-600",
+      description: "Educational facility maintenance"
+    },
+    { 
+      name: "Nursery Cleaning", 
+      icon: Baby,
+      gradient: "from-green-500 to-emerald-600",
+      description: "Child-safe cleaning solutions"
+    },
+    { 
+      name: "Retail Cleaning", 
+      icon: ShoppingBag,
+      gradient: "from-blue-500 to-cyan-600",
+      description: "Store and shop maintenance"
+    },
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-muted/30">
+    <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-6xl font-bold font-heading text-foreground mb-4">
             Our Services
           </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Professional cleaning solutions tailored to your specific needs
+          </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-20">
           {/* Residential Cleaning */}
           <div>
-            <h3 className="text-3xl font-bold font-heading text-foreground text-center mb-8">
-              Residential Cleaning
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3">
+                Residential Cleaning
+              </h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {residentialServices.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
                   <div 
                     key={index}
-                    className="group relative overflow-hidden bg-background rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:scale-105 cursor-pointer"
+                    className="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
                     onClick={() => handleServiceClick(service.name.toLowerCase().replace(/\s+/g, '_'))}
                   >
-                    {/* Hover overlay with darker background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Gradient background */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-90 transition-opacity duration-500`} />
                     
-                    <div className="relative z-10 text-center space-y-4">
-                      <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary/30 rounded-xl flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110">
-                        <IconComponent className="w-8 h-8 text-primary group-hover:text-primary transition-colors" />
+                    {/* Content */}
+                    <div className="relative z-10 p-8 text-center">
+                      <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
                       
-                      <h4 className="text-xl font-semibold text-foreground group-hover:text-foreground transition-colors">
+                      <h4 className="text-2xl font-bold text-gray-800 group-hover:text-white mb-3 transition-colors duration-300">
                         {service.name}
                       </h4>
                       
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ArrowRight className="w-5 h-5 mx-auto text-primary group-hover:translate-x-1 transition-transform" />
+                      <p className="text-gray-600 group-hover:text-white/90 mb-6 transition-colors duration-300">
+                        {service.description}
+                      </p>
+                      
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        <div className="flex items-center justify-center text-white font-semibold">
+                          Learn More
+                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -74,32 +138,43 @@ const HomepageServicesSection = () => {
 
           {/* Commercial Cleaning */}
           <div>
-            <h3 className="text-3xl font-bold font-heading text-foreground text-center mb-8">
-              Commercial Cleaning
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3">
+                Commercial Cleaning
+              </h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {commercialServices.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
                   <div 
                     key={index}
-                    className="group relative overflow-hidden bg-background rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:scale-105 cursor-pointer"
+                    className="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
                     onClick={() => handleServiceClick(service.name.toLowerCase().replace(/\s+/g, '_'))}
                   >
-                    {/* Hover overlay with darker background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Gradient background */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-90 transition-opacity duration-500`} />
                     
-                    <div className="relative z-10 text-center space-y-4">
-                      <div className="w-16 h-16 bg-primary/10 group-hover:bg-primary/30 rounded-xl flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110">
-                        <IconComponent className="w-8 h-8 text-primary group-hover:text-primary transition-colors" />
+                    {/* Content */}
+                    <div className="relative z-10 p-8 text-center">
+                      <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
                       
-                      <h4 className="text-xl font-semibold text-foreground group-hover:text-foreground transition-colors">
+                      <h4 className="text-2xl font-bold text-gray-800 group-hover:text-white mb-3 transition-colors duration-300">
                         {service.name}
                       </h4>
                       
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ArrowRight className="w-5 h-5 mx-auto text-primary group-hover:translate-x-1 transition-transform" />
+                      <p className="text-gray-600 group-hover:text-white/90 mb-6 transition-colors duration-300">
+                        {service.description}
+                      </p>
+                      
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                        <div className="flex items-center justify-center text-white font-semibold">
+                          Learn More
+                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
                     </div>
                   </div>
