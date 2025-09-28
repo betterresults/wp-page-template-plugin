@@ -77,18 +77,18 @@ if (!defined('ABSPATH')) {
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-6">
-                <a href="<?php echo home_url(); ?>" class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base px-4 py-2 rounded-md">Home</a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="<?php echo home_url(); ?>" class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-lg px-5 py-3 rounded-md">Home</a>
                 
                 <div class="relative group">
-                    <button class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base px-4 py-2 rounded-md flex items-center gap-1">
+                    <button class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-lg px-5 py-3 rounded-md flex items-center gap-2">
                         Services
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="absolute top-full left-0 w-72 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="p-4">
                             <div class="grid gap-1">
-                                <a href="/services/end-of-tenancy" class="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">End Of Tenancy Cleaning</a>
+                                <a href="/services/end-of-tenancy" class="block px-4 py-3 text-lg font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">End Of Tenancy Cleaning</a>
                                 <a href="/services/after-builders" class="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">After Builders Cleaning</a>
                                 <a href="/services/domestic" class="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Domestic Cleaning</a>
                                 <a href="/services/airbnb" class="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Airbnb Cleaning</a>
@@ -103,9 +103,9 @@ if (!defined('ABSPATH')) {
                 </div>
                 
                 <div class="relative group">
-                    <button class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base px-4 py-2 rounded-md flex items-center gap-1">
+                    <button class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-lg px-5 py-3 rounded-md flex items-center gap-2">
                         About Us
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="absolute top-full left-0 w-52 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="p-4">
@@ -120,18 +120,18 @@ if (!defined('ABSPATH')) {
                     </div>
                 </div>
                 
-                <a href="/faqs" class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base px-4 py-2 rounded-md">FAQs</a>
+                <a href="/faqs" class="text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-lg px-5 py-3 rounded-md">FAQs</a>
             </nav>
 
             <!-- CTA Buttons -->
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="tel:+442038355033" class="flex items-center justify-center w-10 h-10 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md" aria-label="Call us">
-                    <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="tel:+442038355033" class="flex items-center justify-center w-12 h-12 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md" aria-label="Call us">
+                    <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                 </a>
-                <a href="https://wa.me/442038355033" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md" aria-label="WhatsApp us">
-                    <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                <a href="https://wa.me/442038355033" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 text-primary hover:text-primary-foreground hover:bg-primary rounded-xl transition-all duration-300 group hover:shadow-md" aria-label="WhatsApp us">
+                    <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                 </a>
-                <a href="https://book.sncleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-7 py-3 rounded-xl font-bold hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300">Get Free Quote</a>
+                <a href="https://book.sncleaningservices.co.uk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300">Get Free Quote</a>
             </div>
 
             <!-- Mobile Menu Button -->
