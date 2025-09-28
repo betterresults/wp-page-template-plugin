@@ -175,6 +175,22 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                           About Us
                         </Link>
                       </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/testimonials"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
+                        >
+                          Testimonials
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/our-work"
+                          className="block px-4 py-3 text-base font-medium text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors"
+                        >
+                          Our Work
+                        </Link>
+                      </NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -182,10 +198,10 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
 
               <NavigationMenuItem>
                 <Link 
-                  to="/faq" 
+                  to="/faqs" 
                   className={cn(navigationMenuTriggerStyle(), "text-foreground hover:bg-foreground hover:text-background font-semibold transition-all duration-300 bg-transparent text-base")}
                 >
-                  FAQ
+                  FAQs
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -211,13 +227,15 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
             >
               <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
             </a>
-            <Link 
-              to="/quote" 
+            <a 
+              href="https://book.sncleaningservices.co.uk" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-7 py-3 rounded-xl font-bold hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300"
-              onClick={() => trackClick('get_quote_click', 'header', 'Get Free Quote button', '/quote')}
+              onClick={() => trackClick('get_quote_click', 'header', 'Get Free Quote button', 'https://book.sncleaningservices.co.uk')}
             >
               Get Free Quote
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -270,11 +288,11 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
               About Us
             </Link>
             <Link 
-              to="/faq" 
+              to="/faqs" 
               className="text-foreground hover:text-primary font-semibold transition-colors duration-300 py-3"
               onClick={() => setIsMenuOpen(false)}
             >
-              FAQ
+              FAQs
             </Link>
             
             {/* Mobile CTA */}
@@ -297,13 +315,15 @@ const Header: React.FC<HeaderProps> = ({ className = '', variant = 'default' }) 
                   WhatsApp
                 </a>
               </div>
-              <Link 
-                to="/quote" 
+              <a 
+                href="https://book.sncleaningservices.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center bg-gradient-to-r from-primary to-primary-light text-primary-foreground py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Free Quote
-              </Link>
+              </a>
             </div>
           </nav>
         </div>
