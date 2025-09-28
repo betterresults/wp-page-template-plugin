@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Search, FileText, Calendar, CheckCircle, ArrowRight } from "lucide-react";
+import { Search, FileText, Calendar, ArrowRight } from "lucide-react";
 import { trackEvent } from "@/utils/analytics";
 
 const HomepageBookingSection = () => {
   const steps = [
     {
       icon: Search,
-      title: "Choose a Service",
+      title: "Choose Service",
       description: "Select your cleaning requirements"
     },
     {
@@ -18,11 +18,6 @@ const HomepageBookingSection = () => {
       icon: Calendar,
       title: "Book Online",
       description: "Select your preferred date and time"
-    },
-    {
-      icon: CheckCircle,
-      title: "Confirmation",
-      description: "Receive booking confirmation instantly"
     }
   ];
 
@@ -33,40 +28,67 @@ const HomepageBookingSection = () => {
   };
 
   return (
-    <section className="section-padding bg-muted/30">
+    <section className="section-padding bg-gradient-to-b from-background to-muted/30">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
             Simple Booking Process
           </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Getting your space cleaned is easier than ever
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        {/* Process Flow */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-16">
           {steps.map(({ icon: Icon, title, description }, idx) => (
-            <div key={idx} className="text-center">
-              <div className="relative mb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                  <Icon className="w-8 h-8 text-primary" />
+            <div key={idx} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Step */}
+              <div className="text-center group">
+                <div className="relative mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">
+                    {idx + 1}
+                  </div>
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-xs font-bold text-white">
-                  {idx + 1}
-                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground mb-3">{title}</h3>
+                <p className="text-muted-foreground max-w-xs">{description}</p>
               </div>
+
+              {/* Arrow - only show between steps, not after the last one */}
+              {idx < steps.length - 1 && (
+                <div className="hidden md:block">
+                  <ArrowRight className="w-8 h-8 text-primary/60" />
+                </div>
+              )}
               
-              <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
-              <p className="text-muted-foreground">{description}</p>
+              {/* Mobile arrow - vertical */}
+              {idx < steps.length - 1 && (
+                <div className="md:hidden rotate-90">
+                  <ArrowRight className="w-6 h-6 text-primary/60" />
+                </div>
+              )}
             </div>
           ))}
         </div>
 
+        {/* Large CTA Button */}
         <div className="text-center">
-          <Button 
-            onClick={handleBookNow}
-            className="btn-hero px-8 py-3 text-lg"
-          >
-            Get Quote & Book Online
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <div className="inline-block">
+            <Button 
+              onClick={handleBookNow}
+              className="btn-hero text-2xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+            >
+              Get Quote & Book Online
+              <ArrowRight className="w-6 h-6 ml-3" />
+            </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              Free instant quotes • No hidden fees • Quick response
+            </p>
+          </div>
         </div>
       </div>
     </section>
