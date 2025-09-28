@@ -73,7 +73,7 @@ if (!defined('ABSPATH')) {
                     <li><a href="https://sncleaningservices.co.uk" class="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
                     <li><a href="https://sncleaningservices.co.uk/about-us" class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
                     <li><a href="https://sncleaningservices.co.uk/contact" class="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
-                    <li><a href="https://sncleaningservices.co.uk/faq" class="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/faqs" class="text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
                     <li><a href="https://book.sncleaningservices.co.uk" class="text-muted-foreground hover:text-primary transition-colors">Get Quote</a></li>
                 </ul>
             </div>

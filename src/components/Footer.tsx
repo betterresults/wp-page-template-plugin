@@ -95,12 +95,12 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
                 About Us
               </Link>
               <Link 
-                to="/faq" 
+                to="/faqs" 
                 className={`transition-colors duration-200 hover:text-primary ${
                   variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'
                 }`}
               >
-                FAQ
+                FAQs
               </Link>
               <Link 
                 to="/quote" 
