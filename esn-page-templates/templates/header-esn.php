@@ -89,10 +89,10 @@ if (!defined('ABSPATH')) {
                 </div>
                 
                 <div class="relative group">
-                    <button class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                    <a href="/about-us" class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
                         About Us
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                    </a>
                     <div class="absolute top-full left-0 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="p-2">
                             <a href="/contact" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">Contact Us</a>
@@ -137,7 +137,7 @@ if (!defined('ABSPATH')) {
                     'fallback_cb' => function() {
                         echo '<a href="' . home_url() . '" class="block text-foreground hover:text-primary transition-colors">Home</a>';
                         echo '<a href="#services" class="block text-foreground hover:text-primary transition-colors">Services</a>';
-                        echo '<a href="#about" class="block text-foreground hover:text-primary transition-colors">About</a>';
+                        echo '<a href="/about-us" class="block text-foreground hover:text-primary transition-colors">About Us</a>';
                         echo '<a href="/testimonials" class="block text-foreground hover:text-primary transition-colors">Testimonials</a>';
                         echo '<a href="/our-work" class="block text-foreground hover:text-primary transition-colors">Our Work</a>';
                         echo '<a href="/faqs" class="block text-foreground hover:text-primary transition-colors">FAQs</a>';
