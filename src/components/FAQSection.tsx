@@ -8,28 +8,32 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "How long does an end-of-tenancy clean take?",
-      answer: "A typical end-of-tenancy clean takes 4-8 hours depending on the size and condition of the property. We'll provide an accurate time estimate during our initial assessment."
+      question: "What cleaning services do you offer?",
+      answer: "We provide comprehensive cleaning services including end-of-tenancy cleaning, domestic regular cleaning, one-off deep cleans, office cleaning, after builders cleaning, and carpet cleaning across London and Essex."
     },
     {
-      question: "Do you guarantee deposit return?",
-      answer: "Yes! We offer a 72-hour guarantee. If your landlord or letting agent isn't satisfied with our cleaning, we'll return to re-clean any missed areas at no extra cost."
+      question: "How much do your cleaning services cost?",
+      answer: "Our prices vary based on the type of service, property size, and specific requirements. We offer competitive rates with no hidden fees. Contact us for a free, personalized quote tailored to your needs."
     },
     {
-      question: "What's included in your cleaning checklist?",
-      answer: "Our comprehensive checklist covers every room including deep cleaning of kitchens, bathrooms, bedrooms, living areas, hallways, and general areas. We clean inside appliances, behind furniture, and all surfaces."
+      question: "Are you insured and bonded?",
+      answer: "Yes, we are fully insured and bonded for your complete peace of mind. All our staff are vetted, trained professionals who take pride in delivering exceptional cleaning results."
     },
     {
-      question: "Do I need to be present during the cleaning?",
-      answer: "No, you don't need to be present. Many of our clients prefer to hand over the keys and let us work undisturbed. We're fully insured and bonded for your peace of mind."
+      question: "Do you provide all cleaning supplies and equipment?",
+      answer: "Absolutely! We bring all professional-grade, eco-friendly cleaning products and equipment. You don't need to provide anything - just sit back and let us handle everything."
     },
     {
-      question: "What cleaning products do you use?",
-      answer: "We use professional-grade, eco-friendly cleaning products that are safe for all surfaces. All equipment and supplies are provided by us - you don't need to prepare anything."
+      question: "How do I book your cleaning service?",
+      answer: "Booking is easy! Simply call us, fill out our online form, or get an instant quote through our website. We'll confirm your booking and provide all the details you need."
     },
     {
-      question: "How much does an end-of-tenancy clean cost?",
-      answer: "Prices vary based on property size and condition. We offer competitive rates with no hidden fees. Contact us for a free, no-obligation quote tailored to your specific needs."
+      question: "What areas do you cover?",
+      answer: "We provide cleaning services across London and Essex, including areas like Hornchurch, Romford, Upminster, Rainham, and surrounding boroughs. Check our service areas page for the full list."
+    },
+    {
+      question: "Do you offer satisfaction guarantees?",
+      answer: "Yes! We stand behind our work with satisfaction guarantees. If you're not completely happy with our service, we'll return to make it right at no additional cost."
     }
   ];
 
@@ -41,7 +45,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers. Here are the most common questions about our end-of-tenancy cleaning service.
+            Got questions? We've got answers. Here are the most common questions about our professional cleaning services.
           </p>
         </div>
         

@@ -3,6 +3,10 @@ import HomepageServiceTypesSection from "@/components/HomepageServiceTypesSectio
 import HomepageBookingSection from "@/components/HomepageBookingSection";
 import HomepageFeaturesSection from "@/components/HomepageFeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import EnhancedServiceAreasSection from "@/components/EnhancedServiceAreasSection";
+import FAQSection from "@/components/FAQSection";
+import RecentBlogPostsSection from "@/components/RecentBlogPostsSection";
+import CallToActionSection from "@/components/CallToActionSection";
 
 const Homepage = () => {
   return (
@@ -13,14 +17,26 @@ const Homepage = () => {
       {/* Detailed Service Types Section */}
       <HomepageServiceTypesSection />
       
-      {/* Simple Booking Process Section */}
-      <HomepageBookingSection />
-      
       {/* Features Section */}
       <HomepageFeaturesSection />
       
+      {/* Simple Booking Process Section */}
+      <HomepageBookingSection />
+      
       {/* Testimonials Section */}
       <TestimonialsSection />
+      
+      {/* Enhanced Service Areas Section with Animated Map */}
+      <EnhancedServiceAreasSection />
+      
+      {/* FAQ Section */}
+      <FAQSection />
+      
+      {/* Recent Blog Posts Section */}
+      <RecentBlogPostsSection />
+      
+      {/* Call to Action Get Quote Section */}
+      <CallToActionSection />
     </div>
   );
 };
