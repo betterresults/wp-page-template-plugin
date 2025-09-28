@@ -79,18 +79,18 @@ const HomepageBookingSection = () => {
 
         {/* Large CTA Button */}
         <div className="text-center">
-          <div className="inline-block">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               onClick={handleBookNow}
-              className="btn-hero text-2xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+              className="btn-hero text-xl sm:text-2xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
               Get Quote & Book Online
-              <ArrowRight className="w-6 h-6 ml-3" />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3" />
             </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              Free instant quotes • No hidden fees • Quick response
-            </p>
           </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            Free instant quotes • No hidden fees • Quick response
+          </p>
         </div>
       </div>
     </section>

@@ -47,16 +47,16 @@ const HomepageHeroSection = () => {
           {/* Hero Content */}
           <div className="lg:col-span-3 text-white space-y-8 animate-slide-up">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-heading leading-tight text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-heading leading-tight text-center lg:text-left">
                 <span className="block">Best Cleaners</span>
                 <span className="block">In Your <span className="text-primary">Area</span></span>
               </h1>
               
-              <h2 className="text-3xl lg:text-4xl font-semibold text-accent leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-accent leading-relaxed text-center lg:text-left">
                 Professional Cleaning Services
               </h2>
               
-              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl">
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
                 Experience reliable & professional cleaning services. 
                 <span className="font-semibold text-accent"> Book online today</span> and enjoy a spotless home or office.
               </p>

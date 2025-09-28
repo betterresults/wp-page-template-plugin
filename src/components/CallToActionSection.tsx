@@ -59,14 +59,14 @@ const CallToActionSection = () => {
           </div>
 
           {/* Enhanced CTA Button */}
-          <div className="mb-16">
+          <div className="mb-16 flex justify-center">
             <Button 
               onClick={handleGetQuote}
               size="lg"
-              className="bg-gradient-to-r from-white via-primary-glow/10 to-white text-primary hover:from-primary-glow hover:via-white hover:to-primary-glow hover:text-primary-dark text-xl px-12 py-6 rounded-3xl font-bold shadow-2xl hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transform hover:scale-110 transition-all duration-500 flex items-center gap-4 mx-auto border-2 border-white/20 hover:border-primary-glow/50"
+              className="bg-gradient-to-r from-white via-primary-glow/10 to-white text-primary hover:from-primary-glow hover:via-white hover:to-primary-glow hover:text-primary-dark text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-3xl font-bold shadow-2xl hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transform hover:scale-110 transition-all duration-500 flex items-center gap-3 sm:gap-4 w-full sm:w-auto max-w-md sm:max-w-none border-2 border-white/20 hover:border-primary-glow/50"
             >
-              <span className="text-2xl font-extrabold">Get Instant Quote</span>
-              <ArrowRight className="w-6 h-6" />
+              <span className="text-xl sm:text-2xl font-extrabold">Get Instant Quote</span>
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </Button>
           </div>
 
