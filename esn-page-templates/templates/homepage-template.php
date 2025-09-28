@@ -137,7 +137,7 @@ $page_id = get_the_ID();
                     <!-- Card 1 -->
                     <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/end-of-tenancy-cleaning.jpg" alt="End of Tenancy cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../wp-content/uploads/2024/02/professional-moving-in-cleaning.jpg" alt="End of Tenancy cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                         <div class="p-6 space-y-4">
