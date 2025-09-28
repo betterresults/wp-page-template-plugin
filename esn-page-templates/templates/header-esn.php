@@ -79,37 +79,32 @@ if (!defined('ABSPATH')) {
 
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-8">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => 'flex items-center space-x-8',
-                    'fallback_cb' => function() {
-                        // Default menu if no menu is set
-                        echo '<a href="' . home_url() . '" class="text-foreground hover:text-primary transition-colors">Home</a>';
-                        echo '<div class="relative group">
-                                <a href="#services" class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
-                                    Services <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </a>
-                              </div>';
-                        echo '<div class="relative group">
-                                <a href="#about" class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
-                                    About Us <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </a>
-                                <div class="absolute top-full left-0 w-48 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                                    <div class="p-2">
-                                        <a href="/contact" class="block px-4 py-2 text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Contact Us</a>
-                                        <a href="/accreditation" class="block px-4 py-2 text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Accreditation</a>
-                                        <a href="/about" class="block px-4 py-2 text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">About Us</a>
-                                        <a href="/testimonials" class="block px-4 py-2 text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Testimonials</a>
-                                        <a href="/our-work" class="block px-4 py-2 text-foreground hover:bg-foreground hover:text-background rounded-md transition-colors">Our Work</a>
-                                    </div>
-                                </div>
-                              </div>';
-                        echo '<a href="/faqs" class="text-foreground hover:text-primary transition-colors">FAQs</a>';
-                    }
-                ));
-                ?>
+                <a href="<?php echo home_url(); ?>" class="text-foreground hover:text-primary transition-colors">Home</a>
+                
+                <div class="relative group">
+                    <a href="#services" class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                </div>
+                
+                <div class="relative group">
+                    <button class="text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                        About Us
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="p-2">
+                            <a href="/contact" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">Contact Us</a>
+                            <a href="/accreditation" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">Accreditation</a>
+                            <a href="/about-us" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">About Us</a>
+                            <a href="/testimonials" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">Testimonials</a>
+                            <a href="/our-work" class="block px-4 py-2 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors">Our Work</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="/faqs" class="text-foreground hover:text-primary transition-colors">FAQs</a>
             </nav>
 
             <!-- CTA Button -->
