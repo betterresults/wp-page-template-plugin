@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
-import snLogo from '@/assets/sn-cleaning-logo.png';
+import snLogo from '@/assets/sn-cleaning-logo-new.png';
 import { trackClick } from '@/utils/analytics';
 
 interface FooterProps {
@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
               <img 
                 src={snLogo} 
                 alt="SN Cleaning Services" 
-                className="h-16 w-auto rounded-lg border-2 border-border p-2"
+                className="h-16 w-auto"
               />
             </div>
             <p className={`text-sm leading-relaxed ${variant === 'dark' ? 'text-background/80' : 'text-muted-foreground'}`}>
@@ -251,7 +251,7 @@ const Footer: React.FC<FooterProps> = ({ className = '', variant = 'default' }) 
         }`}>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className={`text-sm ${variant === 'dark' ? 'text-background/60' : 'text-muted-foreground'}`}>
-              © {currentYear} SN Cleaning Services. All rights reserved.
+              Copyright © 2025 SN Core LTD. All Rights Reserved. Company Number 15912581
             </div>
             <div className="flex space-x-6">
               <Link 

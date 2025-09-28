@@ -15,9 +15,9 @@ if (!defined('ABSPATH')) {
             <div class="space-y-6">
                 <div class="flex items-center">
                     <img 
-                        src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/sn-cleaning-logo.png" 
+                        src="https://sncleaningservices.co.uk/wp-content/uploads/2025/02/SN-Cleaning-Logo-small-300x136.png" 
                         alt="SN Cleaning Services" 
-                        class="h-16 w-auto rounded-lg border-2 border-border p-2"
+                        class="h-16 w-auto"
                     />
                 </div>
                 <p class="text-sm leading-relaxed text-muted-foreground">
@@ -136,7 +136,7 @@ if (!defined('ABSPATH')) {
         <div class="mt-12 pt-8 border-t border-border">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div class="text-sm text-muted-foreground">
-                    © <?php echo date('Y'); ?> SN Cleaning Services. All rights reserved.
+                    Copyright © 2025 SN Core LTD. All Rights Reserved. Company Number 15912581
                 </div>
                 <div class="flex space-x-6">
                     <a href="https://sncleaningservices.co.uk/privacy-policy" class="text-sm transition-colors duration-200 hover:text-primary text-muted-foreground">Privacy Policy</a>
