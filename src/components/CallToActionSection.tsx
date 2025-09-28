@@ -24,7 +24,7 @@ const CallToActionSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white rounded-full animate-float"></div>

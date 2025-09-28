@@ -24,48 +24,71 @@ const EnhancedServiceAreasSection = () => {
           </p>
         </div>
 
-        {/* Animated Map Visual */}
+        {/* Visual Coverage Map */}
         <div className="max-w-5xl mx-auto mb-16">
           <div className="relative bg-white rounded-3xl p-8 shadow-lg overflow-hidden">
-            {/* Map Background with Animation */}
-            <div className="relative h-96 bg-gradient-to-br from-primary/10 to-accent/5 rounded-2xl overflow-hidden">
-              {/* Animated Map Dots */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-full h-full max-w-md">
-                  {/* London Area - Left Side */}
-                  <div className="absolute left-16 top-1/2 transform -translate-y-1/2">
-                    <div className="relative">
-                      <div className="w-20 h-20 bg-primary/20 rounded-full animate-pulse flex items-center justify-center">
-                        <div className="w-12 h-12 bg-primary/40 rounded-full animate-pulse delay-300 flex items-center justify-center">
-                          <div className="w-6 h-6 bg-primary rounded-full animate-pulse delay-500"></div>
-                        </div>
-                      </div>
-                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-lg shadow-md">
-                        <span className="text-sm font-semibold text-primary">London</span>
-                      </div>
+            {/* Geographic Coverage Visual */}
+            <div className="relative h-96 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl overflow-hidden border">
+              {/* Background grid pattern */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="grid grid-cols-8 grid-rows-6 h-full w-full">
+                  {Array.from({ length: 48 }).map((_, i) => (
+                    <div key={i} className="border border-slate-200"></div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* London Coverage Area - Left cluster */}
+              <div className="absolute left-8 top-1/2 transform -translate-y-1/2 w-48">
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">London Areas</h3>
+                  <div className="w-full h-px bg-primary"></div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {londonAreas.slice(0, 8).map((area, index) => (
+                    <div 
+                      key={index}
+                      className="bg-primary/10 hover:bg-primary/20 transition-all duration-300 px-3 py-2 rounded-lg text-center cursor-pointer group"
+                    >
+                      <div className="w-2 h-2 bg-primary rounded-full mx-auto mb-1 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-xs font-medium text-foreground">{area}</span>
                     </div>
-                  </div>
-
-                  {/* Essex Area - Right Side */}
-                  <div className="absolute right-16 top-1/3 transform -translate-y-1/2">
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-accent/20 rounded-full animate-pulse delay-200 flex items-center justify-center">
-                        <div className="w-10 h-10 bg-accent/40 rounded-full animate-pulse delay-400 flex items-center justify-center">
-                          <div className="w-5 h-5 bg-accent rounded-full animate-pulse delay-600"></div>
-                        </div>
-                      </div>
-                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-lg shadow-md">
-                        <span className="text-sm font-semibold text-accent">Essex</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Connection Line */}
-                  <div className="absolute top-1/2 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-primary to-accent opacity-50 animate-pulse"></div>
+                  ))}
                 </div>
               </div>
 
-              {/* Floating Service Icons */}
+              {/* Essex Coverage Area - Right cluster */}
+              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 w-48">
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Essex Areas</h3>
+                  <div className="w-full h-px bg-accent"></div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {essexAreas.map((area, index) => (
+                    <div 
+                      key={index}
+                      className="bg-accent/10 hover:bg-accent/20 transition-all duration-300 px-3 py-2 rounded-lg text-center cursor-pointer group"
+                    >
+                      <div className="w-2 h-2 bg-accent rounded-full mx-auto mb-1 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-xs font-medium text-foreground">{area}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Connection visualization */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                  <div className="w-16 h-px bg-gradient-to-r from-primary to-accent"></div>
+                  <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-500"></div>
+                </div>
+                <div className="text-center mt-2">
+                  <span className="text-sm font-semibold text-muted-foreground bg-white px-2 py-1 rounded">Coverage Zone</span>
+                </div>
+              </div>
+
+              {/* Service icons floating */}
               <div className="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-md animate-float">
                 <Clock className="w-5 h-5 text-primary" />
               </div>
@@ -79,18 +102,18 @@ const EnhancedServiceAreasSection = () => {
           </div>
         </div>
 
-        {/* Areas Grid */}
+        {/* Additional Areas Lists */}
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* London Areas */}
+          {/* Remaining London Areas */}
           <div className="card-glass p-8">
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                 <MapPin className="w-4 h-4 text-white" />
               </div>
-              Greater London
+              Additional London Coverage
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              {londonAreas.map((area, index) => (
+              {londonAreas.slice(8).map((area, index) => (
                 <div 
                   key={index}
                   className="flex items-center gap-3 p-3 bg-background rounded-lg hover:bg-primary/5 transition-colors group"
@@ -102,24 +125,36 @@ const EnhancedServiceAreasSection = () => {
             </div>
           </div>
 
-          {/* Essex Areas */}
+          {/* Coverage Info */}
           <div className="card-glass p-8">
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
               <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                <MapPin className="w-4 h-4 text-white" />
+                <CheckCircle className="w-4 h-4 text-white" />
               </div>
-              Essex County
+              Service Coverage
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {essexAreas.map((area, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-3 p-3 bg-background rounded-lg hover:bg-accent/5 transition-colors group"
-                >
-                  <div className="w-2 h-2 bg-accent rounded-full group-hover:scale-125 transition-transform" />
-                  <span className="font-medium text-foreground text-sm">{area}</span>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 p-4 bg-primary/5 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">All Listed Areas Covered</h4>
+                  <p className="text-sm text-muted-foreground">Professional cleaning services available in all mentioned locations</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-accent/5 rounded-lg">
+                <Clock className="w-5 h-5 text-accent mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">Fast Response Times</h4>
+                  <p className="text-sm text-muted-foreground">Same-day quotes and next-day service availability</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-success/5 rounded-lg">
+                <MapPin className="w-5 h-5 text-success mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">Travel Included</h4>
+                  <p className="text-sm text-muted-foreground">No additional charges for travel within our service areas</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
