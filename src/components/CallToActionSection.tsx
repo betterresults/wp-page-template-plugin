@@ -68,10 +68,6 @@ const CallToActionSection = () => {
               <span className="text-2xl font-extrabold">Get Instant Quote</span>
               <ArrowRight className="w-6 h-6" />
             </Button>
-            
-            <p className="text-white/70 mt-4 text-lg">
-              Call us directly: <a href="tel:+442012345678" className="text-primary-glow hover:text-white font-semibold underline">020 1234 5678</a>
-            </p>
           </div>
 
           {/* Trust Signals */}
