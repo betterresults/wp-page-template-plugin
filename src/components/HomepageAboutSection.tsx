@@ -8,26 +8,22 @@ const HomepageAboutSection = () => {
     {
       icon: Home,
       title: "Domestic Cleaning",
-      description: "Regular house cleaning, deep cleaning, and maintenance services for your home.",
-      features: ["Weekly/fortnightly cleaning", "Deep cleaning services", "Move-in/move-out cleaning"]
+      description: "Regular house cleaning, deep cleaning, and maintenance services for your home."
     },
     {
       icon: Building,
       title: "End Of Tenancy Cleaning",
-      description: "Comprehensive cleaning service to ensure you get your full deposit back.",
-      features: ["Deposit guarantee", "Professional standards", "Agency approved"]
+      description: "Comprehensive cleaning service to ensure you get your full deposit back."
     },
     {
       icon: Sparkles,
       title: "Specialized Cleaning",
-      description: "Carpet cleaning, upholstery cleaning, and other specialized services.",
-      features: ["Carpet & upholstery", "Window cleaning", "After builders cleaning"]
+      description: "Carpet cleaning, upholstery cleaning, and other specialized services."
     },
     {
       icon: Calendar,
       title: "Commercial Services",
-      description: "Regular office cleaning, retail cleaning, and business maintenance.",
-      features: ["Flexible scheduling", "Reliable service", "Professional standards"]
+      description: "Regular office cleaning, retail cleaning, and business maintenance."
     }
   ];
 
@@ -53,7 +49,7 @@ const HomepageAboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Services Grid */}
           <div className="grid sm:grid-cols-2 gap-6">
-            {services.map(({ icon: Icon, title, description, features }, idx) => (
+            {services.map(({ icon: Icon, title, description }, idx) => (
               <div key={idx} className="bg-gradient-surface rounded-2xl p-6 space-y-4 border border-border/50">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Icon className="w-6 h-6 text-primary" />
@@ -61,16 +57,7 @@ const HomepageAboutSection = () => {
                 
                 <div className="space-y-3">
                   <h3 className="text-xl font-bold text-foreground">{title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-                  
-                  <ul className="space-y-1">
-                    {features.map((feature, featureIdx) => (
-                      <li key={featureIdx} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-muted-foreground leading-relaxed">{description}</p>
                 </div>
               </div>
             ))}
