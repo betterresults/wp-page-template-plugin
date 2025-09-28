@@ -26,9 +26,33 @@ const EnhancedServiceAreasSection = () => {
 
         {/* Map Background Visual */}
         <div className="max-w-6xl mx-auto">
-          <div className="relative bg-white rounded-3xl p-4 sm:p-8 shadow-lg overflow-hidden">
+          {/* Mobile Layout - Stacked Cards */}
+          <div className="block lg:hidden space-y-6">
+            {/* London Coverage Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                <h3 className="text-xl font-bold text-foreground">London Coverage</h3>
+              </div>
+              <p className="text-lg font-semibold text-primary mb-2">All London areas within M25</p>
+              <p className="text-sm text-muted-foreground">Complete coverage of Greater London</p>
+            </div>
+
+            {/* Essex Coverage Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-4 bg-accent rounded-full animate-pulse delay-500"></div>
+                <h3 className="text-xl font-bold text-foreground">Essex Coverage</h3>
+              </div>
+              <p className="text-lg font-semibold text-accent mb-2">Essex areas</p>
+              <p className="text-sm text-muted-foreground">Major towns and surrounding areas</p>
+            </div>
+          </div>
+
+          {/* Desktop Layout - Map with Overlaid Cards */}
+          <div className="hidden lg:block relative bg-white rounded-3xl p-8 shadow-lg overflow-hidden">
             {/* Map Background */}
-            <div className="relative h-64 sm:h-96 bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden border-2 border-slate-200">
+            <div className="relative h-96 bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden border-2 border-slate-200">
               {/* Map grid pattern to simulate map */}
               <div className="absolute inset-0 opacity-20">
                 <svg className="w-full h-full" viewBox="0 0 400 300">
@@ -59,27 +83,27 @@ const EnhancedServiceAreasSection = () => {
                 </svg>
               </div>
               
-              {/* London Coverage Area - Mobile Responsive */}
-              <div className="absolute left-2 sm:left-8 top-4 sm:top-1/2 sm:transform sm:-translate-y-1/2">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg border max-w-xs">
-                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
-                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-primary rounded-full animate-pulse"></div>
-                    <h3 className="text-sm sm:text-xl font-bold text-foreground">London Coverage</h3>
+              {/* London Coverage Area */}
+              <div className="absolute left-8 top-1/2 transform -translate-y-1/2">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border max-w-xs">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                    <h3 className="text-xl font-bold text-foreground">London Coverage</h3>
                   </div>
-                  <p className="text-sm sm:text-lg font-semibold text-primary mb-1 sm:mb-2">All London areas within M25</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Complete coverage of Greater London</p>
+                  <p className="text-lg font-semibold text-primary mb-2">All London areas within M25</p>
+                  <p className="text-sm text-muted-foreground">Complete coverage of Greater London</p>
                 </div>
               </div>
 
-              {/* Essex Coverage Area - Mobile Responsive */}
-              <div className="absolute right-2 sm:right-8 bottom-4 sm:top-1/3 sm:transform sm:-translate-y-1/2">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg border max-w-xs">
-                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
-                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-accent rounded-full animate-pulse delay-500"></div>
-                    <h3 className="text-sm sm:text-xl font-bold text-foreground">Essex Coverage</h3>
+              {/* Essex Coverage Area */}
+              <div className="absolute right-8 top-1/3 transform -translate-y-1/2">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border max-w-xs">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-4 h-4 bg-accent rounded-full animate-pulse delay-500"></div>
+                    <h3 className="text-xl font-bold text-foreground">Essex Coverage</h3>
                   </div>
-                  <p className="text-sm sm:text-lg font-semibold text-accent mb-1 sm:mb-2">Essex areas</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Major towns and surrounding areas</p>
+                  <p className="text-lg font-semibold text-accent mb-2">Essex areas</p>
+                  <p className="text-sm text-muted-foreground">Major towns and surrounding areas</p>
                 </div>
               </div>
 
