@@ -26,14 +26,20 @@ if (!defined('ABSPATH')) {
                 <div class="space-y-3">
                     <div class="flex items-center gap-3">
                         <span>📞</span>
-                        <a href="tel:+442012345678" class="text-primary hover:text-primary-dark transition-colors font-semibold">
-                            020 1234 5678
+                        <a href="tel:+442038355033" class="text-primary hover:text-primary-dark transition-colors font-semibold">
+                            020 3835 5033
                         </a>
                     </div>
                     <div class="flex items-center gap-3">
                         <span>✉️</span>
-                        <a href="mailto:info@example.com" class="text-primary hover:text-primary-dark transition-colors">
-                            info@example.com
+                        <a href="mailto:info@sncleaningservices.co.uk" class="text-primary hover:text-primary-dark transition-colors">
+                            info@sncleaningservices.co.uk
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>💬</span>
+                        <a href="https://wa.me/442038355033" class="text-primary hover:text-primary-dark transition-colors">
+                            WhatsApp Us
                         </a>
                     </div>
                     <div class="flex items-start gap-3">
@@ -50,12 +56,13 @@ if (!defined('ABSPATH')) {
             <div>
                 <h3 class="text-lg font-bold text-foreground mb-6">Our Services</h3>
                 <ul class="space-y-3">
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">End of Tenancy Cleaning</a></li>
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">Domestic Cleaning</a></li>
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">Office Cleaning</a></li>
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">After Builders Cleaning</a></li>
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">Carpet Cleaning</a></li>
-                    <li><a href="#" class="text-muted-foreground hover:text-primary transition-colors">Airbnb Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/end-of-tenancy-cleaning" class="text-muted-foreground hover:text-primary transition-colors">End of Tenancy Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/deep-cleaning" class="text-muted-foreground hover:text-primary transition-colors">Deep Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/domestic-cleaning" class="text-muted-foreground hover:text-primary transition-colors">Domestic Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/office-cleaning" class="text-muted-foreground hover:text-primary transition-colors">Office Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/after-builders-cleaning" class="text-muted-foreground hover:text-primary transition-colors">After Builders Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/carpet-cleaning" class="text-muted-foreground hover:text-primary transition-colors">Carpet Cleaning</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/airbnb-cleaning" class="text-muted-foreground hover:text-primary transition-colors">Airbnb Cleaning</a></li>
                 </ul>
             </div>
 
@@ -63,12 +70,11 @@ if (!defined('ABSPATH')) {
             <div>
                 <h3 class="text-lg font-bold text-foreground mb-6">Quick Links</h3>
                 <ul class="space-y-3">
-                    <li><a href="<?php echo home_url(); ?>" class="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
-                    <li><a href="#services" class="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
-                    <li><a href="#areas" class="text-muted-foreground hover:text-primary transition-colors">Service Areas</a></li>
-                    <li><a href="#about" class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-                    <li><a href="#quote" class="text-muted-foreground hover:text-primary transition-colors">Get Quote</a></li>
-                    <li><a href="#contact" class="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                    <li><a href="https://sncleaningservices.co.uk" class="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/about-us" class="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/contact" class="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                    <li><a href="https://sncleaningservices.co.uk/faq" class="text-muted-foreground hover:text-primary transition-colors">FAQ</a></li>
+                    <li><a href="https://book.sncleaningservices.co.uk" class="text-muted-foreground hover:text-primary transition-colors">Get Quote</a></li>
                 </ul>
             </div>
 
@@ -88,7 +94,7 @@ if (!defined('ABSPATH')) {
                 
                 <!-- CTA Button -->
                 <div class="mt-6">
-                    <a href="#quote" class="btn-primary w-full text-center">
+                    <a href="https://book.sncleaningservices.co.uk" class="btn-primary w-full text-center">
                         Get Instant Quote
                     </a>
                 </div>
@@ -105,9 +111,9 @@ if (!defined('ABSPATH')) {
                 </div>
                 
                 <div class="flex items-center gap-6 text-sm">
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a>
+                    <a href="https://sncleaningservices.co.uk/privacy-policy" class="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="https://sncleaningservices.co.uk/terms-of-service" class="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="https://sncleaningservices.co.uk/cookie-policy" class="text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a>
                 </div>
             </div>
         </div>
