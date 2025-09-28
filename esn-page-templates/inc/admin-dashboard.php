@@ -26,6 +26,8 @@ class ESN_Admin_Dashboard {
 
     public function register_settings() {
         register_setting('esn_templates_settings', 'esn_default_template_name');
+        register_setting('esn_templates_settings', 'esn_use_custom_header');
+        register_setting('esn_templates_settings', 'esn_use_custom_footer');
     }
 
     public function admin_page() {
@@ -34,6 +36,40 @@ class ESN_Admin_Dashboard {
             <h1>ESN Page Templates</h1>
             
             <div class="esn-admin-container">
+                <!-- Settings Section -->
+                <div class="esn-section esn-settings-section">
+                    <h2>Template Settings</h2>
+                    <form method="post" action="options.php">
+                        <?php settings_fields('esn_templates_settings'); ?>
+                        <?php do_settings_sections('esn_templates_settings'); ?>
+                        
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Use ESN Header Site-wide</th>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="esn_use_custom_header" value="1" <?php checked(1, get_option('esn_use_custom_header'), true); ?> />
+                                        Enable custom ESN header across your entire website
+                                    </label>
+                                    <p class="description">When enabled, the ESN header will be used on all pages instead of your theme's default header.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Use ESN Footer Site-wide</th>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="esn_use_custom_footer" value="1" <?php checked(1, get_option('esn_use_custom_footer'), true); ?> />
+                                        Enable custom ESN footer across your entire website
+                                    </label>
+                                    <p class="description">When enabled, the ESN footer will be used on all pages instead of your theme's default footer.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <?php submit_button(); ?>
+                    </form>
+                </div>
+
                 <!-- Templates Section -->
                 <div class="esn-section esn-templates-section">
                     <h2>Available Templates</h2>
@@ -54,7 +90,8 @@ class ESN_Admin_Dashboard {
                             </select>
                             <select id="esn-template-filter">
                                 <option value="">All Templates</option>
-                            <option value="service-cleaning-template.php">End of Tenancy Cleaning Borough Templates</option>
+                                <option value="service-cleaning-template.php">End of Tenancy Cleaning Borough Templates</option>
+                                <option value="homepage-template.php">ESN Homepage Template</option>
                                 <option value="no-template">No Template</option>
                             </select>
                             <button id="esn-filter-btn" class="button">Filter</button>
@@ -65,6 +102,7 @@ class ESN_Admin_Dashboard {
                         <select id="esn-bulk-template">
                             <option value="">Select Template to Assign</option>
                             <option value="service-cleaning-template.php">End of Tenancy Cleaning Borough Templates</option>
+                            <option value="homepage-template.php">ESN Homepage Template</option>
                             <option value="remove-template">Remove Template</option>
                         </select>
                         <button id="esn-bulk-assign" class="button button-primary" disabled>Apply to Selected</button>
@@ -705,6 +743,29 @@ class ESN_Admin_Dashboard {
 
     private function render_templates() {
         $templates = array(
+            'homepage-template.php' => array(
+                'name' => 'ESN Homepage Template',
+                'description' => 'Complete homepage template with hero section, services, features, testimonials, service areas, FAQ, and call-to-action sections.',
+                'pages_count' => $this->count_pages_using_template('homepage-template.php'),
+                'sections' => array(
+                    'Hero Section' => 'Dynamic hero with quote form',
+                    'Service Types' => 'All cleaning services grid',
+                    'Features' => 'Why choose us section',
+                    'Booking Process' => 'Simple 3-step process',
+                    'Testimonials' => 'Customer reviews',
+                    'Service Areas' => 'London & Essex coverage',
+                    'Call to Action' => 'Get instant quote',
+                    'FAQ Section' => 'Frequently asked questions'
+                ),
+                'fields' => array(
+                    'Fully responsive design',
+                    'Modern animations and transitions',
+                    'Mobile-optimized layout',
+                    'SEO-friendly structure',
+                    'Built-in contact forms',
+                    'Service area mapping'
+                )
+            ),
             'service-cleaning-template.php' => array(
                 'name' => 'End of Tenancy Cleaning Borough Templates',
                 'description' => 'Complete template for end of tenancy cleaning service pages with hero section, about, 3-step process, testimonials, checklist, content sections, FAQs, service areas, and guarantee.',
@@ -738,15 +799,25 @@ class ESN_Admin_Dashboard {
             <div class="esn-template-card" data-template="<?php echo esc_attr($template_key); ?>">
                 <div class="esn-template-preview">
                     <div class="esn-template-layout">
-                        <div class="esn-preview-section esn-hero">[page_h1]</div>
-                        <div class="esn-preview-section esn-about">[page_h2]</div>
-                        <div class="esn-preview-section esn-process">Our 3-Step Process</div>
-                        <div class="esn-preview-section esn-testimonials">What Our Customers Say</div>
-                        <div class="esn-preview-section esn-checklist">Service Checklist</div>
-                        <div class="esn-preview-section esn-content">[page_h3] & [page_h4]</div>
-                        <div class="esn-preview-section esn-areas">Areas We Cover</div>
-                        <div class="esn-preview-section esn-guarantee">Our Guarantee</div>
-                        <div class="esn-preview-section esn-faq">FAQ</div>
+                        <?php if ($template_key === 'homepage-template.php'): ?>
+                            <div class="esn-preview-section esn-hero">Hero Section</div>
+                            <div class="esn-preview-section esn-about">Service Types</div>
+                            <div class="esn-preview-section esn-process">Features</div>
+                            <div class="esn-preview-section esn-testimonials">Testimonials</div>
+                            <div class="esn-preview-section esn-areas">Service Areas</div>
+                            <div class="esn-preview-section esn-guarantee">Call to Action</div>
+                            <div class="esn-preview-section esn-faq">FAQ</div>
+                        <?php else: ?>
+                            <div class="esn-preview-section esn-hero">[page_h1]</div>
+                            <div class="esn-preview-section esn-about">[page_h2]</div>
+                            <div class="esn-preview-section esn-process">Our 3-Step Process</div>
+                            <div class="esn-preview-section esn-testimonials">What Our Customers Say</div>
+                            <div class="esn-preview-section esn-checklist">Service Checklist</div>
+                            <div class="esn-preview-section esn-content">[page_h3] & [page_h4]</div>
+                            <div class="esn-preview-section esn-areas">Areas We Cover</div>
+                            <div class="esn-preview-section esn-guarantee">Our Guarantee</div>
+                            <div class="esn-preview-section esn-faq">FAQ</div>
+                        <?php endif; ?>
                     </div>
                     <div class="esn-template-overlay">
                         <span>Click to view details</span>
@@ -801,7 +872,7 @@ class ESN_Admin_Dashboard {
         
         foreach ($pages as $page) {
             $template = get_page_template_slug($page->ID);
-            $has_template = $template === 'service-cleaning-template.php';
+            $has_template = in_array($template, ['service-cleaning-template.php', 'homepage-template.php']);
             $categories = wp_get_post_categories($page->ID, array('fields' => 'names'));
             $category_names = implode(', ', $categories);
             
@@ -814,8 +885,10 @@ class ESN_Admin_Dashboard {
             echo '</td>';
             echo '<td>' . ucfirst($page->post_status) . '</td>';
             echo '<td>';
-            if ($has_template) {
+            if ($template === 'service-cleaning-template.php') {
                 echo '<span class="esn-template-badge has-template">Service Template</span>';
+            } elseif ($template === 'homepage-template.php') {
+                echo '<span class="esn-template-badge has-template">Homepage Template</span>';
             } else {
                 echo '<span class="esn-template-badge no-template">No Template</span>';
             }

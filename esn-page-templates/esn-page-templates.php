@@ -23,6 +23,7 @@ require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/meta-boxes.php';
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/template-functions.php';
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/template-loader.php';
 require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/admin-dashboard.php';
+require_once ESN_TEMPLATES_PLUGIN_PATH . 'inc/theme-functions.php';
 
 class ESN_Page_Templates {
 

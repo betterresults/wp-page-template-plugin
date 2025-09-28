@@ -13,6 +13,7 @@ class ESN_Template_Loader {
 
     public function add_page_templates($templates) {
         $templates['service-cleaning-template.php'] = 'End of Tenancy Cleaning Borough Templates';
+        $templates['homepage-template.php'] = 'ESN Homepage Template';
         return $templates;
     }
 
@@ -25,19 +26,18 @@ class ESN_Template_Loader {
             if ($page_template === 'service-cleaning-template.php') {
                 $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/service-cleaning-template.php';
                 
-                // Debug: Log what's happening
-                error_log('ESN Template Debug: Page ID = ' . $post->ID);
-                error_log('ESN Template Debug: Page template = ' . $page_template);
-                error_log('ESN Template Debug: Template path = ' . $template_path);
-                error_log('ESN Template Debug: File exists = ' . (file_exists($template_path) ? 'YES' : 'NO'));
-                error_log('ESN Template Debug: Plugin path = ' . ESN_TEMPLATES_PLUGIN_PATH);
-                
                 if (file_exists($template_path)) {
-                    // Mark this page as using our template for dashboard tracking
                     update_post_meta($post->ID, '_esn_page_template', 'service-cleaning-template.php');
                     return $template_path;
-                } else {
-                    error_log('ESN Template Debug: Template file NOT FOUND!');
+                }
+            }
+            
+            if ($page_template === 'homepage-template.php') {
+                $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/homepage-template.php';
+                
+                if (file_exists($template_path)) {
+                    update_post_meta($post->ID, '_esn_page_template', 'homepage-template.php');
+                    return $template_path;
                 }
             }
         }
@@ -53,6 +53,14 @@ class ESN_Template_Loader {
             
             if ($page_template === 'service-cleaning-template.php') {
                 $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/service-cleaning-template.php';
+                
+                if (file_exists($template_path)) {
+                    return $template_path;
+                }
+            }
+            
+            if ($page_template === 'homepage-template.php') {
+                $template_path = ESN_TEMPLATES_PLUGIN_PATH . 'templates/homepage-template.php';
                 
                 if (file_exists($template_path)) {
                     return $template_path;
