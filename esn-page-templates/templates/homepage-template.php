@@ -14,7 +14,23 @@ $page_id = get_the_ID();
 
 
 
-<?php get_header('esn'); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title><?php bloginfo('name'); ?> — Best Cleaners in Your Area</title>
+    <meta name="description" content="Professional cleaning services in London & Essex. Get instant quotes, book online, and enjoy guaranteed, 5-star rated cleaning." />
+    <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" />
+    <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
+<?php include ESN_TEMPLATES_PLUGIN_PATH . 'templates/header-esn.php'; ?>
 
 <div id="page" class="site min-h-screen bg-background">
     
@@ -678,4 +694,8 @@ $page_id = get_the_ID();
     </section>
 </div>
 
-<?php get_footer('esn'); ?>
+<?php include ESN_TEMPLATES_PLUGIN_PATH . 'templates/footer-esn.php'; ?>
+
+<?php wp_footer(); ?>
+</body>
+</html>
