@@ -8,6 +8,10 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
+      question: "Which areas of London and Essex do you cover?",
+      answer: "Our service area is extensive, covering all London boroughs within the M25 and a wide range of towns across Essex. Our dedicated local teams are positioned throughout the capital to provide a fast and reliable service, whether you are in North, South, East, West, or Central London. Essentially, if your property is within the M25 motorway or our key Essex regions, we have you covered. For a detailed list of postcodes, please see our Areas We Serve page."
+    },
+    {
       question: "What's included in a standard professional cleaning service?",
       answer: (
         <div>
@@ -19,10 +23,6 @@ const FAQSection = () => {
           </ul>
         </div>
       )
-    },
-    {
-      question: "Which areas of London and Essex do you cover?",
-      answer: "We are proud to offer extensive coverage across East London and parts of Essex. Our local teams are strategically based to provide reliable service to all boroughs in our service area. This includes major hubs like Havering, Barking & Dagenham, Redbridge, and Waltham Forest in London, as well as key towns in Essex like Brentwood and Upminster. For a full, detailed list of the hundreds of areas we serve, please see our Areas We Serve page."
     },
     {
       question: "Are your cleaners insured, background-checked, and employed by you?",

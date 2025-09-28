@@ -29,11 +29,11 @@ const Homepage = () => {
       {/* Enhanced Service Areas Section with Animated Map */}
       <EnhancedServiceAreasSection />
       
-      {/* FAQ Section */}
-      <FAQSection />
-      
       {/* Recent Blog Posts Section */}
       <RecentBlogPostsSection />
+      
+      {/* FAQ Section */}
+      <FAQSection />
       
       {/* Call to Action Get Quote Section */}
       <CallToActionSection />
