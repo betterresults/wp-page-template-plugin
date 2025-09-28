@@ -8,6 +8,64 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
+<!-- ESN Tailwind + Theme Tokens (loaded once with header) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: 'hsl(var(--primary))',
+          'primary-light': 'hsl(var(--primary-light))',
+          'primary-dark': 'hsl(var(--primary-dark))',
+          'primary-foreground': 'hsl(var(--primary-foreground))',
+          secondary: 'hsl(var(--secondary))',
+          'secondary-foreground': 'hsl(var(--secondary-foreground))',
+          accent: 'hsl(var(--accent))',
+          'accent-foreground': 'hsl(var(--accent-foreground))',
+          background: 'hsl(var(--background))',
+          foreground: 'hsl(var(--foreground))',
+          muted: 'hsl(var(--muted))',
+          'muted-foreground': 'hsl(var(--muted-foreground))',
+          card: 'hsl(var(--card))',
+          'card-foreground': 'hsl(var(--card-foreground))',
+          border: 'hsl(var(--border))',
+          input: 'hsl(var(--input))',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root{
+    --primary: 180 63% 36%;
+    --primary-light: 180 45% 40%;
+    --primary-dark: 203 55% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 180 63% 56%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 11% 15%;
+    --accent: 180 63% 36%;
+    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 203 55% 25%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 11% 22%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --border: 210 40% 90%;
+    --input: 210 40% 95%;
+  }
+  body{font-family: Inter, system-ui, -apple-system, sans-serif;}
+  .section-container{max-width: 80rem; margin-left:auto; margin-right:auto; padding-left:1.5rem; padding-right:1.5rem}
+  .section-padding{padding-top:5rem; padding-bottom:5rem}
+  .card-glass{background: rgba(255,255,255,.95); backdrop-filter: blur(16px); border:1px solid rgba(255,255,255,.2); border-radius:1rem}
+  .btn-primary{background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light))); color: hsl(var(--primary-foreground)); padding:.875rem 1.25rem; border-radius:.875rem; font-weight:600; display:inline-flex; align-items:center; gap:.5rem}
+  .btn-hero{background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light))); color: hsl(var(--primary-foreground)); padding:1rem 2rem; border-radius:1rem; font-weight:700; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; box-shadow:0 20px 40px rgba(24,165,165,.25)}
+  .animate-float{animation: float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+</style>
+
 <header class="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
     <div class="section-container">
         <div class="flex items-center justify-between h-20">

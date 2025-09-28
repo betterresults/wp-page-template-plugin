@@ -20,177 +20,10 @@ $page_id = get_the_ID();
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom CSS -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
-        
-        :root {
-            --primary: 180 63% 36%;
-            --primary-light: 180 45% 40%;
-            --primary-dark: 203 55% 25%;
-            --primary-foreground: 0 0% 100%;
-            --primary-glow: 180 63% 56%;
-            --secondary: 210 40% 96%;
-            --secondary-foreground: 210 11% 15%;
-            --accent: 180 63% 36%;
-            --accent-foreground: 0 0% 100%;
-            --background: 0 0% 100%;
-            --foreground: 203 55% 25%;
-            --muted: 210 40% 96%;
-            --muted-foreground: 210 11% 22%;
-            --card: 0 0% 100%;
-            --card-foreground: 210 11% 15%;
-            --border: 210 40% 90%;
-            --input: 210 40% 95%;
-            --ring: 180 63% 36%;
-            --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%), hsl(200 15% 98%));
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: hsl(var(--background));
-            color: hsl(var(--foreground));
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-            color: hsl(var(--primary-foreground));
-            padding: 1rem 2rem;
-            border-radius: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(24, 165, 165, 0.3);
-        }
-
-        /* Hero-style gradient button */
-        .btn-hero {
-            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-            color: hsl(var(--primary-foreground));
-            padding: 1rem 2rem;
-            border-radius: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 20px 40px rgba(24, 165, 165, 0.25);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-hero:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 30px 60px rgba(24,165,165,0.35);}        
-
-        .card-glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 1rem;
-        }
-
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section-padding {
-            padding: 5rem 0;
-        }
-
-        .font-heading {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-slide-up {
-            animation: slideUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .animate-fade-in-delayed {
-            animation: fadeInDelayed 1s ease-out forwards;
-            animation-delay: 0.3s;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDelayed {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .bg-gradient-surface {
-            background: var(--gradient-surface);
-        }
-
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 3rem 0;
-            }
-        }
-    </style>
-    
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': 'hsl(var(--primary))',
-                        'primary-light': 'hsl(var(--primary-light))',
-                        'primary-dark': 'hsl(var(--primary-dark))',
-                        'primary-foreground': 'hsl(var(--primary-foreground))',
-                        'secondary': 'hsl(var(--secondary))',
-                        'secondary-foreground': 'hsl(var(--secondary-foreground))',
-                        'accent': 'hsl(var(--accent))',
-                        'accent-foreground': 'hsl(var(--accent-foreground))',
-                        'background': 'hsl(var(--background))',
-                        'foreground': 'hsl(var(--foreground))',
-                        'muted': 'hsl(var(--muted))',
-                        'muted-foreground': 'hsl(var(--muted-foreground))',
-                        'card': 'hsl(var(--card))',
-                        'card-foreground': 'hsl(var(--card-foreground))',
-                        'border': 'hsl(var(--border))',
-                        'input': 'hsl(var(--input))'
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'heading': ['Poppins', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
+    <!-- SEO -->
+    <title><?php bloginfo('name'); ?> — Best Cleaners in Your Area</title>
+    <meta name="description" content="Professional cleaning services in London & Essex. Get instant quotes, book online, and enjoy guaranteed, 5-star rated cleaning." />
+    <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" />
     <?php wp_head(); ?>
 </head>
 
@@ -198,6 +31,9 @@ $page_id = get_the_ID();
 <?php wp_body_open(); ?>
 
 <div id="page" class="site min-h-screen bg-background">
+
+    <?php // Load ESN Header directly for exact match
+    include ESN_TEMPLATES_PLUGIN_PATH . 'templates/header-esn.php'; ?>
     
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
@@ -857,10 +693,8 @@ $page_id = get_the_ID();
             </div>
         </div>
     </section>
-
-</div>
-
-<?php get_footer('esn'); ?>
+<?php // Load ESN Footer directly for exact match
+include ESN_TEMPLATES_PLUGIN_PATH . 'templates/footer-esn.php'; ?>
 
 </body>
 </html>
