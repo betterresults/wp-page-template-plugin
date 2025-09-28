@@ -76,6 +76,23 @@ get_header('esn'); ?>
             box-shadow: 0 10px 25px rgba(24, 165, 165, 0.3);
         }
 
+        /* Hero-style gradient button */
+        .btn-hero {
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+            color: hsl(var(--primary-foreground));
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 20px 40px rgba(24, 165, 165, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-hero:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 30px 60px rgba(24,165,165,0.35);}        
+
         .card-glass {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
@@ -369,6 +386,88 @@ get_header('esn'); ?>
         </div>
     </section>
 
+    <!-- Booking Section -->
+    <section class="section-padding bg-gradient-to-b from-background to-muted/30">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">Simple Booking Process</h2>
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">Getting your space cleaned is easier than ever</p>
+            </div>
+
+            <!-- Process Flow Container -->
+            <div class="bg-background rounded-3xl border border-border/50 shadow-xl p-8 lg:p-12 mb-16">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg"><span class="text-3xl text-white">🔍</span></div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">1</div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-foreground mb-3">Choose Service</h3>
+                            <p class="text-muted-foreground max-w-xs">Select your cleaning requirements</p>
+                        </div>
+                        <div class="hidden md:block"><svg class="w-8 h-8 text-primary/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                        <div class="md:hidden rotate-90"><svg class="w-6 h-6 text-primary/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg"><span class="text-3xl text-white">📝</span></div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">2</div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-foreground mb-3">Fill the Form</h3>
+                            <p class="text-muted-foreground max-w-xs">Provide your details and preferences</p>
+                        </div>
+                        <div class="hidden md:block"><svg class="w-8 h-8 text-primary/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                        <div class="md:hidden rotate-90"><svg class="w-6 h-6 text-primary/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl flex items-center justify-center mx-auto shadow-lg"><span class="text-3xl text-white">📅</span></div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-white border-4 border-primary rounded-full flex items-center justify-center text-sm font-bold text-primary shadow-lg">3</div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-foreground mb-3">Book Online</h3>
+                            <p class="text-muted-foreground max-w-xs">Select your preferred date and time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#quote" class="btn-hero text-xl sm:text-2xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl w-full sm:w-auto">Get Quote & Book Online<span class="ml-2">→</span></a>
+                </div>
+                <p class="text-sm text-muted-foreground mt-4">Free instant quotes • No hidden fees • Quick response</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gradient-to-br from-muted/20 to-background">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">What Our <span class="text-primary">Customers Say</span></h2>
+            </div>
+            <div class="card-glass p-8 mb-12">
+                <div class="fbl_w_dcWK51Qwf6A51i8gEolc"></div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                var s = document.createElement('script');
+                s.src = 'https://fbl.embedwidgets.com/dcWK51Qwf6A51i8gEolc.js';
+                document.body.appendChild(s);
+            });
+        </script>
+    </section>
+
     <!-- Service Areas -->
     <section class="section-padding bg-gradient-surface">
         <div class="section-container">
@@ -433,6 +532,73 @@ get_header('esn'); ?>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Blog Posts Section -->
+    <section class="section-padding bg-background">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">Latest <span class="text-primary">Cleaning Tips</span> & Insights</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Stay updated with expert cleaning advice, industry insights, and helpful tips from our professional team</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Post 1 -->
+                <article class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <div class="w-full h-48 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl mb-6"></div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Guides</span>
+                            <div class="flex items-center gap-4">
+                                <span>March 15, 2024</span>
+                                <span>• 5 min read</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">Ultimate End of Tenancy Cleaning Checklist</h3>
+                        <p class="text-muted-foreground">Everything you need to know to get your full deposit back. Our comprehensive guide covers every room and essential cleaning task.</p>
+                        <div class="text-primary font-medium">Read More →</div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <div class="w-full h-48 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl mb-6"></div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Tips</span>
+                            <div class="flex items-center gap-4">
+                                <span>March 10, 2024</span>
+                                <span>• 3 min read</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">Spring Cleaning Tips from Professional Cleaners</h3>
+                        <p class="text-muted-foreground">Transform your home with expert tips and tricks from our professional cleaning team. Make your spring cleaning efficient and thorough.</p>
+                        <div class="text-primary font-medium">Read More →</div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <div class="w-full h-48 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl mb-6"></div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Advice</span>
+                            <div class="flex items-center gap-4">
+                                <span>March 5, 2024</span>
+                                <span>• 4 min read</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">How to Choose the Right Cleaning Service</h3>
+                        <p class="text-muted-foreground">Key factors to consider when selecting a professional cleaning service. Learn what questions to ask and red flags to avoid.</p>
+                        <div class="text-primary font-medium">Read More →</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="inline-flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-xl px-6 py-3">View All Blog Posts <span class="ml-2">→</span></a>
             </div>
         </div>
     </section>
