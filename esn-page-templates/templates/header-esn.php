@@ -72,8 +72,7 @@ if (!defined('ABSPATH')) {
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="<?php echo home_url(); ?>" class="flex items-center gap-3">
-                    <img src="https://sncleaningservices.co.uk/wp-content/uploads/2025/02/SN-Cleaning-Logo-small-300x136.png" alt="<?php bloginfo('name'); ?>" class="h-12 w-auto" />
-                    <span class="text-2xl font-bold text-foreground"><?php bloginfo('name'); ?></span>
+                    <img src="https://sncleaningservices.co.uk/wp-content/uploads/2025/02/SN-Cleaning-Logo-small-300x136.png" alt="SN Cleaning Services" class="h-12 w-auto" />
                 </a>
             </div>
 
