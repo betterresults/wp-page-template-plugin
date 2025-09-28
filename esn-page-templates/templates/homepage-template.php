@@ -14,26 +14,9 @@ $page_id = get_the_ID();
 
 
 
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- SEO -->
-    <title><?php bloginfo('name'); ?> — Best Cleaners in Your Area</title>
-    <meta name="description" content="Professional cleaning services in London & Essex. Get instant quotes, book online, and enjoy guaranteed, 5-star rated cleaning." />
-    <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" />
-    <?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php get_header('esn'); ?>
 
 <div id="page" class="site min-h-screen bg-background">
-
-    <?php // Load ESN Header directly for exact match
-    include ESN_TEMPLATES_PLUGIN_PATH . 'templates/header-esn.php'; ?>
     
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
@@ -693,8 +676,6 @@ $page_id = get_the_ID();
             </div>
         </div>
     </section>
-<?php // Load ESN Footer directly for exact match
-include ESN_TEMPLATES_PLUGIN_PATH . 'templates/footer-esn.php'; ?>
+</div>
 
-</body>
-</html>
+<?php get_footer('esn'); ?>
