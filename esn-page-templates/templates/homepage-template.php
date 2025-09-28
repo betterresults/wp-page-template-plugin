@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 // Get page meta values
 $page_id = get_the_ID();
 
-get_header('esn'); ?>
+
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -290,97 +290,198 @@ get_header('esn'); ?>
     </section>
 
     <!-- Service Types Section -->
-    <section class="section-padding bg-gradient-surface">
+    <section class="section-padding bg-gradient-to-b from-muted/30 to-background">
         <div class="section-container">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-                    Our Cleaning Services
-                </h2>
-                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Professional cleaning solutions tailored to your needs
-                </p>
+            <!-- Residential Services -->
+            <div class="mb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4">Residential Cleaning Services</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Professional home cleaning solutions with real people who care about your space</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/end-of-tenancy-cleaning.jpg" alt="End of Tenancy cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">End of Tenancy</h3>
+                            <p class="text-muted-foreground leading-relaxed">Complete move-out cleaning to get your deposit back with professional standards and equipment.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/after-builders-cleaning.jpg" alt="After Builders cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">After Builders</h3>
+                            <p class="text-muted-foreground leading-relaxed">Post-construction cleanup and dust removal including paint splatter cleaning and surface restoration.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/domestic-cleaning.jpg" alt="Domestic Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">Domestic Cleaning</h3>
+                            <p class="text-muted-foreground leading-relaxed">Regular weekly, fortnightly or monthly home cleaning with flexible scheduling and consistent quality.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/airbnb-cleaning.jpg" alt="Airbnb Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">Airbnb Cleaning</h3>
+                            <p class="text-muted-foreground leading-relaxed">Turnaround cleaning for short-term rentals with quick service and guest-ready standards.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/domestic-cleaning.jpg" alt="Deep House Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">Deep House Cleaning</h3>
+                            <p class="text-muted-foreground leading-relaxed">Comprehensive one-time deep cleaning service covering every corner and inside appliances.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/carpet-cleaning.jpg" alt="Carpet Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">Carpet Cleaning</h3>
+                            <p class="text-muted-foreground leading-relaxed">Professional carpet and upholstery cleaning with steam cleaning and fast drying technology.</p>
+                            <a href="#" class="inline-flex items-center justify-center w-full mt-6 border border-border rounded-xl px-4 py-3 group-hover:bg-primary group-hover:text-white transition-colors">Learn More <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- End of Tenancy -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">End of Tenancy Cleaning</h3>
-                    <p class="text-muted-foreground">Comprehensive deep cleaning service designed to help you get your full deposit back.</p>
+            <!-- Commercial Services -->
+            <div>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4">Commercial Cleaning Services</h2>
+                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Professional business cleaning with experienced teams you can trust</p>
                 </div>
 
-                <!-- Domestic Cleaning -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">Domestic Cleaning</h3>
-                    <p class="text-muted-foreground">Regular house cleaning services to keep your home spotless and comfortable.</p>
-                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/office-cleaning.jpg" alt="Office Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Office Cleaning</h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Professional office maintenance and sanitization with daily or weekly service options.</p>
+                            <a href="#" class="btn-primary w-full mt-4">Get Quote <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
 
-                <!-- Office Cleaning -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">Office Cleaning</h3>
-                    <p class="text-muted-foreground">Professional commercial cleaning for offices, schools, and business premises.</p>
-                </div>
+                    <!-- Card 2 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/office-cleaning.jpg" alt="School Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">School Cleaning</h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Educational facility cleaning with child-safe products and classroom sanitization.</p>
+                            <a href="#" class="btn-primary w-full mt-4">Get Quote <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
 
-                <!-- After Builders -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">After Builders Cleaning</h3>
-                    <p class="text-muted-foreground">Specialized cleaning to remove dust, debris, and construction residue.</p>
-                </div>
+                    <!-- Card 3 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/office-cleaning.jpg" alt="Nursery Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Nursery Cleaning</h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Specialized cleaning for childcare facilities using only non-toxic products.</p>
+                            <a href="#" class="btn-primary w-full mt-4">Get Quote <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
 
-                <!-- Carpet Cleaning -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">Carpet Cleaning</h3>
-                    <p class="text-muted-foreground">Deep carpet cleaning using professional equipment and eco-friendly products.</p>
-                </div>
-
-                <!-- Airbnb Cleaning -->
-                <div class="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">Airbnb Cleaning</h3>
-                    <p class="text-muted-foreground">Quick turnaround cleaning services for short-term rental properties.</p>
+                    <!-- Card 4 -->
+                    <div class="group bg-background rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="<?php echo ESN_TEMPLATES_PLUGIN_URL; ?>../src/assets/office-cleaning.jpg" alt="Retail Cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Retail Cleaning</h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed">Specialized cleaning for retail environments with customer-friendly hours.</p>
+                            <a href="#" class="btn-primary w-full mt-4">Get Quote <span class="ml-2">→</span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="section-padding bg-background">
+    <section class="section-padding bg-gradient-to-br from-foreground via-primary-dark to-foreground">
         <div class="section-container">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-                    Why Choose Us?
-                </h2>
+                <div class="inline-block bg-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-primary/30">WHY WE'RE DIFFERENT</div>
+                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-white leading-tight mb-6">Features That Make Us <span class="text-primary block">The Professional Choice</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">We've built our service around what matters most to you - convenience, quality, and peace of mind. Here's what sets us apart from the competition.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">🛡️</span>
+            <!-- 3x3 Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Repeatable feature cards -->
+                <?php 
+                $features = [
+                    ['icon' => '⚡','title' => 'Same Day Emergency Cleaning','short' => 'Available 7 days a week','full' => 'Need urgent cleaning? We offer same-day emergency services to handle any cleaning crisis. Professional equipment and experienced team ready when you need us most.'],
+                    ['icon' => '🕒','title' => 'Flexible Scheduling','short' => 'Your time, your choice','full' => 'Book cleaning services that fit your schedule. Early morning, evening, weekend, and holiday slots available. Change or reschedule appointments easily.'],
+                    ['icon' => '🎧','title' => '24/7 Customer Support','short' => 'Always here for you','full' => 'Questions or concerns? Our customer support team is available around the clock to help you. Call, text, or message us anytime.'],
+                    ['icon' => '🛡️','title' => 'Satisfaction Guarantee','short' => '100% satisfaction promise','full' => 'Not happy with the service? We\'ll come back and make it right at no additional cost.'],
+                    ['icon' => '👥','title' => 'Dedicated Team Assignment','short' => 'Consistent quality','full' => 'Get the same professional cleaning team every visit for consistent, personalized service.'],
+                    ['icon' => '📱','title' => 'Online Customer Portal','short' => '24/7 online access','full' => 'Manage your bookings, track cleaning progress, and communicate with your team through our portal.'],
+                    ['icon' => '📅','title' => 'Easy Rebooking','short' => 'One-click rebooking','full' => 'Rebook your favorite cleaner with just one click through your customer portal.'],
+                    ['icon' => '⭐','title' => 'Quality Assurance','short' => 'Consistently excellent','full' => 'Every cleaning is quality-checked and rated to ensure high standards.'],
+                    ['icon' => '✔️','title' => 'Licensed & Insured','short' => 'Fully protected service','full' => 'All our cleaners are fully licensed and insured for your peace of mind.'],
+                ];
+                foreach ($features as $f): ?>
+                <div class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors text-2xl"><?= $f['icon']; ?></div>
+                        <div class="space-y-2">
+                            <h4 class="text-xl font-bold font-heading text-white group-hover:text-primary transition-colors"><?= $f['title']; ?></h4>
+                            <p class="text-primary font-medium text-sm"><?= $f['short']; ?></p>
+                            <div class="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-32">
+                                <p class="text-slate-300 text-sm leading-relaxed pt-2"><?= $f['full']; ?></p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">Fully Insured</h3>
-                    <p class="text-muted-foreground">Complete peace of mind with comprehensive insurance coverage</p>
                 </div>
+                <?php endforeach; ?>
+            </div>
 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">⭐</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">5-Star Rated</h3>
-                    <p class="text-muted-foreground">Consistently excellent service rated by our customers</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">🌱</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">Eco-Friendly</h3>
-                    <p class="text-muted-foreground">Safe, non-toxic cleaning products for your family and pets</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">⚡</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">Fast Response</h3>
-                    <p class="text-muted-foreground">Quick quotes and same-day booking available</p>
+            <!-- Stats Section -->
+            <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-white/10 shadow-xl">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="space-y-2"><div class="text-4xl font-bold text-primary">98%</div><div class="text-slate-300 font-medium">Customer Retention Rate</div></div>
+                    <div class="space-y-2"><div class="text-4xl font-bold text-primary">15min</div><div class="text-slate-300 font-medium">Average Response Time</div></div>
+                    <div class="space-y-2"><div class="text-4xl font-bold text-primary">50K+</div><div class="text-slate-300 font-medium">Successful Cleanings</div></div>
+                    <div class="space-y-2"><div class="text-4xl font-bold text-primary">24/7</div><div class="text-slate-300 font-medium">Support Available</div></div>
                 </div>
             </div>
         </div>
@@ -472,18 +573,13 @@ get_header('esn'); ?>
     <section class="section-padding bg-gradient-surface">
         <div class="section-container">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">
-                    Service Areas Across <span class="text-primary">London & Essex</span>
-                </h2>
-                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Professional cleaning services covering Greater London and Essex regions with fast response times
-                </p>
+                <h2 class="text-4xl lg:text-5xl font-bold font-heading text-foreground mb-6">Service Areas Across <span class="text-primary">London & Essex</span></h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Professional cleaning services covering Greater London and Essex regions with fast response times</p>
             </div>
 
             <div class="max-w-6xl mx-auto">
                 <!-- Mobile Layout - Stacked Cards -->
                 <div class="block lg:hidden space-y-6">
-                    <!-- London Coverage Card -->
                     <div class="bg-white rounded-2xl p-6 shadow-lg border">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
@@ -492,8 +588,6 @@ get_header('esn'); ?>
                         <p class="text-lg font-semibold text-primary mb-2">All London areas within M25</p>
                         <p class="text-sm text-muted-foreground">Complete coverage of Greater London</p>
                     </div>
-
-                    <!-- Essex Coverage Card -->
                     <div class="bg-white rounded-2xl p-6 shadow-lg border">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-4 h-4 bg-accent rounded-full animate-pulse delay-500"></div>
@@ -504,9 +598,32 @@ get_header('esn'); ?>
                     </div>
                 </div>
 
-                <!-- Desktop Map Layout -->
+                <!-- Desktop Layout - Map with Overlaid Cards -->
                 <div class="hidden lg:block relative bg-white rounded-3xl p-8 shadow-lg overflow-hidden">
+                    <!-- Map Background -->
                     <div class="relative h-96 bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden border-2 border-slate-200">
+                        <!-- Map grid pattern -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg class="w-full h-full" viewBox="0 0 400 300">
+                                <defs>
+                                    <pattern id="grid" width="40" height="30" patternUnits="userSpaceOnUse">
+                                        <path d="M 40 0 L 0 0 0 30" fill="none" stroke="#94a3b8" stroke-width="1"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                                <g opacity="0.3">
+                                    <circle cx="120" cy="150" r="45" fill="#18A5A5" opacity="0.2"/>
+                                    <circle cx="130" cy="140" r="35" fill="#18A5A5" opacity="0.3"/>
+                                    <circle cx="110" cy="160" r="25" fill="#18A5A5" opacity="0.4"/>
+                                    <ellipse cx="280" cy="120" rx="40" ry="50" fill="#185166" opacity="0.2"/>
+                                    <ellipse cx="290" cy="110" rx="30" ry="35" fill="#185166" opacity="0.3"/>
+                                    <ellipse cx="270" cy="130" rx="20" ry="25" fill="#185166" opacity="0.4"/>
+                                </g>
+                                <path d="M 160 150 Q 200 140 240 120" stroke="#94a3b8" stroke-width="3" fill="none" opacity="0.4"/>
+                                <path d="M 140 170 Q 180 160 220 140" stroke="#94a3b8" stroke-width="2" fill="none" opacity="0.3"/>
+                            </svg>
+                        </div>
+
                         <!-- London Coverage Area -->
                         <div class="absolute left-8 top-1/2 transform -translate-y-1/2">
                             <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border max-w-xs">
@@ -530,7 +647,44 @@ get_header('esn'); ?>
                                 <p class="text-sm text-muted-foreground">Major towns and surrounding areas</p>
                             </div>
                         </div>
+
+                        <!-- Connection line -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                                <div class="w-20 h-0.5 bg-gradient-to-r from-primary to-accent animate-pulse delay-300"></div>
+                                <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-500"></div>
+                            </div>
+                        </div>
+
+                        <!-- Floating service indicators -->
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-md animate-float">
+                            <div class="flex items-center gap-2">
+                                <span class="text-primary">⏱️</span>
+                                <span class="text-sm font-medium">Fast Response</span>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-md animate-float">
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600">✔️</span>
+                                <span class="text-sm font-medium">Guaranteed</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-md animate-float">
+                            <div class="flex items-center gap-2">
+                                <span class="text-accent">📍</span>
+                                <span class="text-sm font-medium">Full Coverage</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Service Promise -->
+            <div class="text-center mt-16">
+                <div class="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-2xl shadow-md">
+                    <span class="text-green-600">✔️</span>
+                    <span class="text-lg font-semibold text-foreground">Same-day quotes • 24/7 availability • Fully insured</span>
                 </div>
             </div>
         </div>
